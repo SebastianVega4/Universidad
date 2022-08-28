@@ -1,5 +1,3 @@
-package Año;
-
 import java.util.Calendar;
 
 import javax.swing.JOptionPane;
@@ -9,8 +7,8 @@ public class Runner {
 
 		Calendar calendario = Calendar.getInstance();
 		int hora, minutos, segundos, mes, dia;
-		int horaaño, minutosaño, segundosaño, mesaño, diaaño;
-		int horaañon, minutosañon, segundosañon, mesañon, diaañon;
+		int horaaï¿½o, minutosaï¿½o, segundosaï¿½o, mesaï¿½o, diaaï¿½o;
+		int horaaï¿½on, minutosaï¿½on, segundosaï¿½on, mesaï¿½on, diaaï¿½on;
 
 		hora = calendario.get(Calendar.HOUR_OF_DAY);
 		minutos = calendario.get(Calendar.MINUTE);
@@ -18,23 +16,23 @@ public class Runner {
 		dia = calendario.get(Calendar.DATE);
 		mes = calendario.get(Calendar.MONTH);
 		mes = mes + 1;
-		mesañon = 12 - mes;
-		diaaño = 31 - dia;
-		diaañon = (diaaño+(mesañon*31))-2;
-		horaaño = 24 - hora;
-		horaañon = horaaño+(24*diaaño);
-		minutosaño = 60 - minutos;
-		minutosañon = minutosaño+(60*horaaño);
-		segundosaño = 60 - segundos;
-		segundosañon = segundosaño+(60*minutosaño);
+		mesaï¿½on = 12 - mes;
+		diaaï¿½o = 31 - dia;
+		diaaï¿½on = (diaaï¿½o+(mesaï¿½on*31))-2;
+		horaaï¿½o = 24 - hora;
+		horaaï¿½on = horaaï¿½o+(24*diaaï¿½o);
+		minutosaï¿½o = 60 - minutos;
+		minutosaï¿½on = minutosaï¿½o+(60*horaaï¿½o);
+		segundosaï¿½o = 60 - segundos;
+		segundosaï¿½on = segundosaï¿½o+(60*minutosaï¿½o);
 
 		JOptionPane.showMessageDialog(null, "La hora actual es: " + hora + ":" + minutos + ":" + segundos + "\n"
 				+ "DIA: " + dia + "                MES: " + mes + "\n" + 
-				"Meses para el año nuevo: "+ mesañon+ "\n"+
-				"Dias para el año nuevo: " + diaañon +"\n"+
-				"Horas para el año nuevo: " +horaaño + "\n"+
-				"Minutos para el año nuevo: "+ minutosaño + "\n"+
-				"Segundos para el año nuevo: "+ segundosaño);
+				"Meses para el aï¿½o nuevo: "+ mesaï¿½on+ "\n"+
+				"Dias para el aï¿½o nuevo: " + diaaï¿½on +"\n"+
+				"Horas para el aï¿½o nuevo: " +horaaï¿½o + "\n"+
+				"Minutos para el aï¿½o nuevo: "+ minutosaï¿½o + "\n"+
+				"Segundos para el aï¿½o nuevo: "+ segundosaï¿½o);
 		
 		System.out.println("Programa finalizado");
 	}

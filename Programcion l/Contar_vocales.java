@@ -1,4 +1,3 @@
-package Vocales;
 import javax.swing.JOptionPane;
 
 public class Runner {

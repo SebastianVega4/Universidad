@@ -1,0 +1,14 @@
+Proceso Par_o_impar
+	Escribir 'DECIR SI UN NUMERO ES PAR O IMPAR'
+	Leer NUM
+	Si NUM MOD 2=0 Entonces
+		Escribir "********"
+		Escribir 'Es Par'
+		Escribir "********"
+	Sino
+		Escribir "********"
+		Escribir 'Es Impar'
+		Escribir "********"
+	FinSi
+FinProceso
+

@@ -1,5 +1,3 @@
-package pareImpar;
-
 import javax.swing.JOptionPane;
 
 public class Runner {

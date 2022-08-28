@@ -1,5 +1,3 @@
-package correo;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -18,10 +16,10 @@ public class Runner {
 		Matcher validar = parametros.matcher(email);
 
 		if (validar.find() == true) {
-			JOptionPane.showMessageDialog(null, "El email ingresado ES válido");
+			JOptionPane.showMessageDialog(null, "El email ingresado ES vï¿½lido");
 			ciclo=1;
 		} else {
-			JOptionPane.showMessageDialog(null, "El email ingresado *NO* es válido");
+			JOptionPane.showMessageDialog(null, "El email ingresado *NO* es vï¿½lido");
 		}
 		
 	} while (ciclo==0);

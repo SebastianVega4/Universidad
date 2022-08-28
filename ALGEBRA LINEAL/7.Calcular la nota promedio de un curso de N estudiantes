@@ -1,0 +1,10 @@
+Proceso sin_titulo
+	Escribir "numero de estudiantes"
+	Leer NUM
+	Para E<-1 Hasta NUM Con Paso 1 Hacer
+		Escribir "Nota del estudiante" E
+		leer NOT
+		suma<-suma+NOT
+	Fin Para
+	Escribir "la nota promedio del curso es" suma/NUM	
+FinProceso

@@ -1,5 +1,3 @@
-package interseccion;
-
 import javax.swing.JOptionPane;
 
 public class Runner {
@@ -24,7 +22,7 @@ public class Runner {
 
 		}
 		JOptionPane.showMessageDialog(null, "Cadena 1: \n" + cadena1 +"\n"+ "Cadena 2: \n" + cadena2
-				+ "\n"+"Su cadena Con Intersección es: \n" + Cadenaamostrar);
+				+ "\n"+"Su cadena Con Intersecciï¿½n es: \n" + Cadenaamostrar);
 		System.out.println("Programa finalizado");
 	}
 }

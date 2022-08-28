@@ -1,0 +1,17 @@
+Proceso Menor_de_2_numeros
+	Escribir "cual es el menor de dos numeros"
+	Escribir "Numero1 >" Sin Saltar
+	Leer NUM1
+	Escribir "Numero2 >" Sin Saltar
+	Leer NUM2
+	Si NUM1<NUM2 Entonces
+		Escribir "*****************"
+		Escribir  NUM1 "  " "es menor que" "  " NUM2
+		Escribir "*****************"
+	Sino
+		Escribir "*****************"
+		Escribir NUM2 "  " "es menor que " "  " NUM1
+		Escribir "*****************"
+	Fin Si
+	
+FinProceso

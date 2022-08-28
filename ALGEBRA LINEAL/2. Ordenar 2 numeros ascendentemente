@@ -1,0 +1,18 @@
+Proceso Ordenar_2numeros_ascendentemente
+	Escribir "ORDENAR DOS NUMEROS ASCENDENTEMENTE";
+	Escribir "NUM1 = "; sin saltar
+	Leer NUM1;
+	Escribir "NUM2 = ";sin saltar
+	Leer NUM2;
+	Si NUM1<MUN2 Entonces
+		Escribir "*************"
+		Escribir NUM1, " ",NUM2;
+		Escribir "*************"
+	Sino
+		Escribir "*************"
+		Escribir NUM2," ",NUM1;
+		Escribir "*************"
+	FinSi
+FinProceso
+
+	

@@ -1,0 +1,9 @@
+Proceso Escribir_laserie_0_3_5_8
+	Escribir 'numero'
+	Leer NUM
+	Para i<-1 Hasta NUM Hacer
+		Escribir i^2-1
+		operacion<-3+i
+	FinPara
+FinProceso
+

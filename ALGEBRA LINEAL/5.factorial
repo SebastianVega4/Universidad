@@ -1,0 +1,14 @@
+Proceso FactorialyCombinacion
+	
+	Escribir 'Ingrese la cantidad de elemntos'
+	Leer elementos
+	
+	factorial<-1
+	
+	Para i<-1 Hasta elementos Hacer
+		factorial<-factorial*i
+	FinPara
+	Escribir 'El Factorial ',elementos,'! es: ',factorial
+	
+	
+FinProceso

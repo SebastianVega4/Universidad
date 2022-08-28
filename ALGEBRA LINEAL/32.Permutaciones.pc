@@ -1,0 +1,22 @@
+Proceso sin_titulo
+	escribir " escribe numero 1"
+	T1 <- 1
+	T2 <- 1 
+	leer A
+	
+	Para NUM<-A Hasta 2 Con Paso -1 Hacer
+		T1<-T1*NUM
+		Escribir "Factotial" T1
+	Fin Para
+	
+	Escribir "escriba numero 2"
+	Leer A
+	
+	Para NUM<-A Hasta 2 Con Paso -1 Hacer
+		T2 <-T2*NUM
+		Escribir "factorial" T2
+	Fin Para
+	permutacion<-T1/T2
+	Escribir "permutacion igual a =" permutacion
+	
+FinProceso

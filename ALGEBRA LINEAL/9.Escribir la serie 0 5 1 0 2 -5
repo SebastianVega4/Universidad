@@ -1,0 +1,15 @@
+Proceso sin_titulo
+	Escribir "digita el munero de intervalos"
+	leer N
+	impar <- 0
+	par <- 5
+	Para i<-1 Hasta n Con Paso 1 Hacer
+		Si i mod 2 = 0 Entonces
+			escribir par
+			par <- par-5
+		Sino
+			escribir impar
+			impar <- impar+1
+		Fin Si
+	Fin Para	
+FinProceso

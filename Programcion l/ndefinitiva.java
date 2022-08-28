@@ -1,5 +1,3 @@
-package ndefinitiva;
-
 import javax.swing.JOptionPane;
 
 public class Runner {
@@ -39,7 +37,7 @@ public class Runner {
 				PonderadoS = PonderadoS - Ponderado;
 			} else if (PonderadoS < 100) {
 				char option = ((String) JOptionPane.showInputDialog(null,
-						"¿Desea Inscrbir mas notas? \n" + "Y= Si   N= No", "", JOptionPane.PLAIN_MESSAGE, null,
+						"ï¿½Desea Inscrbir mas notas? \n" + "Y= Si   N= No", "", JOptionPane.PLAIN_MESSAGE, null,
 						new Object[] { "Y", "N" }, "selecciona")).charAt(0);
 				switch (option) {
 				case 'Y':

@@ -1,0 +1,25 @@
+Proceso Declaracion_de_renta
+	Escribir "Decir si declara renta o no"
+	Escribir "Escriba sus ingresos anuales brutos"
+	Leer anual
+	Escribir "Escriba su patrimonio bruto"
+	Leer patri
+	Si anual>44603000 Entonces
+		Si patri>143366000 Entonces
+			Escribir "******************************************"
+			Escribir "Declara renta por su patrimonio y tambien"
+		Sino
+			Escribir "******************************************"
+			Escribir "No declara renta por patrimonio pero"
+		FinSi
+		Escribir "Declara renta por ingresos anuales"
+		Escribir "******************************************"
+	Sino
+
+		Escribir "****************"
+		Escribir "No declara renta"
+		Escribir "****************"
+		
+	FinSi
+FinProceso
+

@@ -1,0 +1,15 @@
+Proceso sin_titulo
+	Escribir "LEER NUMERO ENTERO" ;
+	Leer NUM
+	Si NUM>0 Entonces
+		OPERA<-NUM+20
+		Escribir "***********"
+		Escribir OPERA
+		Escribir "***********"
+	Sino
+		OPERA1<-NUM-30
+		Escribir "***********"
+		Escribir "  " OPERA1
+		Escribir "***********"
+	Fin Si
+FinProceso

@@ -1,0 +1,12 @@
+Proceso sin_titulo
+	Escribir "numero de estudiantes"
+	Leer N
+	Para MUNC<-1 Hasta N Con Paso 1 Hacer
+		escribir "nota del estudiante" " " MUNC Sin Saltar
+		leer M
+		si m > mayor Entonces
+			mayor <- M
+		FinSi
+	Fin Para
+	Escribir "la nota mayorr es " ,mayor
+FinProceso

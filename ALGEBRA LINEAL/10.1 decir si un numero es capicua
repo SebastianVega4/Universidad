@@ -1,0 +1,18 @@
+Proceso Capicua
+		Escribir "Decir si cun numero es capicua"
+		Escribir "Numero de tres cifras " Sin Saltar
+		Leer NUM
+		
+		NUM1<-trunc(NUM/100)
+		NUM2<-(NUM % 100)% 10
+		
+		Si NUM1 = NUM2 Entonces
+			Escribir "*****************************"
+			Escribir "El numero" " " NUM " " "es capicua"
+			Escribir "*****************************"
+		Sino
+			Escribir "*****************************"
+			Escribir "El numero" " " NUM " " "NO capicua"
+			Escribir "*****************************"
+		Fin Si
+FinProceso

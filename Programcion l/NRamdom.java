@@ -1,5 +1,3 @@
-package nramdom;
-
 import javax.swing.JOptionPane;
 import java.util.Random;
 

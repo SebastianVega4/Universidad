@@ -1,0 +1,14 @@
+Proceso Digitos_iguales
+	Escribir "Decir si el primer y segundo digitos son iguales"
+	Escribir "numero>" Sin Saltar
+	Leer NUM
+	Si NUM % 11=0 Entonces
+		Escribir "****************************************"
+		Escribir "el numero" " " NUM " " "tienen los dojitos iguales"
+		Escribir "****************************************"
+	Sino
+		Escribir "****************************************"
+		Escribir "el numero" " " NUM " " "NO tienen los dojitos iguales"
+		Escribir "****************************************"
+	Fin Si
+FinProceso

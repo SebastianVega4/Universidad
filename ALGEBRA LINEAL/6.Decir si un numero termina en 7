@@ -1,0 +1,14 @@
+Proceso Termina_en_7
+	Escribir "Decir si un numero termina en 7"
+	Escribir "NUMERO >" Sin Saltar
+	Leer NUM
+	Si NUM % 10=7 Entonces
+		Escribir "*********************"
+		Escribir  NUM "  " "SI TERMINA EN 7"
+		Escribir "*********************"
+	Sino
+		Escribir "*********************"
+		Escribir  NUM "  " "NO TERMINA EN 7"
+		Escribir "*********************"
+	Fin Si
+FinProceso

@@ -1,0 +1,18 @@
+Proceso  E
+	
+	Escribir "Dijite el numero hallar Euler"
+	Leer A
+	
+	sum<-0
+	b<-1
+	c<-1
+	
+	Para t<-1 hasta A hacer
+		sum<-sum+c*1/b
+		b <- b+1
+		c <- -c
+	FinPara
+	sum <- 4*sum
+	Escribir " E  =     ", sum
+	
+FinProceso
