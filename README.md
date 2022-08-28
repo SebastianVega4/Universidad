@@ -1,4 +1,2 @@
-# Carpeta_Java
-Trabajos
-
+# Java
 Trabajos de la u y personales en JAVA
