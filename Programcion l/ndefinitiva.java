@@ -1,7 +1,6 @@
 import javax.swing.JOptionPane;
 
 public class Runner {
-
 	public static void main(String[] args) {
 
 		String Name, Materia;
@@ -37,20 +36,16 @@ public class Runner {
 				PonderadoS = PonderadoS - Ponderado;
 			} else if (PonderadoS < 100) {
 				char option = ((String) JOptionPane.showInputDialog(null,
-						"�Desea Inscrbir mas notas? \n" + "Y= Si   N= No", "", JOptionPane.PLAIN_MESSAGE, null,
+						"¿Desea Inscrbir mas notas? \n" + "Y= Si   N= No", "", JOptionPane.PLAIN_MESSAGE, null,
 						new Object[] { "Y", "N" }, "selecciona")).charAt(0);
 				switch (option) {
-				case 'Y':
-					System.out.println("ok");
-					break;
-				case 'N':
-					exited = false;
-					break;
-				default:
-					break;
+					case 'Y' -> System.out.println("ok");
+					case 'N' -> exited = false;
+					default -> {
+					}
 				}
 			}
-			if (exited == false) {
+			if (!exited) {
 				break;
 			}
 		} while (PonderadoS < 100);

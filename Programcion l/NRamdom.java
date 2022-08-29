@@ -15,10 +15,10 @@ public class Runner {
 			if (numA > limiteS) {
 				JOptionPane.showMessageDialog(null, "El numero " + numA + " esta por fuera del rango");
 			} else {
-				if (numA > num && numA != num) {
+				if (numA > num) {
 					JOptionPane.showMessageDialog(null, "El numero es Menor a " + numA);
 				}
-				if (numA < num && numA != num) {
+				if (numA < num) {
 					JOptionPane.showMessageDialog(null, "El numero es Mayor a " + numA);
 				}
 				if (numA == num) {

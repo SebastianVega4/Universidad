@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f9fe718-60f0-451f-ab4a-5ba99be1e41b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../ALGEBRA LINEAL/Proyecto/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../../ALGEBRA LINEAL/Proyecto/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ año_nuevo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ año_nuevo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NRamdom.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NRamdom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Par_o_Impar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Par_o_Impar_y_sumar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Validar_correo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Validar_correo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../factorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Factorial_trallendo_archivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ndefinitiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ndefinitiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../algoritmos y programacion/Parcial_Final/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../../algoritmos y programacion/Parcial_Final/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../algoritmos y programacion/Proyecto/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../../algoritmos y programacion/Proyecto/.project" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2E0macRWVkLCebzYOYwSscgLem7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/sebastian/worksplace/Java/Programcion l/Combinaciones"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f9fe718-60f0-451f-ab4a-5ba99be1e41b" name="Changes" comment="" />
+      <created>1661740940338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661740940338</updated>
+      <workItem from="1661740941480" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
