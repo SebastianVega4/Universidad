@@ -16,8 +16,6 @@ public class Runner {
 
         Figure Triangle = new Triangle(new Point(300,250),Color.GREEN, new Point(150,150),new Point(100,100));
         showFigure(Triangle, myWindow);
-
-
     }
 
     static private void showFigure(Figure figure, JFrame window){
@@ -25,10 +23,8 @@ public class Runner {
         figure.drawFigure(window.getGraphics());
         if (figure instanceof Circle){
             System.out.println("cicle");
-
         }else if (figure instanceof Rectangle){
             System.out.println("Rectangulo");
         }
-
     }
 }

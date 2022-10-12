@@ -20,4 +20,8 @@ public class Triangle extends  Figure {
     public double calcArea() {
         return 0;
     }
+    public String getType(){
+        return "que tipo de triangulo soy";
+        
+    }
 }
