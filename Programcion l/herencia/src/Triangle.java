@@ -1,27 +1,30 @@
-import  java.awt.*;
-public class Triangle extends  Figure {
-    private  Point pointTWO;
-    private Point PointThree;
+import java.awt.*;
 
-    public Triangle(Point point, Color color, Point pointTWO, Point pointThree) {
+public class Triangle extends Figure{
+    private Point pointTwo;
+    private Point pointThree;
+
+    public Triangle(Point point, Color color, Point pointTwo, Point pointThree) {
         super(point, color);
-        this.pointTWO = pointTWO;
-        PointThree = pointThree;
+        this.pointTwo = pointTwo;
+        this.pointThree = pointThree;
     }
 
     @Override
     public void drawFigure(Graphics graphics) {
-        int[] pointX ={point.x,point.y,point.x};
-        int[] pointY ={point.x,point.y,point.x};
-        graphics.drawPolygon(pointX,pointY,pointX.length);
+        graphics.setColor( color );
+        int[] pointX = {point.x, pointTwo.x, pointThree.x, };
+        int[] pointY = {point.y, pointTwo.y, pointThree.y};
+        graphics.drawPolyline( pointX,pointY, pointX.length);
     }
 
     @Override
     public double calcArea() {
+        //TODO calculo del área
         return 0;
     }
+
     public String getType(){
-        return "que tipo de triangulo soy";
-        
+        return "Qué tipo de Triangulo soy";
     }
 }

@@ -70,6 +70,7 @@ public class MyArray {
     }
     public String[] getArray(){
         return array.clone();
+
     }
     public int getSize(){
         return size;

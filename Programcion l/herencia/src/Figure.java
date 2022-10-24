@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public abstract class Figure {
+public abstract class Figure implements ActionsFigure {
     protected Point point;
     protected Color color;
 
@@ -17,8 +17,5 @@ public abstract class Figure {
         this.point = point;
     }
 
-    public abstract void drawFigure(Graphics graphics);
-
-    public abstract double calcArea();
 }
 
