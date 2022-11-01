@@ -1,4 +1,4 @@
-public class Card implements  ActionsCard{
+public class Card implements ActionsCard{
     //Especifica el número asociado a la tarjeta de llamadas
     protected String number;
     protected short minutes;
@@ -31,8 +31,9 @@ public class Card implements  ActionsCard{
         return residue;
     }
 
+
     @Override
-    public double recharge() {
+    public double recharge(double recharge) {
         return 0;
     }
 

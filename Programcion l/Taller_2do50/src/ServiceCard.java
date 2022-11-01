@@ -28,6 +28,7 @@ public class ServiceCard {
 
     //permite realizar una recarga a una tarjeta
     public Card recharge(String number, double Recharge) {
+        return null;
 
     }
 
@@ -37,13 +38,13 @@ public class ServiceCard {
     }
 
     //Retorna un clon del arreglo de objetos de la tarjeta
-    public Card<> getCard() {
-
+    public Card [] getCard() {
+        return null;
     }
 
     //eliminar una tarjeta del sistema, retorna la tarjeta eliminada.
     public Card deleteCard(String number) {
-
+        return null;
     }
 
 }

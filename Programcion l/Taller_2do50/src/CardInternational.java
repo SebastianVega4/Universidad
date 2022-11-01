@@ -1,6 +1,6 @@
 public class CardInternational extends Card {
 
-    private final double VALUE_MINUTE = 35;
+    private double VALUE_MINUTE = 35;
     //porcentaje de descuento que se aplica para las tarjetas
     //interncionales
     private float percentageDiscount;
