@@ -1,87 +1,125 @@
 package logic;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MyArray {
     private String[] array;
     private int size;
-    public MyArray(int dimencion{
-        this.size = dimencion;
-        size =0;
-    }
-    public MyArray(){
+
+    public MyArray() {
         this(10);
     }
-    public void add (String element){
-        ensureCapacity(size+1);
-        array[size++]=element;
 
+    /***
+     *
+     * @param dimension
+     */
+    public MyArray(int dimension) {
+        array = new String[dimension];
+        size = 0;
     }
-    private void ensureCapacity (int capacatyMin){
-        if (capacatyMin>array.length){
-            int newCapacity = array.length+(array.length/2);
-            array= Arrays.copyOf(array,newCapacity);
 
+    /***
+     *
+     * @param element
+     */
+    public void add(String element) {
+        ensureCapacity(size + 1);
+        array[size++] = element;
+    }
+
+    private void ensureCapacity(int min) {
+        if (min > array.length) {
+            int newCapacity = array.length + (array.length / 2);
+            array = Arrays.copyOf(array, newCapacity);
         }
     }
 
-    /**
-     * retorna el parametro de la posicion del parametro de entrada
-     * @param index indica el valor del parametro
-     * @return String almacenaen la posicion del parametro
-     */
-    public String get(int index){
-        return null;
-    }
-
-    /**
-     * elimina todos los elementos del arreglo
-     */
-    public void clean(){
+    public void clear() {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = null;
+        }
+        size = 0;
 
     }
 
-    /**
-     * retorna la pocision del primer elemento que cincide con el parametro
-     * @param element indica el elemento
-     * @return entero con la posicion del elemento, o -1 el elemnto no existe
-     */
-    public int indexOf(String element){
-        return 0;
+    public String get(int position) throws Exception {
+        if (position >= 0 && position < size) {
+            return array[position];
+        }
+        throw new Exception("indice fuera de rango");
     }
 
     /**
+     * destruyo el elemento en pos y y los corre para organizarlos si pos no es valido retorna null
      *
-     * @param element
+     * @param pos
      * @return
      */
-    public int lastIndexOf(String element){
-        return 0;
-    }
-    /**
-     * elimina el elemento ubicado en la posicion del parametro, desplaza los elemnetos de la
-     * derecha dek elemento eliminiado a la izquierda
-     * @param index indica la posicion del elemento a eliminar
-     * @return
-     */
-    public String remove(int index){
+    public String remove(int pos) {
+        if (pos >= 0 && pos < array.length) {
+            String removed = array[pos];
+            array[pos] = null;
+            for (int i = pos; i <= size; i++) {
+                array[i] = array[i + 1];
+            }
+            size--;
+            return removed;
+        }
         return null;
     }
-    public String[] getArray(){
-        return array.clone();
-
+    /**
+     * le doy un valor y bme devuelve la posicion del primer valor coincidente si no existe -1
+     *
+     * @return
+     */
+    public int indexOf(String code) {
+        for (int i = 0; i < size; i++) {
+            if (code.equals(array[i])) {
+                return i;
+            }
+        }
+        return -1;
     }
-    public int getSize(){
+
+    public int lastIndexOf(String code) {
+        for (int i = size - 1; i >= 0; i--) {
+            if (array[i].equals(code)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public String[] getArray() {
+        return array.clone();
+    }
+
+    public int getSize() {
         return size;
     }
 
-    @Override
     public String toString() {
-        StringBuffer out =new StringBuffer("array=[");
-        for (int index =0:index < size : index++){
-
+        StringBuilder out = new StringBuilder("array=[");
+        for (int index = 0; index < size; index++) {
+            out.append(array[index]);
+            if (index < size - 1) {
+                out.append(',');
+            }
         }
-        return "MyArray{" + "array=" + Arrays.toString(array) + ", size=" + size + '}';
+        out.append(']');
+        return out.toString();
+
+
+    }
+
+    /**
+     * @param pos  donde coloca
+     * @param code que coloca
+     * @return que coloca
+     */
+    public String setThis(int pos, String code) {
+        array[pos] = code;
+        return code;
     }
 }
