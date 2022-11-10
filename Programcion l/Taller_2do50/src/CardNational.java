@@ -1,8 +1,13 @@
-public class CardNational extends Card {
+public class CardNational extends Card implements ActionsCard{
 
-    public double VALUE_MINUTE = 20;//valor del minuto
+    public static double VALUE_MINUTE = 20;//valor del minuto
     private Operator operator; //Operador de la tarjeta
-
+    /**
+     *describe el número al que se asocia la tarjeta
+     * @param number
+     * operador emun seleccionado
+     * @param operator
+     */
     public CardNational(String number, Operator operator) {
         //el número al que
         //se asocia la tarjeta
@@ -18,5 +23,15 @@ public class CardNational extends Card {
 
     public void setOperator(Operator operator) {
         this.operator = operator;
+    }
+
+    @Override
+    public double recharge(double recharge) {
+        return super.recharge(recharge);
+    }
+
+    @Override
+    public boolean call(short minutes) {
+        return super.call(minutes);
     }
 }

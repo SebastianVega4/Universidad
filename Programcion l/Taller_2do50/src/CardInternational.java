@@ -1,11 +1,17 @@
-public class CardInternational extends Card {
+public class CardInternational extends Card implements ActionsCard{
 
-    private double VALUE_MINUTE = 35;
+    private static double VALUE_MINUTE = 35;
     //porcentaje de descuento que se aplica para las tarjetas
     //interncionales
     private float percentageDiscount;
 
-    public CardInternational(String number/*,String */, float percentageDiscount) {
+    /**
+     *describe el número al que se asocia la tarjeta
+     * @param number
+     * porcentaje de descuento
+     * @param percentageDiscount
+     */
+    public CardInternational(String number, float percentageDiscount) {
         super(number);//número al que se asocia la tarjeta
         this.percentageDiscount = percentageDiscount;//porcentaje de descuento
     }
@@ -17,13 +23,14 @@ public class CardInternational extends Card {
     public void setPercentageDiscount(float percentageDiscount) {
         this.percentageDiscount = percentageDiscount;
     }
-    /*
-    public double getVALUE_MINUTE() {
-        return VALUE_MINUTE;
+
+    @Override
+    public double recharge(double recharge) {
+        return super.recharge(recharge);
     }
-    public void setVALUE_MINUTE(double VALUE_MINUTE) {
-        this.VALUE_MINUTE = VALUE_MINUTE;
-    }*/
 
-
+    @Override
+    public boolean call(short minutes) {
+        return super.call(minutes);
+    }
 }
