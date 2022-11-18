@@ -45,7 +45,8 @@ public class Runner {
         elecciones.fileVotes(nRango);//RANGO ALEATORIO
         Object seleccion;
         do {
-            String[] options = {"Total por candidatos", "Total por Municipios", "Total de votos", "Candidato Ganador", "Ver resultados de un candidato", "Votos ordenados Desendentemente", "SALIR"};
+            String[] options = {"Total por candidatos", "Total por Municipios", "Total de votos", "Candidato Ganador",
+                    "Ver resultados de un candidato", "Votos ordenados Desendentemente", "Generar Nuevos Numeros Ramdom","SALIR"};
             seleccion = JOptionPane.showInputDialog(null, "Seleccione accion a relizar", "ELECCIONES",
                     JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
             System.out.println(seleccion);
@@ -71,7 +72,10 @@ public class Runner {
             } else if ("Votos ordenados Desendentemente".equals(seleccion)) {
                 JOptionPane.showMessageDialog(null, "Ordenados Desendentemente" + "\n" + elecciones.getDesendet());
 
-            } else if ("SALIR".equals(seleccion) || "null".equals(seleccion)) {
+            } else if ("Generar Nuevos Numeros Ramdom".equals(seleccion)) {
+                int newRango = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el Rango del numero aleatorio"));
+                elecciones.fileVotes(newRango);//RANGO ALEATORIO
+            }else if ("SALIR".equals(seleccion)) {
                 System.exit(0);
             }
         } while (true);
