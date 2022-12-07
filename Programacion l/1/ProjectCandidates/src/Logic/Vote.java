@@ -2,9 +2,9 @@ package Logic;
 import java.util.Arrays;
 
 public class Vote {
-    int[][] votations;
-    Municipality[] municipalitys;
-    Candidate[] candidates;
+    private int[][] votations;
+    private Municipality[] municipalitys;
+    private Candidate[] candidates;
 
     public Vote(int columns, int rows) {
         votations = new int[rows][columns];
@@ -110,7 +110,7 @@ public class Vote {
 
     /**
      * @param candidate Revibe la posicion del candidato a consultar
-     * @return Retorna el Municipio y numeros de votos donde obtuvo la MINIMA votacion
+     * @return Retorna el Municipio y numeros de votos donde obtuvo la MAXIMA votacion
      */
     public String maxCandidate(int candidate) {
         System.out.println(Arrays.deepToString(votations));
@@ -131,7 +131,7 @@ public class Vote {
 
     /**
      * @param candidate Revibe la posicion del candidato a consultar
-     * @return Retorna el Municipio y numeros de votos donde obtuvo la MAXIMA votacion
+     * @return Retorna el Municipio y numeros de votos donde obtuvo la MINIMA votacion
      */
     public String minCandidate(int candidate) {
         var min = votations[0][candidate];
