@@ -1,6 +1,6 @@
-package logic;
+package co.edu.uptc.logic;
 
-public class classCiclos {
+public class ClassCiclos {
     /**
      * variable estatica uqe dice hasta que numero implimir
      */
@@ -9,29 +9,30 @@ public class classCiclos {
     /**
      * ciclo for que imprime del 0 al 9
      */
-    public void getFor() {
+    public int getFor() {
         for (int i = 0; i < number; i++) {
             System.out.print(" " + i);
         }
+        return 0;
     }
     /**
      * ciclo While que imprime del 0 al 9
      */
-    public void getWhile() {
+    public int getWhile() {
         var val = 0;
         while (val != number) {
-            System.out.print(" " + val);
-            val++;
+            System.out.print(" " + val++);
         }
+        return 0;
     }
     /**
      * ciclo doWhile que imprime del 0 al 9
      */
-    public void getDoWhile() {
+    public int getDoWhile() {
         var val = 0;
         do {
-            System.out.print(" " + val);
-            val++;
+            System.out.print(" " + val++);
         } while (val != number);
+        return 0;
     }
 }

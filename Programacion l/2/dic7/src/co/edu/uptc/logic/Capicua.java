@@ -1,6 +1,6 @@
-package logic;
+package co.edu.uptc.logic;
 
-public class capicua {
+public class Capicua {
     /**
      * cadena donde se guardara los caracteres ingresados por el usuario
      */
@@ -9,7 +9,7 @@ public class capicua {
     /**
      * @param cadena ingreada por el usuario (constructor)
      */
-    public capicua(String cadena) {
+    public Capicua(String cadena) {
         this.cadena = cadena;
     }
 
@@ -35,4 +35,3 @@ public class capicua {
         }
     }
 }
-

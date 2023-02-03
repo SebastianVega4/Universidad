@@ -1,6 +1,6 @@
-package logic;
+package co.edu.uptc.logic;
 
-public class enterNumber {
+public class EnterNumber {
     /**
      * variable estatica uqe dice hasta que numero implimir
      */
@@ -9,37 +9,38 @@ public class enterNumber {
     /**
      * @param number variable int ingresada que indica hasta que numero quiere imprimir el usuario
      */
-    public enterNumber(int number) {
+    public EnterNumber(int number) {
         this.number = number + 1;
     }
 
     /**
      * ciclo for que imprime hasta number
      */
-    public void getFor() {
+    public int getFor() {
         for (int i = 0; i < number; i++) {
             System.out.print(" " + i);
         }
+        return 0;
     }
 
     /**
      * ciclo While que imprime hasta number
      */
-    public void getWhile() {
+    public int getWhile() {
         var val = 0;
         while (val != number) {
-            System.out.print(" " + val);
-            val++;
+            System.out.print(" " + val++);
         }
+        return 0;
     }
     /**
      * ciclo doWhile que imprime hasta number
      */
-    public void getDoWhile() {
+    public int getDoWhile() {
         var val = 0;
         do {
-            System.out.print(" " + val);
-            val++;
+            System.out.print(" " + val++);
         } while (val != number);
+        return 0;
     }
 }
