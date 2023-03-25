@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00f5bd80-dc22-469e-88dc-56819eac6969" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../CarElectric/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/CarElectric.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/src/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/src/CarDiesel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/src/CarElectric.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/src/CarGasoline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/src/IRunCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/src/InsufficientCombusException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/src/TypeCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CarElectric/src/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/HerenciaMultiple.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/src/co/edu/uptc/model/player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/src/co/edu/uptc/model/playing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/src/co/edu/uptc/model/position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HerenciaMultiple/src/co/edu/uptc/model/uniform.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Reto177JuegoConNumeros.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AunMas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OptimizadoChatGPT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../reto117/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/.idea/ant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/HerenciaClase1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/model/Daugther.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/model/Father.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/model/Son.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/model/abstractclass/Growable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/model/abstractclass/Human.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/model/abstractclass/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/model/abstractclass/Plant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/model/abstractclass/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/HerenciaClase1/src/co/edu/uptc/view/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/Matriz/src/co/edu/uptc/controller/controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/Matriz/src/co/edu/uptc/model/model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/Matriz/src/co/edu/uptc/view/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/Herencia.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/src/co/edu/uptc/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/src/co/edu/uptc/model/Daughter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/src/co/edu/uptc/model/Father.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/src/co/edu/uptc/model/SkinColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Programacion l/2/untitled/src/co/edu/uptc/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programacion l/1/herencia/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programacion l/1/herencia/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programacion l/2/Matriz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programacion l/2/Matriz/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programacion l/2/Taller/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programacion l/2/Taller/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programacion l/2/Taller/src/co/edu/uptc/model/model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programacion l/2/Taller/src/co/edu/uptc/model/model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Programacion l/2/Taller/src/co/edu/uptc/view/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programacion l/2/Taller/src/co/edu/uptc/view/main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MW8bIqyBOXz5VNose9tczx6V8T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/sebastian/worksplace/Java/Acepta el reto/Reto177JuegoConNumeros"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00f5bd80-dc22-469e-88dc-56819eac6969" name="Changes" comment="" />
+      <created>1677872048456</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677872048456</updated>
+      <workItem from="1677872049696" duration="9677000" />
+      <workItem from="1678034888019" duration="6319000" />
+      <workItem from="1678461017151" duration="1385000" />
+      <workItem from="1679626635542" duration="4197000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

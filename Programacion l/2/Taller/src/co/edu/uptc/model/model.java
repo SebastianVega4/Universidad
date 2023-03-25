@@ -11,7 +11,10 @@ public class model {
         if (numero == 0 || numero == 1 || numero == 4) {
             return false;
         }
+        //                    10
+        //                     5
         for (int x = 2; x < numero / 2; x++) {
+                //5
             if (numero % x == 0)
                 return false;
         }
