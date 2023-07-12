@@ -9,7 +9,7 @@ public class Lector_Barras<T> {
     }
 
     public void mostrarProducto() {
-        producto.toString();
+        System.out.println(producto.toString());
     }
 }
 
