@@ -3,6 +3,8 @@ package co.edu.uptc.view;
 
 import co.edu.uptc.logic.*;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Estudiante estudiante1 = new Estudiante("Sebastian", 201911913);

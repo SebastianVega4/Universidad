@@ -6,7 +6,6 @@ public class Universidad<T> {
     public Universidad(T persona) {
         this.persona = persona;
     }
-
     public void mostrarPersona() {
         System.out.println(persona.toString());
     }

@@ -8,7 +8,6 @@ public class Estudiante {
         this.nombre = nombre;
         this.cod = cod;
     }
-
     @Override
     public String toString() {
         return "Estudiante{" +

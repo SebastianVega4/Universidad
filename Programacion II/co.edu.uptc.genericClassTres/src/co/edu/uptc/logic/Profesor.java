@@ -8,7 +8,6 @@ public class Profesor {
         this.nombre = nombre;
         this.escuela = escuela;
     }
-
     @Override
     public String toString() {
         return "Profesor{" +
