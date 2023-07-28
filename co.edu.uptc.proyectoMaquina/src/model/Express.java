@@ -1,11 +1,16 @@
 package model;
 // Clase que representa el producto Express
 public class Express extends Producto {
-    public Express(double precioPorOnza, int nivelProducto) {
-        super("Express", precioPorOnza, nivelProducto);
+    public Express(double precioPorOnza) {
+        super("Express", precioPorOnza);
     }
     @Override
-    public void llenarProducto() {
-        // Lógica para llenar el producto Express
+    public String llenarProducto() {
+        return """
+              
+         ******************************************
+          Vaso de Expresso llegado puede retirarlo
+         ******************************************
+         """;
     }
 }

@@ -1,11 +1,16 @@
 package model;
 // Clase que representa el producto Cappuccino
 public class Cappuccino extends Producto {
-    public Cappuccino(double precioPorOnza, int nivelProducto) {
-        super("Express", precioPorOnza, nivelProducto);
+    public Cappuccino(double precioPorOnza) {
+        super("Express", precioPorOnza);
     }
     @Override
-    public void llenarProducto() {
-        // Lógica para llenar el producto Cappuccino
+    public String llenarProducto() {
+        return """
+              
+         ********************************************
+          Vaso de Cappuccino llegado puede retirarlo
+         ********************************************
+         """;
     }
 }

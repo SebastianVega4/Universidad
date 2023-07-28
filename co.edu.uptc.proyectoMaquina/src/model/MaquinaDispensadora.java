@@ -6,11 +6,13 @@ import java.util.Map;
 public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar {
     private boolean encendida;
     private double dineroBase;
-    private Map<T, Integer> productosEnInventario;
+    private final Map<T, Integer> productosEnInventario;
     private int totalVentas;
     private int totalOnzas;
     private double totalDinero;
-    private Map<T, Integer> ventasPorProducto;
+    private final Map<T, Integer> ventasPorProducto;
+    private final Map<T, Integer> onzasPorProducto;
+
 
     public MaquinaDispensadora() {
         this.encendida = false;
@@ -20,13 +22,13 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
         this.totalOnzas = 0;
         this.totalDinero = 0.0;
         this.ventasPorProducto = new HashMap<>();
+        this.onzasPorProducto = new HashMap<>();
     }
 
     @Override
     public void prender() {
         encendida = true;
     }
-
     @Override
     public void apagar() {
         encendida = false;
@@ -35,6 +37,7 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
     public void surtirProducto(T producto, int nivelProducto) {
         productosEnInventario.put(producto, nivelProducto);
         ventasPorProducto.put(producto, 0); // Inicializar el contador de ventas en 0 para cada producto
+        onzasPorProducto.put(producto,0); //Iniciar las onzas en 0 para cada producto
     }
 
 
@@ -52,7 +55,10 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
             return "No hay suficiente producto.";
         }
         if (5!=onzas && 10!=onzas){
-            return "No Seleccionaste Onzas correctas."+"\nCambio: $" + dineroDepositado;
+            return """
+                   No Seleccionaste Onzas correctas.
+                   Cambio: $
+                   """ + dineroDepositado;
         }
         double costo = producto.getPrecioPorOnza() * onzas;
 
@@ -69,29 +75,26 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
         totalOnzas += onzas;
         totalDinero += costo;
 
-        ventasPorProducto.put(producto, ventasPorProducto.get(producto)+1);
+        ventasPorProducto.put(producto,ventasPorProducto.get(producto)+1);
+        onzasPorProducto.put(producto,onzasPorProducto.get(producto)+1);
+        producto.llenarProducto();
 
-        String mensaje = "Venta realizada:\n";
-        mensaje += "Producto: " + producto.getNombre() + "\n";
-        mensaje += "Tamaño: " + onzas + " onzas\n";
-        mensaje += "Dinero depositado: $" + dineroDepositado + "\n";
-        mensaje += "Total del Pedido: $" + costo + "\n";
-        mensaje += "Cambio: $" + cambio;
-        return mensaje;
+        return producto.llenarProducto()+"\nVenta realizada:\n" + "Producto: " + producto.getNombre() + "\n" +
+                "Tamaño: " + onzas + " onzas\n" + "Dinero depositado: $" + dineroDepositado + "\n" +
+                "Cambio: $" + cambio;
     }
-
     public int getTotalVentas() {
         return totalVentas;
     }
-
     public int getTotalOnzas() {
         return totalOnzas;
     }
-
     public double getTotalDinero() {
         return totalDinero;
     }
-
+    public Map<T, Integer> getOnzasPorProducto() {
+        return onzasPorProducto;
+    }
     public Map<T, Integer> getVentasPorProducto() {
         return ventasPorProducto;
     }
