@@ -39,8 +39,7 @@ public class Main {
                     1. Cappuccino
                     2. Latte
                     3. Express
-                            Ingrese una opción:
-                    """);
+                            Ingrese una opción:""");
                     int productoSeleccionado = scanner.nextInt();
                     Producto producto;
                     switch (productoSeleccionado) {
@@ -54,6 +53,7 @@ public class Main {
                     }
                     System.out.print("Ingrese el tamaño en onzas (5 o 10): ");
                     int onzas = scanner.nextInt();
+                    System.out.println("Su "+producto.getNombre()+" cuesta: "+maquina.getCosto(producto,onzas));
                     System.out.print("Ingrese el dinero depositado: ");
                     double dineroDepositado = scanner.nextDouble();
                     System.out.println(maquina.realizarVenta(producto, onzas, dineroDepositado));
@@ -61,18 +61,23 @@ public class Main {
                 //Reporte por producto
                 case 2 -> System.out.printf("""
                               ----- Reporte de ventas por producto -----
-                                  Producto: Cappuccino: Ventas:%s ,Onzas: %s
-                                  Producto: Latte:      Ventas:%s ,Onzas: %s
-                                  Producto: Express:    Ventas:%s ,Onzas: %s""",
-                        maquina.getVentasPorProducto().get(cappuccino),maquina.getOnzasPorProducto().get(cappuccino),
-                        maquina.getVentasPorProducto().get(latte),maquina.getOnzasPorProducto().get(latte),
-                        maquina.getVentasPorProducto().get(express),maquina.getOnzasPorProducto().get(express));
+                                  Producto: Cappuccino: Ventas:%s ,Onzas: %s ,Dinero: %s
+                                  Producto: Latte:      Ventas:%s ,Onzas: %s ,Dinero: %s
+                                  Producto: Express:    Ventas:%s ,Onzas: %s ,Dinero: %s
+                              """,
+                        maquina.getTotalVentaProducto(cappuccino),maquina.getTotalOnzasProducto(cappuccino),
+                        maquina.getDineroPorProducto().get(cappuccino),
+                        maquina.getTotalVentaProducto(latte),maquina.getTotalOnzasProducto(latte),
+                        maquina.getDineroPorProducto().get(latte),
+                        maquina.getTotalVentaProducto(express),maquina.getTotalOnzasProducto(express),
+                        maquina.getDineroPorProducto().get(express));
                 //Reporte de ventas
                 case 3 -> System.out.printf("""
                   ----- Reporte general de ventas -----
                         Total de ventas:           %s
                         Total de onzas vendidas:   %s
-                        Total de dinero obtenido:$ %s""",maquina.getTotalVentas(),maquina.getTotalOnzas(), maquina.getTotalDinero());
+                        Total de dinero obtenido:$ %s""",
+                        maquina.getTotalVentas(),maquina.getTotalOnzas(), maquina.getTotalDinero());
                 //Salir
                 case 4 -> {
                     maquina.apagar();

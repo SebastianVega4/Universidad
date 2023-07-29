@@ -3,7 +3,7 @@ package model;
 public abstract class Producto {
     private String nombre;
     private double precioPorOnza;
-    private int totalVentas;
+    private int totalVentas,totalOnzas;
 
     public Producto(String nombre, double precioPorOnza) {
         this.nombre = nombre;
@@ -19,8 +19,14 @@ public abstract class Producto {
     public int getTotalVentas() {
         return totalVentas;
     }
+    public int getTotalOnzas() {
+        return totalOnzas;
+    }
     public void incrementarVentas() {
         totalVentas++;
+    }
+    public void incrementarOnzas(int onzas) {
+        totalOnzas+=onzas;
     }
     // Método abstracto para llenar el producto
     public abstract String llenarProducto();

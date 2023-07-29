@@ -6,23 +6,18 @@ import java.util.Map;
 public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar {
     private boolean encendida;
     private double dineroBase;
-    private final Map<T, Integer> productosEnInventario;
+    private double costo;
     private int totalVentas;
     private int totalOnzas;
     private double totalDinero;
-    private final Map<T, Integer> ventasPorProducto;
-    private final Map<T, Integer> onzasPorProducto;
+    private final Map<T, Integer> nivelOnzasProducto;
+    private final Map<T, Double> dineroPorProducto;
 
 
     public MaquinaDispensadora() {
+        this.nivelOnzasProducto = new HashMap<>();
+        this.dineroPorProducto = new HashMap<>();
         this.encendida = false;
-        this.dineroBase = 0.0;
-        this.productosEnInventario = new HashMap<>();
-        this.totalVentas = 0;
-        this.totalOnzas = 0;
-        this.totalDinero = 0.0;
-        this.ventasPorProducto = new HashMap<>();
-        this.onzasPorProducto = new HashMap<>();
     }
 
     @Override
@@ -34,10 +29,9 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
         encendida = false;
     }
 
-    public void surtirProducto(T producto, int nivelProducto) {
-        productosEnInventario.put(producto, nivelProducto);
-        ventasPorProducto.put(producto, 0); // Inicializar el contador de ventas en 0 para cada producto
-        onzasPorProducto.put(producto,0); //Iniciar las onzas en 0 para cada producto
+    public void surtirProducto(T producto, int nivelProductoOnzas) {
+        nivelOnzasProducto.put(producto, nivelProductoOnzas);
+        dineroPorProducto.put(producto,0.0);
     }
 
 
@@ -50,7 +44,7 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
             return "La máquina dispensadora está apagada.";
         }
 
-        Integer nivelProducto = productosEnInventario.get(producto);
+        Integer nivelProducto = nivelOnzasProducto.get(producto);
         if (nivelProducto == null || nivelProducto < onzas) {
             return "No hay suficiente producto.";
         }
@@ -60,7 +54,8 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
                    Cambio: $
                    """ + dineroDepositado;
         }
-        double costo = producto.getPrecioPorOnza() * onzas;
+
+        costo = getCosto(producto,onzas);
 
         if (dineroDepositado < costo) {
             double faltaDinero = costo - dineroDepositado;
@@ -68,20 +63,23 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
         }
 
         double cambio = dineroDepositado - costo;
-        productosEnInventario.put(producto, productosEnInventario.get(producto)-1);
+
+        nivelOnzasProducto.put(producto,nivelOnzasProducto.get(producto)-onzas);
+        dineroPorProducto.put(producto,dineroPorProducto.get(producto)+costo);
+        producto.incrementarOnzas(onzas);
         producto.incrementarVentas();
 
         totalVentas++;
         totalOnzas += onzas;
         totalDinero += costo;
 
-        ventasPorProducto.put(producto,ventasPorProducto.get(producto)+1);
-        onzasPorProducto.put(producto,onzasPorProducto.get(producto)+1);
-        producto.llenarProducto();
-
         return producto.llenarProducto()+"\nVenta realizada:\n" + "Producto: " + producto.getNombre() + "\n" +
                 "Tamaño: " + onzas + " onzas\n" + "Dinero depositado: $" + dineroDepositado + "\n" +
+                "Costo: "+costo+"\n"+
                 "Cambio: $" + cambio;
+    }
+    public double getCosto(T producto,int onzass){
+        return producto.getPrecioPorOnza() * onzass;
     }
     public int getTotalVentas() {
         return totalVentas;
@@ -92,10 +90,14 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
     public double getTotalDinero() {
         return totalDinero;
     }
-    public Map<T, Integer> getOnzasPorProducto() {
-        return onzasPorProducto;
+    public int getTotalVentaProducto(T producto) {
+        return producto.getTotalVentas();
     }
-    public Map<T, Integer> getVentasPorProducto() {
-        return ventasPorProducto;
+    public int getTotalOnzasProducto(T producto) {
+        return producto.getTotalOnzas();
+    }
+
+    public Map<T, Double> getDineroPorProducto() {
+        return dineroPorProducto;
     }
 }
