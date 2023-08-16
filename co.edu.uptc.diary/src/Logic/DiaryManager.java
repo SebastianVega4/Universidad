@@ -5,47 +5,106 @@ import Model.Note;
 import java.util.ArrayList;
 
 public class DiaryManager {
-    private final ArrayList<Note> diary;
+    private final ArrayList<String> subjects;
+    private final ArrayList<ArrayList<Note>> notes;
 
     public DiaryManager() {
-        diary = new ArrayList<>();
+        subjects = new ArrayList<>();
+        notes = new ArrayList<>();
     }
 
-    public String addNote(String title, String  content) {
-        Note note = new Note( title, content);
-        diary.add(note);
-        return "Nota agregada correctamente.";
+    public void addSubject(String subject) {
+        subjects.add(subject);
+        notes.add(new ArrayList<>());
     }
 
-    public String removeNote(Note note) {
-        diary.remove(note);
-        return"Nota eliminada correctamente.";
+    public boolean removeSubject(String subject) {
+        int index = subjects.indexOf(subject);
+        System.out.println(subjects.indexOf(subject));
+        if (index != -1) {
+            subjects.remove(index);
+            notes.remove(index);
+            return true;
+        }
+        return false;
+    }
+    public boolean getVerificSubject(String subject){
+        if (subjects.indexOf(subject) != -1) {
+            return true;
+        }
+        return false;
+    }
+    public boolean addNoteToSubject(String title, String content, String subject) {
+        int index = subjects.indexOf(subject);
+        if (index != -1) {
+            Note note = new Note(title, content);
+            notes.get(index).add(note);
+            return true;
+        }
+        return false;
     }
 
-    public Note getNoteByTitle(String title) {
-        for (Note note : diary) {
-            if (note.getTitle().equals(title)) {
-                return note;
+    public boolean removeNoteFromSubject(String title, String subject) {
+        int index = subjects.indexOf(subject);
+        if (index != -1) {
+            ArrayList<Note> subjectNotes = notes.get(index);
+            for (Note note : subjectNotes) {
+                if (note.getTitle().equals(title)) {
+                    subjectNotes.remove(note);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public Note getNoteByTitleAndSubject(String title, String subject) {
+        int index = subjects.indexOf(subject);
+        if (index != -1) {
+            ArrayList<Note> subjectNotes = notes.get(index);
+            for (Note note : subjectNotes) {
+                if (note.getTitle().equals(title)) {
+                    return note;
+                }
             }
         }
         return null;
     }
 
-    public ArrayList<Note> getAllNotes() {
-        return diary;
+    public ArrayList<Note> getAllNotesBySubject(String subject) {
+        int index = subjects.indexOf(subject);
+        if (index != -1) {
+            return notes.get(index);
+        }
+        return new ArrayList<>();
     }
 
-    public String getSizeOfNotes() {
-        return "Cantidad de notas en la agenda:" + diary.size();
+    public String getSizeOfNotesBySubject(String subject) {
+        int index = subjects.indexOf(subject);
+        if (index != -1) {
+            return "Cantidad de notas en la asignatura " + subject + ": " + notes.get(index).size();
+        }
+        return "No se encontró una asignatura con ese nombre.";
     }
 
-    public String addNoteAtPosition(Note note, int position) {
-        diary.add(position, note);
-        return "Nota adicionada correctamente.";
+    public boolean addNoteAtPositionInSubject(String title, String content, String subject, int position) {
+        int index = subjects.indexOf(subject);
+        if (index != -1) {
+            ArrayList<Note> subjectNotes = notes.get(index);
+            if (position >= 0 && position <= subjectNotes.size()) {
+                Note note = new Note(title, content);
+                subjectNotes.add(position, note);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public String modifyNoteContent(Note note, String newContent) {
+    public void modifyNoteContent(Note note, String newContent) {
         note.setNote(newContent);
-        return "Nota modificada correctamente.";
+    }
+
+    public ArrayList<String> getSubjects() {
+        return subjects;
     }
 }
