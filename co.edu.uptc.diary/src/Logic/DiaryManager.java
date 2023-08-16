@@ -3,6 +3,7 @@ package Logic;
 import Model.Note;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class DiaryManager {
     private final ArrayList<String> subjects;
@@ -29,10 +30,8 @@ public class DiaryManager {
         return false;
     }
     public boolean getVerificSubject(String subject){
-        if (subjects.indexOf(subject) != -1) {
-            return true;
-        }
-        return false;
+        System.out.println(subjects.contains(subject));
+        return subjects.contains(subject);
     }
     public boolean addNoteToSubject(String title, String content, String subject) {
         int index = subjects.indexOf(subject);
@@ -48,9 +47,11 @@ public class DiaryManager {
         int index = subjects.indexOf(subject);
         if (index != -1) {
             ArrayList<Note> subjectNotes = notes.get(index);
-            for (Note note : subjectNotes) {
+            Iterator<Note> iterator = subjectNotes.iterator();
+            while (iterator.hasNext()) {
+                Note note = iterator.next();
                 if (note.getTitle().equals(title)) {
-                    subjectNotes.remove(note);
+                    iterator.remove();
                     return true;
                 }
             }
