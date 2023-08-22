@@ -6,7 +6,6 @@ import java.util.Map;
 public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar {
     private boolean encendida;
     private double dineroBase;
-    private double costo;
     private int totalVentas;
     private int totalOnzas;
     private double totalDinero;
@@ -31,12 +30,17 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
 
     public void surtirProducto(T producto, int nivelProductoOnzas) {
         nivelOnzasProducto.put(producto, nivelProductoOnzas);
-        dineroPorProducto.put(producto,0.0);
+        if (dineroPorProducto.get(producto)!=null){
+            dineroPorProducto.put(producto,dineroPorProducto.get(producto)+0.0);
+        }else{
+            dineroPorProducto.put(producto,0.0);
+        }
+
     }
 
 
     public void ingresarDineroBase(double dineroBase) {
-        this.dineroBase = dineroBase;
+        dineroBase += dineroBase;
     }
 
     public String realizarVenta(T producto, int onzas, double dineroDepositado) {
@@ -55,7 +59,7 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
                    """ + dineroDepositado;
         }
 
-        costo = getCosto(producto,onzas);
+        double costo = getCosto(producto, onzas);
 
         if (dineroDepositado < costo) {
             double faltaDinero = costo - dineroDepositado;
@@ -65,7 +69,7 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
         double cambio = dineroDepositado - costo;
 
         nivelOnzasProducto.put(producto,nivelOnzasProducto.get(producto)-onzas);
-        dineroPorProducto.put(producto,dineroPorProducto.get(producto)+costo);
+        dineroPorProducto.put(producto,dineroPorProducto.get(producto)+ costo);
         producto.incrementarOnzas(onzas);
         producto.incrementarVentas();
 
@@ -75,7 +79,7 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
 
         return producto.llenarProducto()+"\nVenta realizada:\n" + "Producto: " + producto.getNombre() + "\n" +
                 "Tamaño: " + onzas + " onzas\n" + "Dinero depositado: $" + dineroDepositado + "\n" +
-                "Costo: "+costo+"\n"+
+                "Costo: "+ costo +"\n"+
                 "Cambio: $" + cambio;
     }
     public double getCosto(T producto,int onzass){
