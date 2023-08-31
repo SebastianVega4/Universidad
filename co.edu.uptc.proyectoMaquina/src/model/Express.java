@@ -9,7 +9,7 @@ public class Express extends Producto {
         return """
               
          ******************************************
-          Vaso de Expresso llegado puede retirarlo
+          Vaso de Expresso llenado puede retirarlo
          ******************************************
          """;
     }

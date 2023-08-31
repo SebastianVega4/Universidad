@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         MaquinaDispensadora<Producto> maquina = new MaquinaDispensadora<>();
         Scanner scanner = new Scanner(System.in);
-        maquina.prender();
+        System.out.println(maquina.prender());
         // Crear productos
         Cappuccino cappuccino = new Cappuccino(200.0);
         Latte latte = new Latte(100.0);
@@ -15,16 +15,15 @@ public class Main {
         //key admin
         int keyAdmin = 1234;
 
-        boolean cycles = true;
+        boolean cycles = true,cycleAll=true;
 
-        while (cycles) {
+        while (cycleAll) {
             int optionMaq;
             System.out.print("""
                                 
                             --------- Menú ---------
                     1. Administrador
                     2. Cliente
-                    3. Salir
                              Ingrese una opción:
                     """);
             optionMaq = scanner.nextInt();
@@ -41,7 +40,8 @@ public class Main {
                                     1.Surtir Maquina
                                     2.Ver reporte de ventas por producto
                                     3.Ver reporte general de ventas
-                                    4.salir menu admin
+                                    4.salir del menu admin
+                                    5.***********-APAGAR MAQUINA-*************
                                              Ingrese una opción:
                                     """);
                             optionAdim = scanner.nextInt();
@@ -52,7 +52,8 @@ public class Main {
                                     maquina.surtirProducto(latte, 150);
                                     maquina.surtirProducto(express, 80);
                                     //ingresar dinero base
-                                    maquina.ingresarDineroBase(70_000.0);
+                                    System.out.println("Ingrese dinero base");
+                                    maquina.ingresarDineroBase(scanner.nextDouble());
                                 }
                                 //Reporte por producto
                                 case 2 -> System.out.printf("""
@@ -75,6 +76,12 @@ public class Main {
                                                   Total de dinero obtenido:$ %s""",
                                         maquina.getTotalVentas(), maquina.getTotalOnzas(), maquina.getTotalDinero());
                                 case 4 -> cycles = false;
+                                //Apagar maquina
+                                case 5 -> {
+                                    System.out.println(maquina.apagar());
+                                    cycles = false;
+                                    cycleAll = false;
+                                }
                                 default -> System.out.println("Opción inválida.");
                             }
                         }
@@ -117,7 +124,7 @@ public class Main {
                                 System.out.print("Ingrese el tamaño en onzas (5 o 10): ");
                                 int onzas = scanner.nextInt();
                                 System.out.println("Su " + producto.getNombre() + " cuesta: " + maquina.getCosto(producto, onzas));
-                                System.out.print("Ingrese el dinero depositado: ");
+                                System.out.print("Ingrese el dinero: ");
                                 double dineroDepositado = scanner.nextDouble();
                                 System.out.println(maquina.realizarVenta(producto, onzas, dineroDepositado));
                             }
@@ -127,12 +134,6 @@ public class Main {
                         }
                     }
                     cycles = true;
-                }
-                //Salir
-                case 3 -> {
-                    maquina.apagar();
-                    cycles = false;
-                    System.out.println("Saliendo...Gracias por usar nuestra Maquina");
                 }
             }
         }

@@ -9,7 +9,7 @@ public class Cappuccino extends Producto {
         return """
               
          ********************************************
-          Vaso de Cappuccino llegado puede retirarlo
+          Vaso de Cappuccino llenado puede retirarlo
          ********************************************
          """;
     }

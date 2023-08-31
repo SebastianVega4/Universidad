@@ -20,12 +20,14 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
     }
 
     @Override
-    public void prender() {
+    public String prender() {
         encendida = true;
+        return "La maquina se encendio";
     }
     @Override
-    public void apagar() {
+    public String apagar() {
         encendida = false;
+        return "La Maquina dispensadora se apago";
     }
 
     public void surtirProducto(T producto, int nivelProductoOnzas) {
@@ -40,10 +42,11 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
 
 
     public void ingresarDineroBase(double dineroBase) {
-        dineroBase += dineroBase;
+        this.dineroBase += dineroBase;
     }
 
     public String realizarVenta(T producto, int onzas, double dineroDepositado) {
+
         if (!encendida) {
             return "La máquina dispensadora está apagada.";
         }
@@ -55,8 +58,7 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
         if (5!=onzas && 10!=onzas){
             return """
                    No Seleccionaste Onzas correctas.
-                   Cambio: $
-                   """ + dineroDepositado;
+                   Cambio: $""" + dineroDepositado;
         }
 
         double costo = getCosto(producto, onzas);
@@ -77,10 +79,11 @@ public class MaquinaDispensadora<T extends Producto> implements Prender, Apagar 
         totalOnzas += onzas;
         totalDinero += costo;
 
-        return producto.llenarProducto()+"\nVenta realizada:\n" + "Producto: " + producto.getNombre() + "\n" +
+        return "Venta realizada:\n" + "Producto: " + producto.getNombre() + "\n" +
                 "Tamaño: " + onzas + " onzas\n" + "Dinero depositado: $" + dineroDepositado + "\n" +
                 "Costo: "+ costo +"\n"+
-                "Cambio: $" + cambio;
+                "Cambio: $" + cambio+"\n"+
+                producto.llenarProducto();
     }
     public double getCosto(T producto,int onzass){
         return producto.getPrecioPorOnza() * onzass;

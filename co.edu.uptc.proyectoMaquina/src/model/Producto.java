@@ -1,8 +1,8 @@
 package model;
 // Clase abstracta para representar un producto
 public abstract class Producto {
-    private String nombre;
-    private double precioPorOnza;
+    private final String nombre;
+    private final double precioPorOnza;
     private int totalVentas,totalOnzas;
 
     public Producto(String nombre, double precioPorOnza) {

@@ -9,7 +9,7 @@ public class Latte extends Producto {
        return """
               
         ***************************************
-         Vaso de Latte llegado puede retirarlo
+         Vaso de Latte llenado puede retirarlo
         ***************************************
        """;
     }
