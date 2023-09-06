@@ -9,13 +9,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         AgentContacs agend = new AgentContacs();
         boolean exit = true;
-        int option = 0;
+        int option;
         while (exit) {
            try {
                 System.out.println("""
                                         
                         **************************************
-                              Ingrese la opcion a elegir:
+                              Ingrese la option a elegir:
                         1.Ingresar Contacto.
                         2.Modificar Contacto.
                         3.Borrar Contacto.
@@ -23,7 +23,6 @@ public class Main {
                                         
                         5.SALIR
                         ***************************************
-                                        
                         """);
                 option = sc.nextInt();
 
@@ -71,7 +70,7 @@ public class Main {
                         System.out.println("""
                                 *****************************************
                                      Ingrese la Letra tal y como
-                                   esta la inicial Mayuscula o minuscula
+                                   esta la inicial Mayúscula o minuscule
                                 *****************************************
                                 """);
                         char caracter = sc.next().charAt(0);
@@ -81,14 +80,11 @@ public class Main {
                         exit = false;
                         System.out.println("Hasta Luego");
                     }
-                    default -> {
-                        System.out.println("Digite una opcion valida");
-                    }
+                    default ->System.out.println("Digite una opcion valida");
                 }
            } catch (InputMismatchException e) {
                System.out.println("ingrese un valor valido" + e);
                sc.nextLine();
-               continue;
            }
         }
     }

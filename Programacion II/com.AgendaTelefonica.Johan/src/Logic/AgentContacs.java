@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AgentContacs {
-    private Map<String, Contacs> contac;
+    private final Map<String, Contacs> contac;
     public AgentContacs() {
         contac = new HashMap<>();
     }
@@ -40,7 +40,7 @@ public class AgentContacs {
                 canden = canden +"\n"+ contacView.getName() + ": " + contacView.getPhone();
             }
         }
-        if (canden==""){
+        if (canden.equals("")){
             return "no se encontro contracto con esa inicial";
         }else {
             return canden;
