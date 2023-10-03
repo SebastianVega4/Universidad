@@ -1,4 +1,3 @@
-# Carpeta_Java
-Trabajos
-
-Trabajos de la u y personales en JAVA
+# Descripcion
+Trabajos de la u y personales mas que todo en JAVA
+dado que es el lenguaje verstil que utiliza la u
