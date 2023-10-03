@@ -1,0 +1,4 @@
+llave mixta,1,9500.0,9500.0
+Tornillo Hexagonal,3,450.0,1350.0Aerosol negro mate,2,15000.0,30000.0
+Remache pop,3,200.0,600.0
+llave mixta,1,9500.0,9500.0

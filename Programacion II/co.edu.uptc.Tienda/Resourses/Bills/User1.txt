@@ -1,0 +1,23 @@
+Cinta de enmascarar,1,6700.0,6700.0Cinta Aislante,5,5000.0,25000.0
+Lima Tringular,1,5000.0,5000.0
+Cinta Aislante,1,5000.0,5000.0
+Aerosol negro mate,3,14000.0,42000.0
+Cinta de enmascarar,4,6700.0,26800.0
+Codo PVC,1,600.0,600.0
+Lima Tringular,2,5000.0,10000.0Aerosol negro mate,4,14000.0,56000.0
+Chazo Plastico,2,100.0,200.0
+Cinta Aislante,2,5000.0,10000.0
+Aerosol negro mate,4,14000.0,56000.0
+Chazo Plastico,2,100.0,200.0
+Cinta Aislante,2,5000.0,10000.0
+Aerosol negro mate,4,14000.0,56000.0
+Chazo Plastico,2,100.0,200.0
+Cinta Aislante,2,5000.0,10000.0
+Aerosol negro mate,4,14000.0,56000.0
+Chazo Plastico,2,100.0,200.0
+Cinta Aislante,2,5000.0,10000.0
+Chazo Plastico,6,100.0,600.0
+Remache pop,2,200.0,400.0
+Tornillo Hexagonal,1,450.0,450.0
+Cinta Aislante,3,5000.0,15000.0
+Cinta de enmascarar,1,6700.0,6700.0

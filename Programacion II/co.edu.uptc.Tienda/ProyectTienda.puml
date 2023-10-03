@@ -1,0 +1,264 @@
+@startuml
+class model.ShoppingCart {
+- Map<Product,Integer> purchased
+- List<Product> products
++ void addProduct(Product)
++ void eraseProduct(Product)
++ double calcTotalForProduct(Product)
++ double calcTotal()
++ int getPurchased(Product)
++ void setPurchased(Product,int)
++ List<Product> getProducts()
++ void setProducts(List<Product>)
+}
+class logic.LogicCustomer {
+~ ShoppingCart cart
+- Order order
+- String facture
++ String signinCustomer()
++ boolean loginCustomer(String,String)
++ void addNumberPurchesed(Product,int)
++ String addPurchased(Product)
++ void eraseProductCart(Product)
++ void clearCart()
++ boolean ifAdressIsNull()
++ void makePurchase(String)
++ void makePurchase()
++ void lessInventary()
++ String getFacture()
++ void setFacture()
++ void createFileFactureUser()
+}
+class Interface.JLabelTableCellRenderer {
++ Component getTableCellRendererComponent(JTable,Object,boolean,boolean,int,int)
+}
+class Interface.GUICatalogPanel {
+- JPanel panel
++ JPanel getPanel()
+}
+class Interface.GUIRegisterPanel {
+- JPanel panel
++ JPanel getPanel()
+}
+class model.Order {
+- ShoppingCart shoppingCart
+- String addressShopping
++ ShoppingCart getShoppingCart()
++ void setShoppingCart(ShoppingCart)
++ String getAddressShopping()
++ void setAddressShopping(String)
+}
+class model.Product {
+- int id
+- String nameProduct
+- String description
+- double price
+- int stock
++ int getId()
++ void setId(int)
++ String getNameProduct()
++ void setNameProduct(String)
++ String getDescription()
++ void setDescription(String)
++ double getPrice()
++ void setPrice(double)
++ int getStock()
++ void setStock(int)
++ String toString()
+}
+class model.User {
+- ShoppingCart shoppingCart
+- String name
+- String email
+- String password
+- String address
++ String getName()
++ void setName(String)
++ String getEmail()
++ void setEmail(String)
++ String getPassword()
++ void setPassword(String)
++ String getAddress()
++ void setAddress(String)
++ ShoppingCart getShoppingCart()
++ String toString()
+}
+class Interface.GUIadmin {
+- JPanel JPLogo
+- JPanel JPAreaFormulario
+- JLabel JLname
+- JTextField JTname
+- JPasswordField JTpassword
+- JButton JBloging
+- void initComponents()
++ void actionPerformed(ActionEvent)
+}
+class Interface.GUIeditProduct {
+- JPanel JPproduct
+- JLabel JLimagenP
+- JTextArea JTname
+- JSpinner JSstock
+- JButton JBsave
+- int index
+- LogicAdmin LA
+- void initComponents()
+- ImageIcon imageEscale(ImageIcon,int,int)
++ void actionPerformed(ActionEvent)
+}
+class model.Administrator {
+- String name
+- String password
++ String getName()
++ String getPassword()
+}
+class persistence.Bills {
+- ArrayList<Product> products
+- String name
++ void obtainBills()
++ ArrayList<Product> getProducts()
+}
+class Interface.Main {
++ {static} void main(String[])
+}
+class Interface.GUICartPanel {
+- JPanel panel
++ JPanel getPanel()
+}
+class Interface.GUILoginPanel {
+- JPanel panel
++ JPanel getPanel()
+}
+class Interface.GUIcustomerDetails {
+- JPanel JPtitle
+- JLabel JLtitle
+- JButton JBback
+- JTable JTdetails
+- JScrollPane JSPTabla
+- DefaultTableCellRenderer centerRenderer
+- String name
+- double total
+- void initComponents()
+- TableModel modelTable()
++ void actionPerformed(ActionEvent)
+}
+class Interface.GUIaddProduct {
+- JPanel JPproduct
+- JLabel JLimagenP
+- JTextArea JTname
+- JSpinner JSstock
+- JButton JBsave
+- int index
+- LogicAdmin LA
+- void initComponents()
+- ImageIcon imageEscale(ImageIcon,int,int)
++ void actionPerformed(ActionEvent)
+}
+class logic.LogicAdmin {
++ boolean adminlogin(String,String)
++ void deletteProduct(int)
++ void editProduct(String,String,String,String,int)
++ int newIndex()
++ void addProduct(String,String,String,String,int)
+}
+class Interface.GUICustomerMenuPanel {
+- JPanel panel
++ JPanel getPanel()
+}
+class persistence.Customers {
+- List<User> users
++ void obtainUsersFromTxt()
++ void addUsersToTxt()
++ void addUser(User)
++ void eraseUser(User)
++ List<User> getUsers()
+}
+class Interface.GUIcustomerAdmi {
+- JLabel JLtitle
+- JButton JBback
+- JTable JTableUsers
+- JPanel JPheader
+- JScrollPane JSPTabla
+- DefaultTableCellRenderer centerRenderer
+- void initComponents()
+- TableModel modelTable()
+- ImageIcon imageEscale(ImageIcon,int,int)
++ void actionPerformed(ActionEvent)
++ void mouseClicked(MouseEvent)
++ void mousePressed(MouseEvent)
++ void mouseReleased(MouseEvent)
++ void mouseEntered(MouseEvent)
++ void mouseExited(MouseEvent)
+}
+class Interface.GUImenuAdmin {
+- JPanel JPheader
+- JButton JBcustomer
+- void initComponents()
+- ImageIcon imageEscale(ImageIcon,int,int)
++ void actionPerformed(ActionEvent)
+}
+class persistence.Inventory {
+- List<Product> products
++ void obtainProductToTxt()
++ void updateProductToTxt()
++ void addProduct(Product)
++ void eraseProduct(Product)
++ List<Product> getProducts()
+}
+class Interface.GUIinventoryAdmi {
+- JPanel JPheader
+- JLabel JLtitle
+- JButton JBaddProduct
+- JTable JTinventoryTable
+- JScrollPane JSPTabla
+- DefaultTableCellRenderer centerRenderer
+- LogicAdmin lA
+- void initComponents()
+- ImageIcon imageEscale(ImageIcon,int,int)
+- TableModel modelTable()
++ void actionPerformed(ActionEvent)
++ void mouseClicked(MouseEvent)
++ void mousePressed(MouseEvent)
++ void mouseReleased(MouseEvent)
++ void mouseEntered(MouseEvent)
++ void mouseExited(MouseEvent)
+}
+class Interface.GUIstore {
+- JFrame frame
+- {static} Customers customers
+- {static} Inventory inventory
+- {static} int userSelect
++ void showLoginPanel()
++ void showRegisterPanel()
++ void showCustomerMenuPanel()
++ void showCatalogPanel()
++ void showCartPanel()
++ JFrame getFrame()
++ {static} Customers getCustomers()
++ {static} Inventory getInventory()
++ {static} void setUserSelect(int)
++ {static} int getUserSelect()
+}
+
+
+javax.swing.table.DefaultTableCellRenderer <|-- Interface.JLabelTableCellRenderer
+logic.LogicCustomer <|-- Interface.GUICatalogPanel
+logic.LogicCustomer <|-- Interface.GUIRegisterPanel
+java.awt.event.ActionListener <|.. Interface.GUIadmin
+Interface.JFrame <|-- Interface.GUIadmin
+java.awt.event.ActionListener <|.. Interface.GUIeditProduct
+Interface.JFrame <|-- Interface.GUIeditProduct
+logic.LogicCustomer <|-- Interface.GUICartPanel
+logic.LogicCustomer <|-- Interface.GUILoginPanel
+java.awt.event.ActionListener <|.. Interface.GUIcustomerDetails
+Interface.JFrame <|-- Interface.GUIcustomerDetails
+java.awt.event.ActionListener <|.. Interface.GUIaddProduct
+javax.swing.JFrame <|-- Interface.GUIaddProduct
+java.awt.event.ActionListener <|.. Interface.GUIcustomerAdmi
+java.awt.event.MouseListener <|.. Interface.GUIcustomerAdmi
+Interface.JFrame <|-- Interface.GUIcustomerAdmi
+java.awt.event.ActionListener <|.. Interface.GUImenuAdmin
+Interface.JFrame <|-- Interface.GUImenuAdmin
+java.awt.event.ActionListener <|.. Interface.GUIinventoryAdmi
+java.awt.event.MouseListener <|.. Interface.GUIinventoryAdmi
+Interface.JFrame <|-- Interface.GUIinventoryAdmi
+@enduml

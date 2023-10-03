@@ -1,0 +1,5 @@
+Tornillo Hexagonal,2,450.0,900.0
+Codo PVC,1,600.0,600.0
+Cinta Aislante,1,5000.0,5000.0
+Aerosol negro mate,1,14000.0,14000.0
+Aerosol negro mate,11,14000.0,154000.0

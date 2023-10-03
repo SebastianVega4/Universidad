@@ -1,0 +1,9 @@
+1,SuperBonder,50 gr,6000.0,20
+3,Cinta enmascarar,100 metros,3800.0,15
+4,Cinta aislante,negra,5000.0,12
+5,Codo pvc,3 pulgados,500.0,35
+6,lima triangular,lima calibre 20,6500.0,15
+7,llave mixta,3/4,7800.0,50
+8,Remache pop,mediano,700.0,100
+9,aerosol mate negro,500 ml,14000.0,10
+10,Tornillo hexagonal,mediano,15000.0,2

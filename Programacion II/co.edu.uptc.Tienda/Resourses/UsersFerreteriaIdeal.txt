@@ -1,0 +1,8 @@
+1,1,1,calle 21 #20
+jazmin,j@gmail.com,jaz,Ramiriqui
+sebas,sebas@gmail.com,sebas,Cll 4w n15 a 33
+juan,3@gmail.com,3,null
+cami,4@gmail.com,4,null
+Julian,julian@gmail.com,1234,null
+Claudia Marcela Nova Rojas ,Claudia024n@gmail.com,1234,null
+Sara Vergas,saravergas@uprc.edu.co,018003000444,bottellita de oro
