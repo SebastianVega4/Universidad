@@ -1,0 +1,22 @@
+# ninja log v5
+4	593	1698683127847966240	CMakeFiles/prjHerencia.dir/main.cpp.o	b3a8a161a57643c3
+1	478	1698683392692736619	CMakeFiles/prjHerencia.dir/EmployeeTemp.cpp.o	f3951ddfedd8d787
+1	518	1698683007209755119	CMakeFiles/prjHerencia.dir/Employee.cpp.o	8db7418b36e320ed
+478	584	1698683392802553487	prjHerencia	a4f9d1a99b5e344
+2	568	1699458341007285553	CMakeFiles/prjHerencia.dir/HanlingEmployee.cpp.o	c81714fb037edd2e
+568	665	1699458341106231690	prjHerencia	af6caea9945d21c3
+1	628	1699458426449568181	CMakeFiles/prjHerencia.dir/HanlingEmployee.cpp.o	c81714fb037edd2e
+628	689	1699458426514746796	prjHerencia	af6caea9945d21c3
+1	635	1699458662185507965	CMakeFiles/prjHerencia.dir/HanlingEmployee.cpp.o	c81714fb037edd2e
+635	694	1699458662247616850	prjHerencia	af6caea9945d21c3
+2	735	1699458821552842623	CMakeFiles/prjHerencia.dir/HanlingEmployee.cpp.o	c81714fb037edd2e
+735	799	1699458821623714706	prjHerencia	af6caea9945d21c3
+1	497	1699459050434426908	CMakeFiles/prjHerencia.dir/main.cpp.o	b3a8a161a57643c3
+2	499	1699459050437597348	CMakeFiles/prjHerencia.dir/HanlingEmployee.cpp.o	c81714fb037edd2e
+499	562	1699459050504257248	prjHerencia	af6caea9945d21c3
+1	421	1699459071667217882	CMakeFiles/prjHerencia.dir/main.cpp.o	b3a8a161a57643c3
+421	466	1699459071714636994	prjHerencia	af6caea9945d21c3
+2	508	1699459145506354532	CMakeFiles/prjHerencia.dir/main.cpp.o	b3a8a161a57643c3
+508	556	1699459145557695450	prjHerencia	af6caea9945d21c3
+1	483	1699459189922082288	CMakeFiles/prjHerencia.dir/main.cpp.o	b3a8a161a57643c3
+483	531	1699459189973728439	prjHerencia	af6caea9945d21c3
