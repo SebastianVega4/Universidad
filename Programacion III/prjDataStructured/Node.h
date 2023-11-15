@@ -7,8 +7,11 @@
 
 #include <cstdlib>
 
+template <class T> class LinkedList;
+
 template<class T>
 class Node {
+    friend class LinkedList<T>;
 public:
     Node() {
         Node::next = NULL;

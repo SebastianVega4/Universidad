@@ -2,3 +2,11 @@
 1	490	1699649106391721966	CMakeFiles/prjDataStructured.dir/Dish.cpp.o	ba54da26f05515a1
 2	427	1699649300128795531	CMakeFiles/prjDataStructured.dir/main.cpp.o	f6f52c6665641edb
 427	471	1699649300176936662	prjDataStructured	555802369413540f
+0	27	1700066876682919676	build.ninja	3fe8f1063378d192
+1	467	1700066877154933560	CMakeFiles/prjDataStructured.dir/Dish.cpp.o	266af28367833ffc
+2	178	1700066894735447869	CMakeFiles/prjDataStructured.dir/LinkedList.cpp.o	2e46a88ef0108edf
+1	535	1700066895091458229	CMakeFiles/prjDataStructured.dir/main.cpp.o	c6d39725fe1d5824
+535	612	1700066895167460440	prjDataStructured	decaf27111140377
+1	184	1700067096036974748	CMakeFiles/prjDataStructured.dir/LinkedList.cpp.o	2e46a88ef0108edf
+0	555	1700067096408984386	CMakeFiles/prjDataStructured.dir/main.cpp.o	c6d39725fe1d5824
+555	637	1700067096488986458	prjDataStructured	decaf27111140377

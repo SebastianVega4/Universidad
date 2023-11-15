@@ -50,7 +50,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -84,7 +85,8 @@
 			"sourceIndexes" : 
 			[
 				0,
-				3
+				3,
+				4
 			]
 		},
 		{
@@ -92,7 +94,8 @@
 			"sourceIndexes" : 
 			[
 				1,
-				2
+				2,
+				5
 			]
 		}
 	],
@@ -119,6 +122,17 @@
 			"compileGroupIndex" : 0,
 			"path" : "Dish.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "LinkedList.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "LinkedList.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"
