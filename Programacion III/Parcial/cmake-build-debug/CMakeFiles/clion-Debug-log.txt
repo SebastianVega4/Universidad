@@ -1,0 +1,4 @@
+/app/extra/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/app/extra/clion/bin/ninja/linux/x64/ninja -G Ninja -S "/home/mint/Universidad/Universidad/Programacion III/Parcial" -B "/home/mint/Universidad/Universidad/Programacion III/Parcial/cmake-build-debug"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/mint/Universidad/Universidad/Programacion III/Parcial/cmake-build-debug

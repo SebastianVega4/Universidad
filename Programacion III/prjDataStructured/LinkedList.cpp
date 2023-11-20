@@ -1,23 +1,37 @@
 //
-// Created by julia on 15/11/2023.
+// Created by Jairo Riaño on 15/11/23.
 //
 
 #include "LinkedList.h"
-#include <vector>
-
+template<class T>
+LinkedList<T>::LinkedList() {
+    LinkedList::head = NULL;
+}
 
 template<class T>
-LinkedList<T>::~LinkedList() {
-    LinkedList::head = NULL;
+bool LinkedList<T>::isEmpty() {
+
+    return head == NULL;
+}
+
+template<class T>
+void LinkedList<T>::addNodeFirst(T info) {
+    if( isEmpty()){
+        head = new Node<T>(info);
+    }else{
+        Node<T> *newNode = new Node<T>(info);
+        newNode->next = head;
+        head = newNode;
+    }
 }
 
 template<class T>
 std::vector<T> LinkedList<T>::getLinkedList() {
     std::vector<T> linked;
-    Node<T> *aux = head;
 
-    while (aux != NULL){
-        linked.push_back(aux->info);
+    Node<T> *aux = head;
+    while( aux != NULL ){
+        linked.push_back( aux->info);
         aux = aux->next;
     }
 
@@ -25,33 +39,50 @@ std::vector<T> LinkedList<T>::getLinkedList() {
 }
 
 template<class T>
-void LinkedList<T>::addNodeFirst(T info) {
-    head = new Node<T>(info);
-if(isEmpty()){
-      Node<T> *aux = new Node<T>(info);
-    aux -> next = head;
-    head = aux;
+Node<T>* LinkedList<T>::findNode(std::string id) {
+    Node<T>* aux = head;
+    while( aux != NULL ){
+        if( aux->info.getId().compare(id) == 0 ){
 
-  }
+            return aux;
+        }
+        aux = aux->next;
+    }
+
+    return NULL;
 }
 
 template<class T>
-void LinkedLast<T>::addNodeLast(T info) {
-    head = new Node<T>(info);
-    if(isEmpty()){
-        Node<T> *aux = new Node<T>(info);
-        aux -> next = head;
-        head = aux;
+void LinkedList<T>::addNodeAfterTo(Node<T> *node, T info) {
 
+}
+
+template<class T>
+void LinkedList<T>::addNodeBeforeTo(Node<T> *node, T info) {
+
+}
+
+template<class T>
+void LinkedList<T>::addNodeLast(T info) {
+    if( isEmpty()){
+        head = new Node<T>( info );
+    }else{
+        Node<T> *aux = head;
+        while( aux->next != NULL ){
+            aux = aux->next;
+        }
+
+        Node<T> *node = new Node<T>(info);
+        aux->next = node;
     }
 }
 
 template<class T>
-bool LinkedList<T>::isEmpty() {
-    return head == NULL;
-}
-
-template<class T>
-LinkedList<T>::LinkedList() {
-
+LinkedList<T>::~LinkedList() {
+    while( head != NULL ){
+        Node<T> *delAux = head;
+        head = head->next;
+        delete(delAux);
+    }
+    delete(head);
 }

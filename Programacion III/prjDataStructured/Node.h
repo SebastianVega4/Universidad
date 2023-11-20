@@ -12,6 +12,7 @@ template <class T> class LinkedList;
 template<class T>
 class Node {
     friend class LinkedList<T>;
+
 public:
     Node() {
         Node::next = NULL;
@@ -21,24 +22,8 @@ public:
         Node::next = NULL;
     }
 
-    T getInfo() const {
-        return info;
-    }
-
-    void setInfo(T info) {
-        Node::info = info;
-    }
-
-    Node<T> *getNext() const {
-        return next;
-    }
-
-    void setNext(Node<T> *next) {
-        Node::next = next;
-    }
-
     virtual ~Node() {
-        delete(next);
+
     }
 
 private:
