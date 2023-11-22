@@ -31,8 +31,4 @@ private:
     Node<T> *next;
 };
 
-
-
-
-
 #endif //PRJDATASTRUCTURED_NODE_H

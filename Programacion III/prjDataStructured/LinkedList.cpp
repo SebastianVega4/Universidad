@@ -1,7 +1,7 @@
 //
 // Created by Jairo Riaño on 15/11/23.
 //
-
+#include <iostream>
 #include "LinkedList.h"
 template<class T>
 LinkedList<T>::LinkedList() {
@@ -10,7 +10,6 @@ LinkedList<T>::LinkedList() {
 
 template<class T>
 bool LinkedList<T>::isEmpty() {
-
     return head == NULL;
 }
 
@@ -54,12 +53,32 @@ Node<T>* LinkedList<T>::findNode(std::string id) {
 
 template<class T>
 void LinkedList<T>::addNodeAfterTo(Node<T> *node, T info) {
-
+    if( isEmpty()) {
+        head = new Node<T>( info );
+        // cout<<"El Nodo NO Existe"<<endl;
+    }else{
+        Node<T> *aux = head;
+        while( aux->next != node ){
+            aux = aux->next;
+        }
+        Node<T> *newNodee = new Node<T>(info);
+        Node<T> *valBack = aux;
+        newNodee->next = aux->next;
+        valBack->next = newNodee;
+    }
 }
 
 template<class T>
 void LinkedList<T>::addNodeBeforeTo(Node<T> *node, T info) {
+    if( isEmpty()) {
+        head = new Node<T>( info );
+    }else{
+        Node<T> *newNodee = new Node<T>(info);
+        Node<T> *valNextt = node->next;
 
+        node->next = newNodee;
+        newNodee->next = valNextt;
+    }
 }
 
 template<class T>
