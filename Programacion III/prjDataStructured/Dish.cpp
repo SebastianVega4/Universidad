@@ -1,6 +1,3 @@
-//
-// Created by Jairo Riaño on 10/11/23.
-//
 
 #include "Dish.h"
 

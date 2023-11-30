@@ -1,6 +1,4 @@
-//
-// Created by Jairo Riaño on 15/11/23.
-//
+
 #include <iostream>
 #include "LinkedList.h"
 template<class T>
