@@ -1,6 +1,0 @@
-# ninja log v5
-587	4745	7230641205618081	build.ninja	c0c2d99277790b5
-10	2237	7230636957639767	CMakeFiles/LinkedDouble.dir/main.cpp.obj	8478317f860dc4da
-2684	3768	7230624076631195	CMakeFiles/LinkedDouble.dir/LinkedDouble.cpp.obj	52f4d27863f1d919
-4763	6320	7230620698576117	CMakeFiles/LinkedDouble.dir/VolleyballPlayer.cpp.obj	97b8104a9d5a3d1e
-2238	2570	7230636960900547	LinkedDouble.exe	7f0e0c8953987fc5
