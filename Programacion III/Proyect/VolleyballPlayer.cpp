@@ -1,7 +1,7 @@
 
 #include "VolleyballPlayer.h"
 
-VolleyballPlayer::VolleyballPlayer( int numberPlayer,const string &name, const string &posicion, int yearsInGame)
+VolleyballPlayer::VolleyballPlayer(int numberPlayer, const string &name, const string &posicion, int yearsInGame)
         : name(name), numberPlayer(numberPlayer), posicion(posicion), yearsInGame(yearsInGame) {}
 
 const string &VolleyballPlayer::getName() const {

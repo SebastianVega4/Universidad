@@ -7,11 +7,13 @@
 
 #include <cstdlib>
 
-template <class T> class LinkedDouble;
+template<class T>
+class LinkedDouble;
 
-template <class T>
+template<class T>
 class Node {
     friend class LinkedDouble<T>;
+
 public:
     Node() {
         next = NULL;
@@ -29,8 +31,8 @@ public:
 
 private:
     T info;
-    Node<T>* next;
-    Node<T>* previous;
+    Node<T> *next;
+    Node<T> *previous;
 };
 
 

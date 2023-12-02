@@ -9,22 +9,22 @@
 
 using namespace std;
 
-template <class T>
+template<class T>
 class LinkedDouble {
 public:
     LinkedDouble();
 
     bool isEmpty();
 
-    void addNodeFirst( T );
+    void addNodeFirst(T);
 
-    void addNodeLast( T );
+    void addNodeLast(T);
 
-    void addNodeBeforeTo( Node<T>* node, T info );
+    void addNodeBeforeTo(Node<T> *node, T info);
 
-    void addNodeAfterTo( Node<T>* node, T info );
+    void addNodeAfterTo(Node<T> *node, T info);
 
-    Node<T>* findNode(int namePLayer);
+    Node<T> *findNode(int namePLayer);
 
     vector<T> getLinkedList(bool forward);
 
@@ -45,11 +45,10 @@ public:
     virtual ~LinkedDouble();
 
 private:
-    Node<T>* head;
-    Node<T>* last;
+    Node<T> *head;
+    Node<T> *last;
 
 };
-
 
 
 #endif //LINKDOUBLE_LINKEDDOUBLE_H
