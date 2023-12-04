@@ -1,4 +1,3 @@
-
 #include <string>
 #include "LinkedDouble.h"
 #include "VolleyballPlayer.h"
@@ -168,6 +167,4 @@ VolleyballPlayer LinkedDouble<T>::getLast() {
 }
 
 template<class T>
-LinkedDouble<T>::~LinkedDouble() {
-
-}
+LinkedDouble<T>::~LinkedDouble() = default;

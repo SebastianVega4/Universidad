@@ -61,12 +61,6 @@ build CMakeFiles/LinkedDouble.dir/VolleyballPlayer.cpp.obj: CXX_COMPILER__Linked
   OBJECT_DIR = CMakeFiles\LinkedDouble.dir
   OBJECT_FILE_DIR = CMakeFiles\LinkedDouble.dir
 
-build CMakeFiles/LinkedDouble.dir/Controller.cpp.obj: CXX_COMPILER__LinkedDouble_unscanned_Debug C$:/Users/A372144/Downloads/Git/Universidad/Programacion$ III/Proyect/Controller.cpp || cmake_object_order_depends_target_LinkedDouble
-  DEP_FILE = CMakeFiles\LinkedDouble.dir\Controller.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\LinkedDouble.dir
-  OBJECT_FILE_DIR = CMakeFiles\LinkedDouble.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LinkedDouble
@@ -75,7 +69,7 @@ build CMakeFiles/LinkedDouble.dir/Controller.cpp.obj: CXX_COMPILER__LinkedDouble
 #############################################
 # Link the executable LinkedDouble.exe
 
-build LinkedDouble.exe: CXX_EXECUTABLE_LINKER__LinkedDouble_Debug CMakeFiles/LinkedDouble.dir/main.cpp.obj CMakeFiles/LinkedDouble.dir/VolleyballPlayer.cpp.obj CMakeFiles/LinkedDouble.dir/Controller.cpp.obj
+build LinkedDouble.exe: CXX_EXECUTABLE_LINKER__LinkedDouble_Debug CMakeFiles/LinkedDouble.dir/main.cpp.obj CMakeFiles/LinkedDouble.dir/VolleyballPlayer.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\LinkedDouble.dir

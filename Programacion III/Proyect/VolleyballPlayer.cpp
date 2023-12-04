@@ -36,12 +36,16 @@ void VolleyballPlayer::setYearsInGame(int yearsInGame) {
     VolleyballPlayer::yearsInGame = yearsInGame;
 }
 
+string VolleyballPlayer::toString() {
+    return "name: " + name + " numberPlayer: " + to_string(numberPlayer) + " posicion: " + posicion + " yearsInGame: " + to_string(yearsInGame);
+}
+
+
 ostream &operator<<(ostream &os, const VolleyballPlayer &player) {
     os << "name: " << player.name << " numberPlayer: " << player.numberPlayer << " posicion: " << player.posicion
        << " yearsInGame: " << player.yearsInGame;
     return os;
 }
 
-VolleyballPlayer::~VolleyballPlayer() {
 
-}
+VolleyballPlayer::~VolleyballPlayer() = default;

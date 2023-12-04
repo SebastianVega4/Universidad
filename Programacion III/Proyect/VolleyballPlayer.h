@@ -33,6 +33,8 @@ public:
 
     virtual ~VolleyballPlayer();
 
+    basic_string<char> toString();
+
 private:
     string name;
     int numberPlayer;

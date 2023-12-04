@@ -1,7 +1,3 @@
-
-#ifndef LINKDOUBLE_LINKEDDOUBLE_H
-#define LINKDOUBLE_LINKEDDOUBLE_H
-
 #include <vector>
 
 #include "Node.h"
@@ -50,5 +46,4 @@ private:
 
 };
 
-
-#endif //LINKDOUBLE_LINKEDDOUBLE_H
+//LINKDOUBLE_LINKEDDOUBLE_H
