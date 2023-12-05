@@ -26,24 +26,16 @@ public:
 
     void addNodeSorted(T No);
 
-    T findInfo(int namePLayer);
-
     string deleteNode(Node<T> *node);
 
     int getSize();
-
-    T *getObject(int NumberPLayer);
 
     VolleyballPlayer getFirst();
 
     VolleyballPlayer getLast();
 
     virtual ~LinkedDouble();
-
 private:
     Node<T> *head;
     Node<T> *last;
-
 };
-
-//LINKDOUBLE_LINKEDDOUBLE_H
