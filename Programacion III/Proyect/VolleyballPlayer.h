@@ -12,9 +12,7 @@ public:
 
     const int getNumberPlayer() const;
 
-    basic_string<char> toString();
-
-    friend ostream &operator<<(ostream &os, const VolleyballPlayer &player);
+    string toString();
 
     virtual ~VolleyballPlayer();
 private:

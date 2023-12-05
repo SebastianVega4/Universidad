@@ -13,10 +13,4 @@ string VolleyballPlayer::toString() {
            to_string(yearsInGame);
 }
 
-ostream &operator<<(ostream &os, const VolleyballPlayer &player) {
-    os << "name: " << player.name << " numberPlayer: " << player.numberPlayer << " posicion: " << player.posicion
-       << " yearsInGame: " << player.yearsInGame;
-    return os;
-}
-
 VolleyballPlayer::~VolleyballPlayer() = default;

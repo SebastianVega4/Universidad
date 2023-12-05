@@ -112,7 +112,7 @@ int main() {
                         if ((position = obtenerStrig()).empty())break;
                         cout << "Ingrese los years de experiencia de " + name + " :" << endl;
                         if ((yearsInGame = obtenerEntero()) == 0)break;
-                        controller.addPlayerBeforeto(findPlayer, number, name, position, yearsInGame);
+                        controller.addPlayerBeforeTo(findPlayer, number, name, position, yearsInGame);
                         cout << endl << controller.showPlayers() << endl;
                     }
                 }

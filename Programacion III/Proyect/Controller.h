@@ -26,7 +26,7 @@ public:
         SquadVoley->addNodeLast(VolleyballPlayer(number, name, position, yearsInGame));
     }
 
-    void addPlayerBeforeto(int fintPlayer, int number, const string &name, const string &position, int yearsInGame) {
+    void addPlayerBeforeTo(int fintPlayer, int number, const string &name, const string &position, int yearsInGame) {
         SquadVoley->addNodeBeforeTo(SquadVoley->findNode(fintPlayer),
                                     VolleyballPlayer(number, name, position, yearsInGame));
     }
