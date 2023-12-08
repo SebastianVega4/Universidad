@@ -1,30 +1,27 @@
 package Model;
 
-import java.util.Set;
-
 public class Main {
-
     public static void main(String[] args) {
         controller cs = new controller();
-        System.out.println(cs.Agreggar("ala ","es una ","fadfdsfsd"));
-        System.out.println(cs.Agreggar("clA ","es una ","fadfdsfsd"));
-        System.out.println(cs.Agreggar("bLA ","es una ","fadfdsfsd"));
-        System.out.println(cs.Agreggar("alaaaa ","es una ","fadfdsfsd"));
-        System.out.println(cs.Agreggar("alad ","es una prueba mu chimba esto es el resultado de mi trabajo ","fadfdsfsd"));
-        System.out.println(cs.Agreggar("alafw ","es una ","fadfdsfsd"));
-        System.out.println(cs.Agreggar("bla ","es una ","fadfdsfsd"));
-        System.out.println(cs.Agreggar("ala ","¡","fadfdsfsd"));
-        System.out.println(cs.Agreggar("bla ","es una ","fadfdsfsd"));
-        System.out.println(cs.Agreggar("la ","¡","fadfdsfsd"));
+        System.out.println(cs.addWord("ala ", "es una ", "fadfdsfsd"));
+        System.out.println(cs.addWord("clA ", "es una ", "fadfdsfsd"));
+        System.out.println(cs.addWord("bLA ", "es una ", "fadfdsfsd"));
+        System.out.println(cs.addWord("alaaaa ", "es una ", "fadfdsfsd"));
+        System.out.println(cs.addWord("alad ", "es una prueba mu chimba esto es el resultado de mi trabajo ", "fadfdsfsd"));
+        System.out.println(cs.addWord("alafw ", "es una ", "fadfdsfsd"));
+        System.out.println(cs.addWord("bla ", "es una ", "fadfdsfsd"));
+        System.out.println(cs.addWord("ala ", "¡", "fadfdsfsd"));
+        System.out.println(cs.addWord("bla ", "es una ", "fadfdsfsd"));
+        System.out.println(cs.addWord("la ", "¡", "fadfdsfsd"));
         System.out.println("=====================================");
-        System.out.println(cs.consultar("-ala "));
+        System.out.println(cs.consult("-ala "));
         String nm = "ala";
         System.out.println(nm.equals("Ala"));
-        System.out.println(cs.consultar(nm));
+        System.out.println(cs.consult(nm));
 
-        System.out.println(cs.consultar("ala "));
-        System.out.println(cs.consultar("bair "));
-        System.out.println(cs.consultar("jose"));
+        System.out.println(cs.consult("ala "));
+        System.out.println(cs.consult("bair "));
+        System.out.println(cs.consult("jose"));
         System.out.println("=====================================");
         System.out.println(cs.listadoLetra("a"));
         System.out.println(cs.listadoLetra("b"));
@@ -40,6 +37,3 @@ public class Main {
 
         }
     }
-
-
-

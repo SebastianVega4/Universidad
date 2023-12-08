@@ -2,11 +2,9 @@ package Model;
 
 import Logic.BinaryTree;
 import Logic.Diccionario;
-import Logic.TreeNode;
 
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Set;
 import java.util.TreeMap;
 
 public class controller {
@@ -15,45 +13,39 @@ public class controller {
 
     HashMap<Integer,BinaryTree<Diccionario>> hash = new HashMap<>();
 
-
-    public String Agreggar(String str, String significado, String traduccion){
-
-        String palabra = mayus(str);
-        int val = ascci(palabra);
+    public String addWord(String str, String significado, String traduccion) {
+        String word = mayus(str);
+        int val = ascci(word);
         BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        if (!palabrarepe(diccionario,palabra)){
-            diccionario.addNode(new Diccionario(palabra,significado,traduccion));
-            return  "la palabra fue agregada correctamente";
+        if (!palabrarepe(diccionario, word)) {
+            diccionario.addNode(new Diccionario(word, significado, traduccion));
+            return "la word fue agregada correctamente";
         }else {
-            return  "la palabra esta repetida";
+            return "la word esta repetida";
         }
     }
 
-    public String consultar(String str){
-        String palabra = mayus(str);
-        int val = ascci(palabra);
+    public String consult(String str) {
+        String word = mayus(str);
+        int val = ascci(word);
         BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-            if (diccionario.encontrarNodo(new Diccionario(palabra,null,null))!=null){
-                return  imprCons(palabra,diccionario);
+        if (diccionario.encontrarNodo(new Diccionario(word, null, null)) != null) {
+            return imprCons(word, diccionario);
             }
-            return "no existe la palabra : "+palabra;
+        return "no existe la palabra : " + word;
         }
 
     public boolean consultarExistencia(String str){
         String palabra = mayus(str);
         int val = ascci(palabra);
         BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        if (diccionario.encontrarNodo(new Diccionario(palabra,null,null))!=null){
-            return true;
-        }
-        return false;
+        return diccionario.encontrarNodo(new Diccionario(palabra, null, null)) != null;
     }
 
     public String consultarPalab(String str){
         String palabra = mayus(str);
         int val = ascci(palabra);
         BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-
         return  diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getPalabra();
     }
 
@@ -61,7 +53,6 @@ public class controller {
         String palabra = mayus(str);
         int val = ascci(palabra);
         BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-
         return  diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getSignificado();
     }
 
@@ -69,7 +60,6 @@ public class controller {
         String palabra = mayus(str);
         int val = ascci(palabra);
         BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-
         return  diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getTraduccion();
     }
 
@@ -80,9 +70,9 @@ public class controller {
         BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
         if (diccionario!=null){
             for (int i = 0; i <diccionario.listPresort().size() ; i++) {
-                msj  = msj+"\n"+"palabra : " +diccionario.listPresort().get(i).getPalabra() +"\n"+
-                        "significado : "+diccionario.listPresort().get(i).getSignificado() +"\n"+
-                        "traduccion : "+diccionario.listPresort().get(i).getTraduccion() +"\n";
+                msj = msj + "\n palabra: " + diccionario.listPresort().get(i).getPalabra() + "\n" +
+                        "significado: " + diccionario.listPresort().get(i).getSignificado() + "\n" +
+                        "traduccion: " + diccionario.listPresort().get(i).getTraduccion() + "\n";
             }
             return msj;
         }
@@ -97,31 +87,29 @@ public class controller {
                 int val = key;
                 char convertedChar = (char)val;
                 if (!diccionario.isEmpty()){
-                    msj +=  "\nletra : " + convertedChar +" \n";
+                    msj += "\n letra: " + convertedChar + " \n";
                 }
             for (int j = 0; j < diccionario.listPresort().size(); j++) {
-                msj += "\n" + "palabra : " + diccionario.listPresort().get(j).getPalabra() + "\n" +
-                        "significado : " + diccionario.listPresort().get(j).getSignificado() + "\n" +
-                        "traduccion : " + diccionario.listPresort().get(j).getTraduccion() + "\n";
+                msj += "\n palabra: " + diccionario.listPresort().get(j).getPalabra() + "\n" +
+                        "significado: " + diccionario.listPresort().get(j).getSignificado() + "\n" +
+                        "traduccion: " + diccionario.listPresort().get(j).getTraduccion() + "\n";
             }
         }
         }
-        if (!msj.equals("")){
+        if (!msj.isEmpty()) {
             return msj;
         }else {
             return "no existe Ninguna palabra en el diccionario";
         }
-
     }
 
     public String Modificar(String str, String significado, String traduccion){
-
         String palabra = mayus(str);
         int val = ascci(palabra);
         BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
         if (diccionario.encontrarNodo(new Diccionario(palabra,null,null))!=null){
             diccionario.modifyNode(diccionario.encontrarInfo(new Diccionario(palabra,null,null)), new Diccionario(palabra,significado,traduccion));
-            return "la palabra fue cambiada con exito : "+"\n"+ consultar(palabra);
+            return "la palabra fue cambiada con exito : " + "\n" + consult(palabra);
         }
         return "no existe la palabra que desea modificar : "+palabra;
     }
@@ -137,10 +125,6 @@ public class controller {
         return "no existe la palabra que desea eliminar: "+palabra;
     }
 
-
-
-
-
     private String imprCons(String palabra,BinaryTree<Diccionario> diccionario){
 
             return "palabra : " +diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getPalabra() +"\n"+
@@ -150,7 +134,6 @@ public class controller {
 
     private BinaryTree<Diccionario> buscarDiccionario(int key){
         BinaryTree<Diccionario> diccionario = hash.get(key);
-
         if (diccionario == null){
             hash.put(key,new BinaryTree<>(Comparator.comparing(Diccionario::getPalabra)));
             diccionario = hash.get(key);
@@ -167,7 +150,7 @@ public class controller {
         return false;
     }
 
-    public   String mayus(String str){
+    public String mayus(String str) {
         if (str == null || str.isEmpty()) {
             return str;
         } else {
@@ -177,8 +160,6 @@ public class controller {
     }
 
     private int ascci(String palabra){
-        char cara = palabra.charAt(0);
-        return (int)cara;
+        return palabra.charAt(0);
     }
-
 }
