@@ -1,100 +1,88 @@
 package Model;
 
 import Logic.BinaryTree;
-import Logic.Diccionario;
+import Logic.Dictionary;
 
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.TreeMap;
 
 public class controller {
-    public controller() {
-    }
-
-    HashMap<Integer,BinaryTree<Diccionario>> hash = new HashMap<>();
-
-    public String addWord(String str, String significado, String traduccion) {
-        String word = mayus(str);
-        int val = ascci(word);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        if (!palabrarepe(diccionario, word)) {
-            diccionario.addNode(new Diccionario(word, significado, traduccion));
-            return "la word fue agregada correctamente";
+    HashMap<Integer,BinaryTree<Dictionary>> hash = new HashMap<>();
+    public String addWord(String str, String meaning, String translation) {
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        if (!repeatWord(dictionary, word)) {
+            dictionary.addNode(new Dictionary(word, meaning, translation));
+            return "la palabra fue agregada correctamente";
         }else {
-            return "la word esta repetida";
+            return "la palabra esta repetida";
         }
     }
 
     public String consult(String str) {
-        String word = mayus(str);
-        int val = ascci(word);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        if (diccionario.encontrarNodo(new Diccionario(word, null, null)) != null) {
-            return imprCons(word, diccionario);
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        if (dictionary.encontrarNodo(new Dictionary(word, null, null)) != null) {
+            return printAllWord(word, dictionary);
             }
         return "no existe la palabra : " + word;
-        }
-
-    public boolean consultarExistencia(String str){
-        String palabra = mayus(str);
-        int val = ascci(palabra);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        return diccionario.encontrarNodo(new Diccionario(palabra, null, null)) != null;
     }
 
-    public String consultarPalab(String str){
-        String palabra = mayus(str);
-        int val = ascci(palabra);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        return  diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getPalabra();
+    public boolean showIfExistWord(String str){
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        return dictionary.encontrarNodo(new Dictionary(word, null, null)) != null;
     }
 
-    public String consultarSignifica(String str){
-        String palabra = mayus(str);
-        int val = ascci(palabra);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        return  diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getSignificado();
+    public String showWord(String str){
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        return  dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getWord();
     }
 
-    public String consultarTraduc(String str){
-        String palabra = mayus(str);
-        int val = ascci(palabra);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        return  diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getTraduccion();
+    public String showMeaning(String str){
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        return  dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getMeaning();
     }
 
-    public String listadoLetra(String str){
+    public String showTranslation(String str){
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        return  dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getTranslation();
+    }
+
+    public String showForLatter(String str){
         String msj = "";
-        String palabra = mayus(str);
-        int val = ascci(palabra);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        if (diccionario!=null){
-            for (int i = 0; i <diccionario.listPresort().size() ; i++) {
-                msj = msj + "\n palabra: " + diccionario.listPresort().get(i).getPalabra() + "\n" +
-                        "significado: " + diccionario.listPresort().get(i).getSignificado() + "\n" +
-                        "traduccion: " + diccionario.listPresort().get(i).getTraduccion() + "\n";
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        if (dictionary!=null){
+            for (int i = 0; i <dictionary.listPresort().size() ; i++) {
+                msj = msj + "\n palabra: " + dictionary.listPresort().get(i).getWord() + "\n" +
+                        "significado: " + dictionary.listPresort().get(i).getMeaning() + "\n" +
+                        "traduccion: " + dictionary.listPresort().get(i).getTranslation() + "\n";
             }
             return msj;
         }
-        return "no existe Ninguna palabra con esa letra : "+palabra;
+        return "no existe Ninguna palabra con esa letra : "+word;
     }
-    public String listadototal(){
-        TreeMap<Integer, BinaryTree<Diccionario>> map1 = new TreeMap<>(hash);
+    public String showAllWord(){
+        TreeMap<Integer, BinaryTree<Dictionary>> map1 = new TreeMap<>(hash);
         String msj = "";
         for ( Integer key : map1.keySet() ) {
-            BinaryTree<Diccionario> diccionario = hash.get(key);
-            if (diccionario.listPresort() != null) {
+            BinaryTree<Dictionary> dictionary = hash.get(key);
+            if (dictionary.listPresort() != null) {
                 int val = key;
-                char convertedChar = (char)val;
-                if (!diccionario.isEmpty()){
-                    msj += "\n letra: " + convertedChar + " \n";
+                if (!dictionary.isEmpty()){
+                    msj += "\n letra: " + (char)val + " \n";
                 }
-            for (int j = 0; j < diccionario.listPresort().size(); j++) {
-                msj += "\n palabra: " + diccionario.listPresort().get(j).getPalabra() + "\n" +
-                        "significado: " + diccionario.listPresort().get(j).getSignificado() + "\n" +
-                        "traduccion: " + diccionario.listPresort().get(j).getTraduccion() + "\n";
+                for (int j = 0; j < dictionary.listPresort().size(); j++) {
+                    msj += "\n palabra: " + dictionary.listPresort().get(j).getWord() + "\n" +
+                            "significado: " + dictionary.listPresort().get(j).getMeaning() + "\n" +
+                            "traduccion: " + dictionary.listPresort().get(j).getTranslation() + "\n";
+                }
             }
-        }
         }
         if (!msj.isEmpty()) {
             return msj;
@@ -103,63 +91,59 @@ public class controller {
         }
     }
 
-    public String Modificar(String str, String significado, String traduccion){
-        String palabra = mayus(str);
-        int val = ascci(palabra);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        if (diccionario.encontrarNodo(new Diccionario(palabra,null,null))!=null){
-            diccionario.modifyNode(diccionario.encontrarInfo(new Diccionario(palabra,null,null)), new Diccionario(palabra,significado,traduccion));
-            return "la palabra fue cambiada con exito : " + "\n" + consult(palabra);
+    public String modifyWord(String str, String meaning, String translation){
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        if (dictionary.encontrarNodo(new Dictionary(word,null,null))!=null){
+            dictionary.modifyNode(dictionary.encontrarInfo(new Dictionary(word,null,null)), new Dictionary(word,meaning,translation));
+            return "la palabra fue cambiada con exito : " + "\n" + consult(word);
         }
-        return "no existe la palabra que desea modificar : "+palabra;
+        return "no existe la palabra que desea modificar : "+word;
     }
 
-    public String Eliminar(String str){
-        String palabra = mayus(str);
-        int val = ascci(palabra);
-        BinaryTree<Diccionario> diccionario = buscarDiccionario(val);
-        if (diccionario.encontrarNodo(new Diccionario(palabra,null,null))!=null){
-            diccionario.deleteNode(diccionario.encontrarNodo(new Diccionario(palabra,null,null)));
-            return "la plabra se elimino con exito: " +palabra;
+    public String delete(String str){
+        String word = firstLetterWithMayus(str);
+        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        if (dictionary.encontrarNodo(new Dictionary(word,null,null))!=null){
+            dictionary.deleteNode(dictionary.encontrarNodo(new Dictionary(word,null,null)));
+            return "la plabra se elimino con exito: " +word;
         }
-        return "no existe la palabra que desea eliminar: "+palabra;
+        return "no existe la palabra que desea eliminar: "+word;
     }
 
-    private String imprCons(String palabra,BinaryTree<Diccionario> diccionario){
-
-            return "palabra : " +diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getPalabra() +"\n"+
-                    "significado : "+diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getSignificado() +"\n"+
-                    "traduccion : "+diccionario.encontrarNodo(new Diccionario(palabra,null,null)).getInfo().getTraduccion() +"\n";
+    private String printAllWord(String word, BinaryTree<Dictionary> dictionary){
+            return "palabra : " +dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getWord() +"\n"+
+                    "significado : "+dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getMeaning() +"\n"+
+                    "traduccion : "+dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getTranslation() +"\n";
     }
 
-    private BinaryTree<Diccionario> buscarDiccionario(int key){
-        BinaryTree<Diccionario> diccionario = hash.get(key);
-        if (diccionario == null){
-            hash.put(key,new BinaryTree<>(Comparator.comparing(Diccionario::getPalabra)));
-            diccionario = hash.get(key);
+    private BinaryTree<Dictionary> searchWord(int key){
+        BinaryTree<Dictionary> dictionary = hash.get(key);
+        if (dictionary == null){
+            hash.put(key,new BinaryTree<>(Comparator.comparing(Dictionary::getWord)));
+            dictionary = hash.get(key);
         }
-        return diccionario;
+        return dictionary;
     }
 
-    private Boolean palabrarepe(BinaryTree<Diccionario> diccionario,String palabra){
-        for (int i = 0; i < diccionario.listInsort().size(); i++) {
-            if(diccionario.listInsort().get(i).getPalabra().equals(palabra)){
+    private Boolean repeatWord(BinaryTree<Dictionary> dictionary, String word){
+        for (int i = 0; i < dictionary.listInsort().size(); i++) {
+            if(dictionary.listInsort().get(i).getWord().equals(word)){
                 return true;
             }
         }
         return false;
     }
 
-    public String mayus(String str) {
+    public String firstLetterWithMayus(String str) {
         if (str == null || str.isEmpty()) {
             return str;
         } else {
-            //La primera letra en mayuscula y las demas en minuscula.
             return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
         }
     }
 
-    private int ascci(String palabra){
-        return palabra.charAt(0);
+    private int firstLetterInAscii(String word){
+        return word.charAt(0);
     }
 }
