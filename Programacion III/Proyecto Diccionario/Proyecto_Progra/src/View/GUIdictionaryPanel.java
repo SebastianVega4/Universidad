@@ -134,7 +134,7 @@ public class GUIdictionaryPanel {
                     meaningField.setText("");
                     translationField.setText("");
                     jtxaLista.setText("");
-                    jtxaLista.append(guIdictionary.getControl().showAllWord());
+                    jtxaLista.append(guIdictionary.getControl().showAllWords());
                 }else {
                     JOptionPane.showMessageDialog(null,"Nigun campo debe estar vacio");
                 }
@@ -149,7 +149,7 @@ public class GUIdictionaryPanel {
                     String word = JOptionPane.showInputDialog("Digite la palabra que desea modificar");
                     if (!Objects.equals(word, "")) {
                         if (guIdictionary.getControl().showIfExistWord(word)) {
-                            wordField.setText(guIdictionary.getControl().showWord(word));
+                            wordField.setText(word);
                             meaningField.setText(guIdictionary.getControl().showMeaning(word));
                             translationField.setText(guIdictionary.getControl().showTranslation(word));
                             addButton.setVisible(false);
@@ -181,7 +181,7 @@ public class GUIdictionaryPanel {
                     }
                 }
                 jtxaLista.setText("");
-                jtxaLista.append(guIdictionary.getControl().showAllWord());
+                jtxaLista.append(guIdictionary.getControl().showAllWords());
             }
         });
 
@@ -189,7 +189,7 @@ public class GUIdictionaryPanel {
             String word = JOptionPane.showInputDialog("Digite la palabra que desea eliminar");
             if (!Objects.equals(word, "")) {
                 if (guIdictionary.getControl().showIfExistWord(word)) {
-                    guIdictionary.getControl().delete(word);
+                    guIdictionary.getControl().deleteWord(word);
                     JOptionPane.showMessageDialog(null, "La palabra: " + word + " fue eliminada");
                 } else {
                     JOptionPane.showMessageDialog(null, "La palabra no existe");
@@ -198,7 +198,7 @@ public class GUIdictionaryPanel {
                 JOptionPane.showMessageDialog(null, "El campo no puede ser vacio");
             }
             jtxaLista.setText("");
-            jtxaLista.append(guIdictionary.getControl().showAllWord());
+            jtxaLista.append(guIdictionary.getControl().showAllWords());
         });
 
         exitButton.addActionListener(e -> System.exit(0));
@@ -209,7 +209,7 @@ public class GUIdictionaryPanel {
                     new Object[]{"Dictionary completo", "Listado por Letra", "Palabra"}, "Opcion");
             jtxaLista.setText("");
             switch (a) {
-                case 0 -> jtxaLista.append(guIdictionary.getControl().showAllWord());
+                case 0 -> jtxaLista.append(guIdictionary.getControl().showAllWords());
                 case 1 -> {
                     String word = JOptionPane.showInputDialog("digite la letra que desea consultar");
                     if (word.length() != 1) {

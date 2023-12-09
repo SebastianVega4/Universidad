@@ -74,7 +74,7 @@ public class BinaryTree<T> {
         }
     }
 
-    public TreeNode<T> encontrarNodo(T info) {
+    public TreeNode<T> findNodo(T info) {
         TreeNode<T> aux = root;
         while (aux != null && comparator.compare(info, aux.getInfo()) != 0) {
             if (comparator.compare(info, aux.getInfo()) < 0) {
@@ -86,7 +86,7 @@ public class BinaryTree<T> {
         return aux;
     }
 
-    public T encontrarInfo(T info) {
+    public T findInfo(T info) {
         TreeNode<T> aux = root;
         while (aux != null && comparator.compare(info, aux.getInfo()) != 0) {
             if (comparator.compare(info, aux.getInfo()) < 0) {
@@ -99,7 +99,7 @@ public class BinaryTree<T> {
     }
 
     public void modifyNode(T info, T newInfo) {
-        TreeNode<T> node = encontrarNodo(info);
+        TreeNode<T> node = findNodo(info);
         if (node == null) {
             return;
         }

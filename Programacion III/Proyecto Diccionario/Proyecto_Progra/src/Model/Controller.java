@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.TreeMap;
 
-public class controller {
+public class Controller {
     HashMap<Integer,BinaryTree<Dictionary>> hash = new HashMap<>();
     public String addWord(String str, String meaning, String translation) {
         String word = firstLetterWithMayus(str);
@@ -23,8 +23,8 @@ public class controller {
     public String consult(String str) {
         String word = firstLetterWithMayus(str);
         BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
-        if (dictionary.encontrarNodo(new Dictionary(word, null, null)) != null) {
-            return printAllWord(word, dictionary);
+        if (dictionary.findNodo(new Dictionary(word, null, null)) != null) {
+            return printInfoWord(word, dictionary);
             }
         return "no existe la palabra : " + word;
     }
@@ -32,25 +32,19 @@ public class controller {
     public boolean showIfExistWord(String str){
         String word = firstLetterWithMayus(str);
         BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
-        return dictionary.encontrarNodo(new Dictionary(word, null, null)) != null;
-    }
-
-    public String showWord(String str){
-        String word = firstLetterWithMayus(str);
-        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
-        return  dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getWord();
+        return dictionary.findNodo(new Dictionary(word, null, null)) != null;
     }
 
     public String showMeaning(String str){
         String word = firstLetterWithMayus(str);
         BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
-        return  dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getMeaning();
+        return  dictionary.findNodo(new Dictionary(word,null,null)).getInfo().getMeaning();
     }
 
     public String showTranslation(String str){
         String word = firstLetterWithMayus(str);
         BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
-        return  dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getTranslation();
+        return  dictionary.findNodo(new Dictionary(word,null,null)).getInfo().getTranslation();
     }
 
     public String showForLatter(String str){
@@ -67,7 +61,7 @@ public class controller {
         }
         return "no existe Ninguna palabra con esa letra : "+word;
     }
-    public String showAllWord(){
+    public String showAllWords(){
         TreeMap<Integer, BinaryTree<Dictionary>> map1 = new TreeMap<>(hash);
         String msj = "";
         for ( Integer key : map1.keySet() ) {
@@ -94,27 +88,27 @@ public class controller {
     public String modifyWord(String str, String meaning, String translation){
         String word = firstLetterWithMayus(str);
         BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
-        if (dictionary.encontrarNodo(new Dictionary(word,null,null))!=null){
-            dictionary.modifyNode(dictionary.encontrarInfo(new Dictionary(word,null,null)), new Dictionary(word,meaning,translation));
+        if (dictionary.findNodo(new Dictionary(word,null,null))!=null){
+            dictionary.modifyNode(dictionary.findInfo(new Dictionary(word,null,null)), new Dictionary(word,meaning,translation));
             return "la palabra fue cambiada con exito : " + "\n" + consult(word);
         }
         return "no existe la palabra que desea modificar : "+word;
     }
 
-    public String delete(String str){
+    public String deleteWord(String str){
         String word = firstLetterWithMayus(str);
         BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
-        if (dictionary.encontrarNodo(new Dictionary(word,null,null))!=null){
-            dictionary.deleteNode(dictionary.encontrarNodo(new Dictionary(word,null,null)));
+        if (dictionary.findNodo(new Dictionary(word,null,null))!=null){
+            dictionary.deleteNode(dictionary.findNodo(new Dictionary(word,null,null)));
             return "la plabra se elimino con exito: " +word;
         }
         return "no existe la palabra que desea eliminar: "+word;
     }
 
-    private String printAllWord(String word, BinaryTree<Dictionary> dictionary){
-            return "palabra : " +dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getWord() +"\n"+
-                    "significado : "+dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getMeaning() +"\n"+
-                    "traduccion : "+dictionary.encontrarNodo(new Dictionary(word,null,null)).getInfo().getTranslation() +"\n";
+    private String printInfoWord(String word, BinaryTree<Dictionary> dictionary){
+            return "palabra : " +dictionary.findNodo(new Dictionary(word,null,null)).getInfo().getWord() +"\n"+
+                    "significado : "+dictionary.findNodo(new Dictionary(word,null,null)).getInfo().getMeaning() +"\n"+
+                    "traduccion : "+dictionary.findNodo(new Dictionary(word,null,null)).getInfo().getTranslation() +"\n";
     }
 
     private BinaryTree<Dictionary> searchWord(int key){

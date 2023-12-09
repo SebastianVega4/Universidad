@@ -1,13 +1,13 @@
 package View;
 
-import Model.controller;
+import Model.Controller;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GUIdictionary {
     private final JFrame frame;
-    private static controller control;
+    private static Controller control;
 
     public GUIdictionary(){
         frame = new JFrame("Diccionario");
@@ -18,7 +18,7 @@ public class GUIdictionary {
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
 
-        control = new controller();
+        control = new Controller();
     }
     public void showDictionaryPanel() {
         GUIdictionaryPanel guIdictionaryPanel = new GUIdictionaryPanel(this);
@@ -28,7 +28,7 @@ public class GUIdictionary {
         frame.repaint();
     }
 
-    public static controller getControl() {
+    public static Controller getControl() {
         return control;
     }
 
