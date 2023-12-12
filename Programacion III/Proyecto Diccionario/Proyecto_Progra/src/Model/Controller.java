@@ -4,19 +4,19 @@ import Logic.BinaryTree;
 import Logic.Dictionary;
 
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.TreeMap;
 
 public class Controller {
-    HashMap<Integer,BinaryTree<Dictionary>> hash = new HashMap<>();
+    private static BinaryTree<Dictionary>[] array = new BinaryTree[26];
+
     public String addWord(String str, String meaning, String translation) {
         String word = firstLetterWithMayus(str);
-        BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
+        int index = firstLetterInAscii(word); // Assuming uppercase letters only
+        BinaryTree<Dictionary> dictionary = searchWord(index);
         if (!repeatWord(dictionary, word)) {
             dictionary.addNode(new Dictionary(word, meaning, translation));
-            return "la palabra fue agregada correctamente";
-        }else {
-            return "la palabra esta repetida";
+            return "La palabra fue agregada correctamente";
+        } else {
+            return "La palabra está repetida";
         }
     }
 
@@ -26,7 +26,7 @@ public class Controller {
         if (dictionary.findNodo(new Dictionary(word, null, null)) != null) {
             return printInfoWord(word, dictionary);
             }
-        return "no existe la palabra : " + word;
+        return "La palabra _"+word+"_ no ha sido agregada al diccionario";
     }
 
     public boolean showIfExistWord(String str){
@@ -47,41 +47,37 @@ public class Controller {
         return  dictionary.findNodo(new Dictionary(word,null,null)).getInfo().getTranslation();
     }
 
-    public String showForLatter(String str){
+    public String showForLetter(String str){
         String msj = "";
         String word = firstLetterWithMayus(str);
         BinaryTree<Dictionary> dictionary = searchWord(firstLetterInAscii(word));
-        if (dictionary!=null){
-            for (int i = 0; i <dictionary.listPresort().size() ; i++) {
+        if (dictionary != null && !dictionary.isEmpty()) {
+            for (int i = 0; i < dictionary.listPresort().size(); i++) {
                 msj = msj + "\n palabra: " + dictionary.listPresort().get(i).getWord() + "\n" +
                         "significado: " + dictionary.listPresort().get(i).getMeaning() + "\n" +
                         "traduccion: " + dictionary.listPresort().get(i).getTranslation() + "\n";
             }
             return msj;
         }
-        return "no existe Ninguna palabra con esa letra : "+word;
+        return "No existe ninguna palabra con esa letra: " + word;
     }
-    public String showAllWords(){
-        TreeMap<Integer, BinaryTree<Dictionary>> map1 = new TreeMap<>(hash);
-        String msj = "";
-        for ( Integer key : map1.keySet() ) {
-            BinaryTree<Dictionary> dictionary = hash.get(key);
-            if (dictionary.listPresort() != null) {
-                int val = key;
-                if (!dictionary.isEmpty()){
-                    msj += "\n letra: " + (char)val + " \n";
-                }
-                for (int j = 0; j < dictionary.listPresort().size(); j++) {
-                    msj += "\n palabra: " + dictionary.listPresort().get(j).getWord() + "\n" +
-                            "significado: " + dictionary.listPresort().get(j).getMeaning() + "\n" +
-                            "traduccion: " + dictionary.listPresort().get(j).getTranslation() + "\n";
+    public String showAllWords() {
+        String message = "";
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null && !array[i].isEmpty()) {
+                char letter = (char) (i + 65);
+                message = message + "\nLetra: " + letter + "\n";
+                for (int j = 0; j < array[i].listPresort().size(); j++) {
+                    message = message + "\n Palabra: " + array[i].listPresort().get(j).getWord() + "\n"
+                            + "Significado: " + array[i].listPresort().get(j).getMeaning() + "\n"
+                            + "Traducción: " + array[i].listPresort().get(j).getTranslation() + "\n";
                 }
             }
         }
-        if (!msj.isEmpty()) {
-            return msj;
-        }else {
-            return "no existe Ninguna palabra en el diccionario";
+        if (!message.isEmpty()) {
+            return message;
+        } else {
+            return "No existe ninguna palabra en el diccionario";
         }
     }
 
@@ -111,13 +107,11 @@ public class Controller {
                     "traduccion : "+dictionary.findNodo(new Dictionary(word,null,null)).getInfo().getTranslation() +"\n";
     }
 
-    private BinaryTree<Dictionary> searchWord(int key){
-        BinaryTree<Dictionary> dictionary = hash.get(key);
-        if (dictionary == null){
-            hash.put(key,new BinaryTree<>(Comparator.comparing(Dictionary::getWord)));
-            dictionary = hash.get(key);
+    private BinaryTree<Dictionary> searchWord(int index) {
+        if (array[index] == null) {
+            array[index] = new BinaryTree<>(Comparator.comparing(Dictionary::getWord));
         }
-        return dictionary;
+        return array[index];
     }
 
     private Boolean repeatWord(BinaryTree<Dictionary> dictionary, String word){
@@ -138,6 +132,6 @@ public class Controller {
     }
 
     private int firstLetterInAscii(String word){
-        return word.charAt(0);
+        return word.charAt(0)-65;
     }
 }

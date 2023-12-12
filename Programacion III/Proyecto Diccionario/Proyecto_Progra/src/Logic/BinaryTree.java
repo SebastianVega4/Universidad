@@ -19,16 +19,16 @@ public class BinaryTree<T> {
         if (isEmpty()) {
             root = newNode;
         } else {
-            TreeNode<T> aux = root;
-            TreeNode<T> ant = null;
-            while (aux != null) {
-                ant = aux;
-                aux = comparator.compare(info, aux.getInfo()) < 0 ? aux.getLeft() : aux.getRight();
+            TreeNode<T> actually = root;
+            TreeNode<T> previous = null;
+            while (actually != null) {
+                previous = actually;
+                actually = comparator.compare(info, actually.getInfo()) < 0 ? actually.getLeft() : actually.getRight();
             }
-            if (comparator.compare(info, ant.getInfo()) < 0) {
-                ant.setLeft(newNode);
+            if (comparator.compare(info, previous.getInfo()) < 0) {
+                previous.setLeft(newNode);
             } else {
-                ant.setRight(newNode);
+                previous.setRight(newNode);
             }
         }
     }

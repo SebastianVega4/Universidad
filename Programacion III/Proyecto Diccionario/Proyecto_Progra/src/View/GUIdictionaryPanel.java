@@ -215,7 +215,7 @@ public class GUIdictionaryPanel {
                     if (word.length() != 1) {
                         JOptionPane.showMessageDialog(null, "Digite solo un caracter");
                     } else {
-                        jtxaLista.append("\nletra : "+ guIdictionary.getControl().firstLetterWithMayus(word) +"\n"+guIdictionary.getControl().showForLatter(word));
+                        jtxaLista.append("\nletra : "+ guIdictionary.getControl().firstLetterWithMayus(word) +"\n"+guIdictionary.getControl().showForLetter(word));
                     }
                 }
                 case 2 -> {
