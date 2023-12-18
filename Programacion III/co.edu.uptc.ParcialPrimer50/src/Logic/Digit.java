@@ -8,7 +8,7 @@ public class Digit {
         this.digit = digit;
     }
 
-    public int getdigit() {
+    public int getDigit() {
         return digit;
     }
 

@@ -43,11 +43,11 @@ public class ListCircled {
 
     public Node findNode( int node ){
         Node aux = head;
-        if (node==head.getInfo().getdigit()){
+        if (node==head.getInfo().getDigit()){
             return head;
         }
         do{
-            if( node==aux.getNext().getInfo().getdigit()){
+            if( node==aux.getNext().getInfo().getDigit()){
                 return aux.getNext();
             }
             aux = aux.getNext();
@@ -81,7 +81,7 @@ public class ListCircled {
         Node aux = head;
         Node aux2 ;
         do{
-            aux= jumping(aux,aux.getInfo().getdigit());
+            aux= jumping(aux,aux.getInfo().getDigit());
 
         }while( aux.getInfo().isVisited() != true );
         return false;
