@@ -6,9 +6,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+/**
+ * Clase GUIdictionaryPanel que se encarga del modelado del panel para la vista del usuario
+ * @author Sebastian Vega y Luisa Merchan
+ */
 public class GUIdictionaryPanel {
+    /**
+     * Atributo de la clase GuidictionaryPanel que representa un objeto de la clase JPanel para utilizar sus componentes
+     */
     private final JPanel panel;
 
+    /**
+     * Constructor de la clase GUidictionaryPanel parametrizada con un objeto de la clase GUidictionary, que se encarga de inicializar los
+     * componentes que se añadiran al panel principal de la Interfaz del usuario, como cuadros de texto, Etiquetas, botones, titulos...
+     * @param guIdictionary Este parametro representa el objeto de la clase GUIdictionary
+     */
     public GUIdictionaryPanel(GUIdictionary guIdictionary) {
         panel = new JPanel(new BorderLayout()) {
             @Override
@@ -120,6 +132,9 @@ public class GUIdictionaryPanel {
         panel.add(topPanel, BorderLayout.NORTH);
         panel.add(centerPanel, BorderLayout.CENTER);
         panel.add(buttomPanel, BorderLayout.SOUTH);
+        /**
+         * Funcion que se encarga de que el botón Agregar, añada correctamente las palabras al árbol binario
+         */
 
 
         addButton.addActionListener(new ActionListener() {
@@ -140,6 +155,10 @@ public class GUIdictionaryPanel {
                 }
             }
         });
+        /**
+         * Función que da instructucciones al botón de modificar para hacer un cambio en una palabra, segun los parametros que se establecen
+         * en la clase de controller
+         */
         modificButton.addActionListener(new ActionListener() {
             int cont=0;
             @Override
@@ -184,6 +203,10 @@ public class GUIdictionaryPanel {
                 jtxaLista.append(guIdictionary.getControl().showAllWords());
             }
         });
+        /**
+         * Función que perimite la elimiinacion de alguna palbra que haya sido digitada en el campo de texto
+         * al oprimir el botón de eliminar
+         */
 
         deleteButton.addActionListener(e -> {
             String word = JOptionPane.showInputDialog("Digite la palabra que desea eliminar");
@@ -200,8 +223,15 @@ public class GUIdictionaryPanel {
             jtxaLista.setText("");
             jtxaLista.append(guIdictionary.getControl().showAllWords());
         });
+        /**
+         * Función que permite al usuario salir del programa si es su desición
+         */
 
         exitButton.addActionListener(e -> System.exit(0));
+        /**
+         * Funcion que perimite al usuario consultar una palabra dentro del arbol binario al digita la palabra y oprimir
+         * el boton de consultar
+         */
 
         consultButton.addActionListener(e -> {
             int a = JOptionPane.showOptionDialog(null, "Eligue la opcion que desea", "Atencion",
@@ -229,6 +259,11 @@ public class GUIdictionaryPanel {
             }
         });
     }
+
+    /**
+     * método de tipo JPanel que obtiene el panel creado
+     * @return panel retorna el panel creado
+     */
 
     public JPanel getPanel() {
         return panel;

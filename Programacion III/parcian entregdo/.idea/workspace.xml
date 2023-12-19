@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="535d8d1e-c7e7-4bf0-8a83-a7c2ffacdf8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/Test/ListCircledTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/Logic/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/Logic/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/Logic/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/Logic/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/Logic/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/Logic/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/Model/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/Model/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/View/GUIdictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/View/GUIdictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/View/GUIdictionaryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Proyecto Diccionario/Proyecto_Progra/src/View/GUIdictionaryPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/co.edu.uptc.ParcialPrimer50.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/co.edu.uptc.ParcialPrimer50.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/src/Logic/Digit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/src/Logic/Digit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/src/Logic/ListCircled.java" beforeDir="false" afterPath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/src/Logic/ListCircled.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../co.edu.uptc.ParcialPrimer50/src/Main/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2Zjo0zJNpIpKM5XwNKmf0U2HDRT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/A372144/Downloads/Git/Universidad/Programacion III/parcian entregdo/co.edu.uptc.ParcialPrimer50/co.edu.uptc.ParcialPrimer50",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="535d8d1e-c7e7-4bf0-8a83-a7c2ffacdf8c" name="Changes" comment="" />
+      <created>1702944632913</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702944632913</updated>
+      <workItem from="1702944634262" duration="83000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
