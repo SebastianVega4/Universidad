@@ -20,8 +20,13 @@ public class ListCircled {
             head.setNext(head);
         } else {
             Node nodeNew = new Node(digit);
+            Node aux=head;
             nodeNew.setNext(head);
+            while(aux.getNext()!=head){
+                aux=aux.getNext();
+            }
             head=nodeNew;
+            aux.setNext(nodeNew);
         }
     }
 
@@ -58,43 +63,41 @@ public class ListCircled {
     public List<Digit> getLinked(){
         ArrayList<Digit> list = new ArrayList<>();
         Node aux = head;
-        Node aux2 ;
         do{
-            list.add( aux.getNext().getInfo());
-            aux2 = aux;
+            list.add( aux.getInfo());
             aux = aux.getNext();
         }while( aux != head );
         return list;
     }
 
-    public Node jumping(Node nd,int v){
-        Node aux=nd;
-        for (int i = 1; i < v ; i++) {
+    public Node jumping(Node aux,int v){
+        for (int i = 0; i < v ; i++) {
             aux.getInfo().setVisited(true);
-            aux= nd.getNext();
+            aux= aux.getNext();
         }
         return aux;
     }
 
     public boolean isJumping(){
-        ArrayList<Digit> list = new ArrayList<>();
         Node aux = head;
-        Node aux2 ;
         do{
             aux= jumping(aux,aux.getInfo().getDigit());
-
-        }while( aux.getInfo().isVisited() != true );
-        return false;
+        }while(!aux.getInfo().isVisited() && aux != head && !aux.getNext().getInfo().isVisited());
+        return aux != head;
     }
 
-    private boolean isAllVisted(){
+    private boolean isAllVisited(){
         ArrayList<Digit> list = new ArrayList<>();
         Node aux = head;
-        Node aux2 ;
         do{
-            list.add( aux.getNext().getInfo());
+            list.add(aux.getInfo());
             aux = aux.getNext();
-        }while( aux != head );
-        return false;
+        }while(aux != head);
+        for (Digit digit : list) {
+            if (!digit.isVisited()) {
+                return false;
+            }
+        }
+        return true;
     }
 }
