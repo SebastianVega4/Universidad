@@ -1,7 +1,7 @@
 package Logic;
 
 public class Digit {
-    private final int digit;
+    private int digit;
     private boolean visited;
 
     public Digit (int digit) {

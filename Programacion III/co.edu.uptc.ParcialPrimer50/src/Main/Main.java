@@ -5,21 +5,18 @@ import Logic.ListCircled;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("prueba 1");
         ListCircled list = new ListCircled();
-        System.out.println("prueba 2");
         list.addNodeFirst( new Digit(2));
         list.addNodeFirst( new Digit(3));
-        System.out.println("prueba 3");
         list.addNodeLast( new Digit(6));
-        System.out.println("prueba 4");
         list.addNodeLast( new Digit(1));
         list.addNodeFirst( new Digit(5));
         list.addNodeFirst( new Digit(9));
         list.addNodeLast( new Digit(9));
+
         System.out.println(list.findNode(9).getInfo().getDigit());
         System.out.println(list.getLinked().get(0).getDigit());
-        System.out.println("prueba 5");
+
         list.jumping(list.findNode(5),1).getInfo().getDigit();
         System.out.println(list.jumping(list.findNode(9),4).getInfo().getDigit());
         list.jumping(list.findNode(3),10).getInfo().getDigit();
