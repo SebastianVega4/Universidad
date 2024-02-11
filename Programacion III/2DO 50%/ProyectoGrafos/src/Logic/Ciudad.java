@@ -1,15 +1,12 @@
 package Logic;
 
-// Clase que representa una ciudad en el grafo
-
 import java.util.HashMap;
 import java.util.Map;
 
-// Clase que representa una ciudad en el grafo
 class Ciudad {
     private final String nombre;
     private final Map<Ciudad, Double> conexiones = new HashMap<>();
-    private boolean visitado = false;
+    private double distanciaDesdeOrigen = Double.POSITIVE_INFINITY;
     private Ciudad predecesor;
 
     public Ciudad(String nombre) {
@@ -28,12 +25,12 @@ class Ciudad {
         return conexiones;
     }
 
-    public boolean isVisitado() {
-        return visitado;
+    public double getDistanciaDesdeOrigen() {
+        return distanciaDesdeOrigen;
     }
 
-    public void setVisitado(boolean visitado) {
-        this.visitado = visitado;
+    public void setDistanciaDesdeOrigen(double distancia) {
+        this.distanciaDesdeOrigen = distancia;
     }
 
     public Ciudad getPredecesor() {
@@ -43,6 +40,4 @@ class Ciudad {
     public void setPredecesor(Ciudad predecesor) {
         this.predecesor = predecesor;
     }
-
-    // Otros métodos y getters/setters...
 }
