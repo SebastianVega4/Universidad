@@ -37,7 +37,9 @@ class PanelPrincipal extends JPanel {
                 String destino = campoDestino.getText();
 
                 String trayecto = grafo.encontrarTrayectoCorto(origen, destino);
-
+                System.out.println(grafo);
+                System.out.println(origen);
+                System.out.println(destino);
                 // Mostrar el resultado en la interfaz gráfica
                 System.out.println(trayecto);
             }

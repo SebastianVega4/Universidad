@@ -1,7 +1,6 @@
 package Logic;
 
 import com.google.common.collect.Maps;
-import com.google.common.collect.PriorityQueues;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -27,9 +26,10 @@ public class Grafo {
         distancias.put(ciudades.get(origen), 0.0);
 
         // Crear una cola de prioridad para ordenar las ciudades por distancia
-        PriorityQueue<Ciudad> ciudadesPorVisitar = PriorityQueues.newPriorityQueue(
+        PriorityQueue<Ciudad> ciudadesPorVisitar = new PriorityQueue<>(
                 Comparator.comparing(distancias::get)
         );
+
         ciudadesPorVisitar.add(ciudades.get(origen));
 
         // Mientras haya ciudades sin visitar

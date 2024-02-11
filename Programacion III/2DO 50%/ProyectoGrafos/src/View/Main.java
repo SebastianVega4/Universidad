@@ -14,17 +14,17 @@ public class Main {
 
             Grafo grafo = new Grafo();
 // Agregar ciudades y distancias aquí, por ejemplo:
-// grafo.agregarCiudad("Bogotá", "Medellín", 300);
-            grafo.agregarCiudad("Bogotá", "Medellín", 300);
-            grafo.agregarCiudad("Bogotá", "Cali", 400);
-            grafo.agregarCiudad("Medellín", "Cartagena", 500);
+            grafo.agregarCiudad("Bogota", "Medellin", 300);
+            grafo.agregarCiudad("Bogota", "Cali", 400);
+            grafo.agregarCiudad("Medellin", "Cartagena", 500);
             grafo.agregarCiudad("Cali", "Barranquilla", 600);
 
-            String trayecto = grafo.encontrarTrayectoCorto("Bogotá", "Cartagena");
-            System.out.println(trayecto); // Imprime "Bogotá -> Medellín -> Cartagena"
+            String trayecto = grafo.encontrarTrayectoCorto("Bogota", "Cartagena");
+            System.out.println(trayecto); // "Bogota -> Medellin -> Cartagena"
+            System.out.println(grafo);
 
 
-            PanelPrincipal panel = new PanelPrincipal(grafo);
+            PanelPrincipal panel = new PanelPrincipal(grafo);System.out.println(grafo);
             frame.getContentPane().add(panel);
 
             frame.pack();
