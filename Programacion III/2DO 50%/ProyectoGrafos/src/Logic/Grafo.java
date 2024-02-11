@@ -64,4 +64,8 @@ public class Grafo {
         Collections.reverse(ruta);
         return String.join(" -> ", ruta);
     }
+
+    public List<String> obtenerNombresCiudades() {
+        return new ArrayList<>(ciudades.keySet());
+    }
 }

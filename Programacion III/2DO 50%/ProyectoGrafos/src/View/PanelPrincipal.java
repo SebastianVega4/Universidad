@@ -6,37 +6,45 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
-class PanelPrincipal extends JPanel {
+public class PanelPrincipal extends JPanel {
     private final Grafo grafo;
-    private final JTextField campoOrigen;
-    private final JTextField campoDestino;
+    private final JComboBox<String> listaOrigen;
+    private final JComboBox<String> listaDestino;
     private final JButton botonBuscar;
+    private final JTextArea areaRutas;
 
     public PanelPrincipal(Grafo grafo) {
         this.grafo = grafo;
 
-        setLayout(new GridLayout(3, 2));
+        setLayout(new GridLayout(4, 2));
 
         add(new JLabel("Ciudad de Origen:"));
-        campoOrigen = new JTextField();
-        add(campoOrigen);
+        List<String> nombresCiudades = grafo.obtenerNombresCiudades();
+        listaOrigen = new JComboBox<>(nombresCiudades.toArray(new String[0]));
+        add(listaOrigen);
 
         add(new JLabel("Ciudad de Destino:"));
-        campoDestino = new JTextField();
-        add(campoDestino);
+        listaDestino = new JComboBox<>(nombresCiudades.toArray(new String[0]));
+        add(listaDestino);
 
         botonBuscar = new JButton("Buscar Trayecto");
         botonBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String origen = campoOrigen.getText();
-                String destino = campoDestino.getText();
+                String origen = (String) listaOrigen.getSelectedItem();
+                String destino = (String) listaDestino.getSelectedItem();
 
                 String trayecto = grafo.encontrarTrayectoCorto(origen, destino);
-                System.out.println(trayecto); // Mostrar el resultado en la consola
+                areaRutas.setText(trayecto);
             }
         });
         add(botonBuscar);
+
+        areaRutas = new JTextArea(10, 20);
+        areaRutas.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(areaRutas);
+        add(scrollPane);
     }
 }

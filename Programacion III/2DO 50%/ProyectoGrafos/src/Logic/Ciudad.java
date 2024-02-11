@@ -3,7 +3,7 @@ package Logic;
 import java.util.HashMap;
 import java.util.Map;
 
-class Ciudad {
+public class Ciudad {
     private final String nombre;
     private final Map<Ciudad, Double> conexiones = new HashMap<>();
     private double distanciaDesdeOrigen = Double.POSITIVE_INFINITY;
