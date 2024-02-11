@@ -40,4 +40,8 @@ public class Ciudad {
     public void setPredecesor(Ciudad predecesor) {
         this.predecesor = predecesor;
     }
+
+    public double getDistanciaHacia(Ciudad otraCiudad) {
+        return conexiones.get(otraCiudad);
+    }
 }

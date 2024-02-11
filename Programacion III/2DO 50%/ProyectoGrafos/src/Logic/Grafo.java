@@ -12,7 +12,7 @@ public class Grafo {
         ciudadDestino.conectarCon(ciudadOrigen, distancia); // Permite ir de un lado a otro
     }
 
-    public String encontrarTrayectoCorto(String origen, String destino) {
+    public String encontrarTrayectoMasCorto(String origen, String destino) {
         Ciudad ciudadOrigen = ciudades.get(origen);
         if (ciudadOrigen == null) {
             return "La ciudad de origen no existe en el grafo.";
@@ -67,5 +67,24 @@ public class Grafo {
 
     public List<String> obtenerNombresCiudades() {
         return new ArrayList<>(ciudades.keySet());
+    }
+
+    public Ciudad obtenerCiudad(String nombreCiudad) {
+        return ciudades.get(nombreCiudad);
+    }
+
+    public double calcularDistanciaTotal(String trayecto) {
+        String[] ciudades = trayecto.split(" -> ");
+        double distanciaTotal = 0;
+        for (int i = 0; i < ciudades.length - 1; i++) {
+            Ciudad ciudadActual = obtenerCiudad(ciudades[i]);
+            Ciudad ciudadSiguiente = obtenerCiudad(ciudades[i + 1]);
+            distanciaTotal += ciudadActual.getDistanciaHacia(ciudadSiguiente);
+        }
+        return distanciaTotal;
+    }
+    public double calcularTiempoEstimado(String trayecto, double velocidadPromedio) {
+        double distanciaTotal = calcularDistanciaTotal(trayecto);
+        return distanciaTotal / velocidadPromedio;
     }
 }
