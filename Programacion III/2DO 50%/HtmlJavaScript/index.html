@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <title>Progra III</title>
+
+</head>
+<script>
+    /*
+    var age = prompt("Edad")
+    age += 10
+    console.log(typeof age)
+    var name = prompt("Nombre")
+    //document.write(`<p style="color:red"> hola ${name} ${age} años</p>`)
+    alert(`hola ${name} ${age} años`)*/
+    /*function test(){
+        age =235;
+        var name = "pedro";
+        if (age>= 18){
+            let state = "Mayor";
+            console.log(state)
+        }
+    }
+    function begin(){
+        console.log(`age en otra funcion =${age}`)
+    }
+    test()
+    begin()
+    console.log(age)
+
+    const vector = [234,342.5,"Juan",false,{id:3252,city:"Sogamoso"}]
+    for (var index =0; index<vector.length;index++){
+        console.log(`vector[${index}]=${vector[index]}`)
+    }
+    console.log("_________________________________________________")
+    for (item of vector){
+        console.log(item)
+    }
+    vector.forEach(item=>console.log(`Item=${item}`))
+
+    const names = names // falta completar esta linea
+
+    names.push("Lola")
+    names.push("Pedro")
+    names.push("Sebas")
+    names.push("Julian")
+    names.push("Pato")
+    const student = [
+        {"id":123,"name":"Juan","age":23,"gender":true},
+        {"id":456,"name":"Pedro","age":24,"gender":true},
+        {"id":789,"name":"Sebas","age":35,"gender":true},
+        {"id":12,"name":"Camilo","age":26,"gender":true},
+    ]
+
+    student.forEach(student=>{
+        console.log(`_____________________`)
+        console.log(student.id)
+        console.log(student.name)
+        console.log(student.age)
+        console.log(student.gender)
+    })
+*/
+    const map = new Map()
+    map.set(10,"Sogamoso")
+    map.set(11,"Duitama")
+    map.set(12,"Bogota")
+    map.set(13,"Tibasosa")
+    map.set(14,"Nobsa")
+    map.set(15,"Corrales")
+    console.log(map)
+
+    if(map.has(10)){
+        console.log(map.get(10))
+    }
+
+    map.forEach(item => console.log(item))
+
+    for ([key,value] of map){
+        console.log(`${key}---->${value}`)
+    }
+
+    const numbers = [54,11,67,54,75,34,65,23,76,97,9,12,43,54,87]
+
+    console.log(numbers.map(n=> n* 2).sort((x,y)=> x-y))
+
+
+
+</script>
+<body>
+</body>
+</html>
