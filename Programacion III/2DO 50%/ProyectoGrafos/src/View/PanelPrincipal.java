@@ -85,8 +85,11 @@ public class PanelPrincipal extends JPanel {
             areaRutas.setText(trayecto);
         } else {
             double distanciaTotal = grafo.calcularDistanciaTotal(trayecto);
-            double tiempoEstimado = grafo.calcularTiempoEstimado(trayecto, 60);
-            String informacionTrayecto = "Ruta más corta: " + trayecto + "\nDistancia total: " + distanciaTotal + " km\nTiempo estimado: " + tiempoEstimado + " horas";
+            int tiempoEstimadoHoras = (int) grafo.calcularTiempoEstimado(trayecto, 70); // Velocidad promedio de 60 km/h
+            int tiempoEstimadoMinutos = (int) ((grafo.calcularTiempoEstimado(trayecto, 70) * 60) % 60); // Obtener los minutos restantes
+            String informacionTrayecto = "Ruta más corta: " + trayecto +
+                    "\nDistancia total: " + distanciaTotal + " km" +
+                    "\nTiempo estimado: " + tiempoEstimadoHoras + " Horas " + tiempoEstimadoMinutos + " Minutos";
             areaRutas.setText(informacionTrayecto);
         }
     }
