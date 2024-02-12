@@ -66,10 +66,6 @@ public class Main {
             grafo.agregarCiudad("Socota", "Guateque", 30);
             grafo.agregarCiudad("Guateque", "Sachica", 20);
 
-
-
-
-
             PanelPrincipal panel = new PanelPrincipal(grafo);
             frame.getContentPane().add(panel);
 

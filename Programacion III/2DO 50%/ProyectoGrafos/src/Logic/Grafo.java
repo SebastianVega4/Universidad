@@ -6,8 +6,8 @@ public class Grafo {
     private final Map<String, Ciudad> ciudades = new HashMap<>();
 
     public void agregarCiudad(String origen, String destino, double distancia) {
-        Ciudad ciudadOrigen = ciudades.computeIfAbsent(origen, Ciudad::new);
-        Ciudad ciudadDestino = ciudades.computeIfAbsent(destino, Ciudad::new);
+        Ciudad ciudadOrigen = ciudades.computeIfAbsent(origen, Ciudad::new);//verifica si key ya existe Si no existe ->(Ciudad::new)
+        Ciudad ciudadDestino = ciudades.computeIfAbsent(destino, Ciudad::new);//crea una nueva instancia de Ciudad si key existe
         ciudadOrigen.conectarCon(ciudadDestino, distancia);
         ciudadDestino.conectarCon(ciudadOrigen, distancia); // Permite ir de un lado a otro
     }
@@ -25,12 +25,14 @@ public class Grafo {
 
         ciudadOrigen.setDistanciaDesdeOrigen(0);
 
+        //ordena aotometicente y le da priosidad a la distancia mas corta
         PriorityQueue<Ciudad> ciudadesPorVisitar = new PriorityQueue<>(Comparator.comparing(Ciudad::getDistanciaDesdeOrigen));
         ciudadesPorVisitar.add(ciudadOrigen);
 
         while (!ciudadesPorVisitar.isEmpty()) {
-            Ciudad ciudadActual = ciudadesPorVisitar.poll();
+            Ciudad ciudadActual = ciudadesPorVisitar.poll();//alimina de la cola el elimento de mayor prioridad luego de asignarlo
 
+            //.entrySet() devuleve ambas partes
             for (Map.Entry<Ciudad, Double> conexion : ciudadActual.getConexiones().entrySet()) {
                 Ciudad ciudadVecina = conexion.getKey();
                 double distanciaTotal = ciudadActual.getDistanciaDesdeOrigen() + conexion.getValue();
@@ -47,20 +49,18 @@ public class Grafo {
         if (ciudadDestino == null || ciudadDestino.getDistanciaDesdeOrigen() == Double.POSITIVE_INFINITY) {
             return "No se encontró una ruta entre las ciudades ingresadas.";
         }
-
         return obtenerRuta(origen, destino);
     }
 
     private String obtenerRuta(String origen, String destino) {
-        Ciudad ciudadActual = ciudades.get(destino);
+        Ciudad ciudadActualD = ciudades.get(destino);
         List<String> ruta = new ArrayList<>();
         ruta.add(destino);
 
-        while (!ciudadActual.getNombre().equals(origen)) {
-            ciudadActual = ciudadActual.getPredecesor();
-            ruta.add(ciudadActual.getNombre());
+        while (!ciudadActualD.getNombre().equals(origen)) {
+            ciudadActualD = ciudadActualD.getPredecesor();
+            ruta.add(ciudadActualD.getNombre());
         }
-
         Collections.reverse(ruta);
         return String.join(" -> ", ruta);
     }
