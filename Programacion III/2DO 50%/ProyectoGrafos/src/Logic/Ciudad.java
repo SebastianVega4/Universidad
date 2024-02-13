@@ -1,13 +1,14 @@
 package Logic;
 
-import java.util.HashMap;
+import com.google.common.collect.Maps;
+
 import java.util.Map;
 
 public class Ciudad {
+
     private final String nombre;
-    private final Map<Ciudad, Double> conexiones = new HashMap<>();
+    private final Map<Ciudad, Double> conexiones = Maps.newHashMap();
     private double distanciaDesdeOrigen = Double.POSITIVE_INFINITY;
-    //Double.POSITIVE_INFINITY se utiliza para desde un nodo de origen a un nodo determinado en el grafo
     private Ciudad predecesor;
 
     public Ciudad(String nombre) {
@@ -45,4 +46,5 @@ public class Ciudad {
     public double getDistanciaHacia(Ciudad otraCiudad) {
         return conexiones.get(otraCiudad);
     }
+
 }
