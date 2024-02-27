@@ -35,5 +35,6 @@
     </orderEntry>
     <orderEntry type="library" name="guava-33.0.0-jre" level="project" />
     <orderEntry type="library" name="guava-31.0.1-jre" level="project" />
+    <orderEntry type="library" name="guava-33.0.0-jre (2)" level="project" />
   </component>
 </module>
