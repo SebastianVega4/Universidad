@@ -1,8 +1,12 @@
 package Logic;
-
 import com.google.common.collect.Maps;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class Grafo {
 
@@ -15,10 +19,14 @@ public class Grafo {
         ciudadDestino.conectarCon(ciudadOrigen, distancia); // Permite ir de un lado a otro
     }
 
-    public String encontrarTrayectoMasCorto(String origen, String destino) {
-        Ciudad ciudadOrigen = ciudades.get(origen);
-        if (ciudadOrigen == null) {
-            return "La ciudad de origen no existe en el grafo.";
+    public String encontrarTrayectoMasCorto(List<String> ciudadesIntermedias) {
+        List<String> ciudadesTotales = new ArrayList<>(ciudadesIntermedias);
+
+        // Verifica si las ciudades intermedias son válidas
+        for (String ciudad : ciudadesTotales) {
+            if (!ciudades.containsKey(ciudad)) {
+                return "La ciudad '" + ciudad + "' no existe en el grafo.";
+            }
         }
 
         for (Ciudad ciudad : ciudades.values()) {
@@ -26,9 +34,11 @@ public class Grafo {
             ciudad.setPredecesor(null);
         }
 
+        // Establece la distancia desde el origen a 0
+        Ciudad ciudadOrigen = ciudades.get(ciudadesTotales.get(0));
         ciudadOrigen.setDistanciaDesdeOrigen(0);
 
-        // Ordena automáticamente y le da prioridad a la distancia más corta
+        // Crea la cola de prioridad para ordenar las ciudades por distancia
         PriorityQueue<Ciudad> ciudadesPorVisitar = new PriorityQueue<>(Comparator.comparing(Ciudad::getDistanciaDesdeOrigen));
         ciudadesPorVisitar.add(ciudadOrigen);
 
@@ -47,22 +57,28 @@ public class Grafo {
             }
         }
 
-        Ciudad ciudadDestino = ciudades.get(destino);
+        Ciudad ciudadDestino = ciudades.get(ciudadesTotales.get(ciudadesTotales.size() - 1));
         if (ciudadDestino == null || ciudadDestino.getDistanciaDesdeOrigen() == Double.POSITIVE_INFINITY) {
             return "No se encontró una ruta entre las ciudades ingresadas.";
         }
 
-        return obtenerRuta(origen, destino);
+        return obtenerRuta(ciudadesTotales);
     }
 
-    private String obtenerRuta(String origen, String destino) {
-        Ciudad ciudadActualD = ciudades.get(destino);
+    private String obtenerRuta(List<String> ciudadesTotales) {
         List<String> ruta = new ArrayList<>();
-        ruta.add(destino);
 
-        while (!ciudadActualD.getNombre().equals(origen)) {
-            ciudadActualD = ciudadActualD.getPredecesor();
-            ruta.add(ciudadActualD.getNombre());
+        for (int i = 0; i < ciudadesTotales.size() - 1; i++) {
+            String origen = ciudadesTotales.get(i);
+            String destino = ciudadesTotales.get(i + 1);
+
+            Ciudad ciudadActualD = ciudades.get(destino);
+            ruta.add(destino);
+
+            while (!ciudadActualD.getNombre().equals(origen)) {
+                ciudadActualD = ciudadActualD.getPredecesor();
+                ruta.add(ciudadActualD.getNombre());
+            }
         }
 
         Collections.reverse(ruta);
@@ -80,11 +96,13 @@ public class Grafo {
     public double calcularDistanciaTotal(String trayecto) {
         String[] ciudades = trayecto.split(" -> ");
         double distanciaTotal = 0;
+
         for (int i = 0; i < ciudades.length - 1; i++) {
             Ciudad ciudadActual = obtenerCiudad(ciudades[i]);
             Ciudad ciudadSiguiente = obtenerCiudad(ciudades[i + 1]);
             distanciaTotal += ciudadActual.getDistanciaHacia(ciudadSiguiente);
         }
+
         return distanciaTotal;
     }
 

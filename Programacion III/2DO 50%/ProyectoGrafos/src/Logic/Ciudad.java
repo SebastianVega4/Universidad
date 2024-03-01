@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 
 import java.util.Map;
 
+
 public class Ciudad {
 
     private final String nombre;
@@ -46,5 +47,4 @@ public class Ciudad {
     public double getDistanciaHacia(Ciudad otraCiudad) {
         return conexiones.get(otraCiudad);
     }
-
 }
