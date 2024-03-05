@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Insertar Libro</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Insertar Libro</h1>
+    <form id="bookForm">
+        <div class="form-group">
+            <label for="id">ID:</label>
+            <input class="form-control" id="id" name="id" required type="number">
+        </div>
+        <div class="form-group">
+            <label for="title">Titulo:</label>
+            <input class="form-control" id="title" name="title" required type="text">
+        </div>
+        <div class="form-group">
+            <label for="author">Autor:</label>
+            <input class="form-control" id="author" name="author" required type="text">
+        </div>
+        <div class="form-group">
+            <label for="pages">Número de Páginas:</label>
+            <input class="form-control" id="pages" name="pages" required type="number">
+        </div>
+        <button class="btn btn-primary" onclick="submitForm()" type="button">Enviar</button>
+    </form>
+    <!-- Tabla para mostrar libros -->
+    <table class="table mt-3">
+        <!-- Cabecera de la tabla -->
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Páginas</th>
+        </tr>
+        </thead>
+        <!-- Cuerpo de la tabla -->
+        <tbody id="bookTableBody">
+        <!-- Aquí se mostrarán los libros -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function submitForm() {
+        var formData = new FormData(document.getElementById("bookForm"));
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "BookServlet", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // Actualizar la tabla con la respuesta del servidor
+                    updateTable(JSON.parse(xhr.responseText));
+                } else {
+                    console.error("Error en la solicitud AJAX");
+                }
+            }
+        };
+
+        xhr.send(formData);
+    }
+
+    function updateTable(books) {
+        var tableBody = document.getElementById("bookTableBody");
+        tableBody.innerHTML = "";
+
+        for (var i = 0; i < books.length; i++) {
+            var row = tableBody.insertRow(i);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+
+            cell1.innerHTML = books[i].id;
+            cell2.innerHTML = books[i].title;
+            cell3.innerHTML = books[i].author;
+            cell4.innerHTML = books[i].pages;
+        }
+    }
+</script>
+</body>
+</html>
