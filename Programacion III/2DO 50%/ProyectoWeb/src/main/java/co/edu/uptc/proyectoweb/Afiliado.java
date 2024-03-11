@@ -3,72 +3,69 @@ package co.edu.uptc.proyectoweb;
 import java.util.ArrayList;
 import java.util.List;
 
-    public class Afiliado {
-        private String id;
-        private String nombre;
-        private String apellido;
-        private List<Disciplina> disciplinas;
-        private List<Evento> eventos;
+public class Afiliado {
+    private int id;
+    private String nombre;
+    private String apellido;
+    private Disciplina disciplina;
+    private List<Evento> eventos;
 
-        public Afiliado() {
-            disciplinas = new ArrayList<>();
-            eventos = new ArrayList<>();
-        }
+    public Afiliado() {
+        eventos = new ArrayList<>();
+    }
 
-        public Afiliado(String id, String nombre, String apellido, List<Disciplina> disciplinas, List<Evento> eventos) {
-            this.id = id;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.disciplinas = disciplinas;
-            this.eventos = eventos;
-        }
+    public Afiliado(int id, String nombre, String apellido, Disciplina disciplina, List<Evento> eventos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.disciplina = disciplina;
+        this.eventos = eventos;
+    }
 
-        public String getId() {
-            return id;
-        }
+    public int getId() {
+        return id;
+    }
 
-        public void setId(String id) {
-            this.id = id;
-        }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        public String getNombre() {
-            return nombre;
-        }
+    public String getNombre() {
+        return nombre;
+    }
 
-        public void setNombre(String nombre) {
-            this.nombre = nombre;
-        }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-        public String getApellido() {
-            return apellido;
-        }
+    public String getApellido() {
+        return apellido;
+    }
 
-        public void setApellido(String apellido) {
-            this.apellido = apellido;
-        }
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
-        public List<Disciplina> getDisciplinas() {
-            return disciplinas;
-        }
+    public List<Evento> getEventos() {
+        return eventos;
+    }
 
-        public void setDisciplinas(List<Disciplina> disciplinas) {
-            this.disciplinas = disciplinas;
-        }
+    public void setEventos(List<Evento> eventos) {
+        this.eventos = eventos;
+    }
 
-        public List<Evento> getEventos() {
-            return eventos;
-        }
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
 
-        public void setEventos(List<Evento> eventos) {
-            this.eventos = eventos;
-        }
-
-        @Override
+    @Override
     public String toString() {
         return "Afiliado{" +
                 "id='" + id + '\'' +
-                "nombre='" + nombre + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
+                ", disciplina=" + disciplina +
+                ", eventos=" + eventos +
                 '}';
     }
 }

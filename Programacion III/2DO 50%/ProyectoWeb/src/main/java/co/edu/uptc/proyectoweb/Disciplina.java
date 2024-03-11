@@ -1,12 +1,23 @@
 package co.edu.uptc.proyectoweb;
 
 public class Disciplina {
+
+    private int id;
     private String nombre;
     private boolean esIndividual;
 
-    public Disciplina(String nombre, boolean esIndividual) {
+    public Disciplina(int id, String nombre, boolean esIndividual) {
+        this.id = id;
         this.nombre = nombre;
         this.esIndividual = esIndividual;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -17,7 +28,7 @@ public class Disciplina {
         this.nombre = nombre;
     }
 
-    public boolean isEsIndividual() {
+    public boolean getEsIndividual() {
         return esIndividual;
     }
 

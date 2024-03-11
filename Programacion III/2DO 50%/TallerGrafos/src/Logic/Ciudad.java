@@ -12,8 +12,8 @@ public class Ciudad {
     private double distanciaDesdeOrigen = Double.POSITIVE_INFINITY;
     private Ciudad predecesor;
 
-    public Ciudad(String nombre) {
-        this.nombre = nombre;
+    public Ciudad(String nomCiu) {
+        nombre = nomCiu;
     }
 
     public void conectarCon(Ciudad ciudad, double distancia) {
