@@ -14,60 +14,69 @@ public class PanelPrincipal extends JPanel {
     private final JButton botonAgregarCiudad;
     private final JButton botonBuscar;
     private final JTextArea areaRutas;
+    private JPanel panelTop, panelCenter, panelBottom;
 
     public PanelPrincipal(Grafo grafo) {
         this.grafo = grafo;
         this.listaCiudadesIntermedias = new ArrayList<>();
 
-        // Layout
-        setLayout(new GridBagLayout());
+        // Crear paneles top, center y bottom
+        panelTop = new JPanel(new GridBagLayout());
+        panelCenter = new JPanel(new GridBagLayout());
+        panelBottom = new JPanel(new GridBagLayout());
+
+        // Añadir paneles al panel principal
+        setLayout(new BorderLayout());
+        add(panelTop, BorderLayout.NORTH);
+        add(panelCenter, BorderLayout.CENTER);
+        add(panelBottom, BorderLayout.SOUTH);
+
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
 
-        // Labels and combo boxes
+        // Labels and combo boxes (en panelTop)
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.LINE_END;
-        add(new JLabel("Ciudad de Origen:"), gbc);
+        panelTop.add(new JLabel("Ciudad de Origen:"), gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.LINE_START;
         List<String> nombresCiudades = grafo.obtenerNombresCiudades();
         JComboBox<String> listaOrigen = new JComboBox<>(nombresCiudades.toArray(new String[0]));
-        add(listaOrigen, gbc);
+        panelTop.add(listaOrigen, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.LINE_END;
-        add(new JLabel("Ciudad de Destino:"), gbc);
+        panelTop.add(new JLabel("Ciudad de Destino:"), gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.LINE_START;
         JComboBox<String> listaDestino = new JComboBox<>(nombresCiudades.toArray(new String[0]));
-        add(listaDestino, gbc);
+        panelTop.add(listaDestino, gbc);
 
-        // Button to add intermediate cities
-        gbc.gridx = 2;
-        gbc.gridy = 1;
-        gbc.anchor = GridBagConstraints.LINE_START;
+        // Button to add intermediate cities (en panelCenter)
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER;
         botonAgregarCiudad = new JButton("Agregar Ciudad");
         botonAgregarCiudad.addActionListener(this::agregarCiudadIntermedia);
-        add(botonAgregarCiudad, gbc);
+        panelCenter.add(botonAgregarCiudad, gbc);
 
-        // Button to search route
-        gbc.gridx = 0;
-        gbc.gridy = 2;
-        gbc.gridwidth = 3;
+        // Button to search route (en panelCenter)
+        gbc.gridx = 1;
+        gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.CENTER;
         botonBuscar = new JButton("Buscar Trayecto");
         botonBuscar.addActionListener(this::buscarTrayecto);
-        add(botonBuscar, gbc);
+        panelCenter.add(botonBuscar, gbc);
 
-        // Text area
+        // Text area (en panelBottom)
         gbc.gridx = 0;
-        gbc.gridy = 3;
+        gbc.gridy = 0;
         gbc.gridwidth = 3;
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
@@ -75,7 +84,7 @@ public class PanelPrincipal extends JPanel {
         areaRutas = new JTextArea(20, 40);
         areaRutas.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(areaRutas);
-        add(scrollPane, gbc);
+        panelBottom.add(scrollPane, gbc);
 
         // Visual enhancements
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -92,14 +101,14 @@ public class PanelPrincipal extends JPanel {
             listaCiudadesIntermedias.add(nuevaLista);
 
             GridBagConstraints gbc = new GridBagConstraints();
-            gbc.gridx = 0;
-            gbc.gridy = listaCiudadesIntermedias.size() + 1;
+            gbc.gridx = 2;
+            gbc.gridy = listaCiudadesIntermedias.size();
             gbc.anchor = GridBagConstraints.LINE_END;
-            add(new JLabel("Ciudad intermedia:"), gbc);
+            panelTop.add(new JLabel("Ciudad intermedia:"), gbc);
 
-            gbc.gridx = 1;
+            gbc.gridx = 3;
             gbc.anchor = GridBagConstraints.LINE_START;
-            add(nuevaLista, gbc);
+            panelTop.add(nuevaLista, gbc);
 
             revalidate();
             repaint();
@@ -109,8 +118,8 @@ public class PanelPrincipal extends JPanel {
     }
 
     private void buscarTrayecto(ActionEvent e) {
-        String origen = (String) ((JComboBox<?>) getComponent(1)).getSelectedItem();
-        String destino = (String) ((JComboBox<?>) getComponent(3)).getSelectedItem();
+        String origen = (String) ((JComboBox<?>) panelTop.getComponent(1)).getSelectedItem();
+        String destino = (String) ((JComboBox<?>) panelTop.getComponent(3)).getSelectedItem();
 
         List<String> ciudadesIntermedias = new ArrayList<>();
         for (JComboBox<String> listaIntermedia : listaCiudadesIntermedias) {

@@ -16,6 +16,7 @@ public class Ciudad {
 
     public void conectarCon(Ciudad ciudad, double distancia) {
         conexiones.put(ciudad, distancia);
+        ciudad.conexiones.put(this, distancia); // Asegúrate de que la conexión sea bidireccional
     }
 
     public String getNombre() {

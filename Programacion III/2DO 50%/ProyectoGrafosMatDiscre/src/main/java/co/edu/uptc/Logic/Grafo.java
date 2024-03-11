@@ -16,7 +16,6 @@ public class Grafo {
         Ciudad ciudadOrigen = ciudades.computeIfAbsent(origen, Ciudad::new);
         Ciudad ciudadDestino = ciudades.computeIfAbsent(destino, Ciudad::new);
         ciudadOrigen.conectarCon(ciudadDestino, distancia);
-        ciudadDestino.conectarCon(ciudadOrigen, distancia); // Permite ir de un lado a otro
     }
 
     public String encontrarTrayectoMasCorto(List<String> ciudadesIntermedias) {
@@ -73,10 +72,20 @@ public class Grafo {
             String destino = ciudadesTotales.get(i + 1);
 
             Ciudad ciudadActualD = ciudades.get(destino);
+
+            if (ciudadActualD == null) {
+                return "No se encontró una ruta entre las ciudades ingresadas.";
+            }
+
             ruta.add(destino);
 
             while (!ciudadActualD.getNombre().equals(origen)) {
                 ciudadActualD = ciudadActualD.getPredecesor();
+
+                if (ciudadActualD == null) {
+                    return "No se encontró una ruta entre las ciudades ingresadas.";
+                }
+
                 ruta.add(ciudadActualD.getNombre());
             }
         }
