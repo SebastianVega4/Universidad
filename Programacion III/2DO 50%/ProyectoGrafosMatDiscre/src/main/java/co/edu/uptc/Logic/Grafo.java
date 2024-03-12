@@ -1,6 +1,8 @@
 package co.edu.uptc.Logic;
 
 import com.google.common.collect.Maps;
+
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -25,22 +27,24 @@ public class Grafo {
         for (int i = 0; i < ciudadesPorVisitar.size() - 1; i++) {
             Ciudad origen = ciudades.get(ciudadesPorVisitar.get(i));
             Ciudad destino = ciudades.get(ciudadesPorVisitar.get(i + 1));
+            // Validar si la ciudad ya está en el trayecto
+            if (trayecto.contains(destino.getNombre())&&destino.getNombre()!=ciudadesAvisitar.getLast()) {
+                JOptionPane.showMessageDialog(null, "La ciudad '" + destino.getNombre() + "' ya está en el trayecto.", "Error", JOptionPane.ERROR_MESSAGE);
+                return "";
+            }
             if (i>0) trayecto.remove(trayecto.getLast());
             trayecto.addAll(encontrarTrayectoMasCorto(origen, destino));
         }
         return String.join(" -> ", trayecto);
     }
     public List<String> encontrarTrayectoMasCorto(Ciudad ciudadOrigen, Ciudad ciudadDestino) {
-
         for (Ciudad ciudad : ciudades.values()) {
             ciudad.setDistanciaDesdeOrigen(Double.POSITIVE_INFINITY);
             ciudad.setPredecesor(null);
         }
 
-        // Establece la distancia desde el origen a 0
         ciudadOrigen.setDistanciaDesdeOrigen(0);
 
-        // Crea la cola de prioridad para ordenar las ciudades por distancia
         PriorityQueue<Ciudad> ciudadesPorVisitar = new PriorityQueue<>(Comparator.comparing(Ciudad::getDistanciaDesdeOrigen));
         ciudadesPorVisitar.add(ciudadOrigen);
 
@@ -59,36 +63,21 @@ public class Grafo {
             }
         }
 
-        if (ciudadDestino == null || ciudadDestino.getDistanciaDesdeOrigen() == Double.POSITIVE_INFINITY) {
+        if (ciudadDestino.getPredecesor() == null) {
             return Collections.singletonList("No se encontró una ruta entre las ciudades ingresadas.");
         }
 
-        return obtenerRuta(ciudadOrigen,ciudadDestino);
+        return obtenerRuta(ciudadDestino);
     }
 
-    private List<String> obtenerRuta(Ciudad ciudadOrigen, Ciudad ciudadDestino) {
+    private List<String> obtenerRuta(Ciudad ciudadDestino) {
         List<String> ruta = new ArrayList<>();
+        Ciudad ciudadActualD = ciudadDestino;
 
-            String origen = ciudadOrigen.getNombre();
-            String destino = ciudadDestino.getNombre();
-
-            Ciudad ciudadActualD = ciudades.get(destino);
-
-            if (ciudadActualD == null) {
-                return Collections.singletonList("No se encontró una ruta entre las ciudades ingresadas.");
-            }
-
-            ruta.add(destino);
-
-            while (!ciudadActualD.getNombre().equals(origen)) {
-                ciudadActualD = ciudadActualD.getPredecesor();
-
-                if (ciudadActualD == null) {
-                    return Collections.singletonList("No se encontró una ruta entre las ciudades ingresadas.");
-                }
-
-                ruta.add(ciudadActualD.getNombre());
-            }
+        while (ciudadActualD != null) {
+            ruta.add(ciudadActualD.getNombre());
+            ciudadActualD = ciudadActualD.getPredecesor();
+        }
 
         Collections.reverse(ruta);
         return ruta;
@@ -109,11 +98,19 @@ public class Grafo {
         for (int i = 0; i < ciudades.length - 1; i++) {
             Ciudad ciudadActual = obtenerCiudad(ciudades[i]);
             Ciudad ciudadSiguiente = obtenerCiudad(ciudades[i + 1]);
+
+            // Validar si la ciudad actual o siguiente es nula
+            if (ciudadActual == null || ciudadSiguiente == null) {
+                JOptionPane.showMessageDialog(null, "Error al calcular la distancia. Verifica las ciudades en el trayecto.", "Error", JOptionPane.ERROR_MESSAGE);
+                return -1; // O cualquier valor que indique un error
+            }
+
             distanciaTotal += ciudadActual.getDistanciaHacia(ciudadSiguiente);
         }
 
         return distanciaTotal;
     }
+
 
     public double calcularTiempoEstimado(String trayecto, double velocidadPromedio) {
         double distanciaTotal = calcularDistanciaTotal(trayecto);
