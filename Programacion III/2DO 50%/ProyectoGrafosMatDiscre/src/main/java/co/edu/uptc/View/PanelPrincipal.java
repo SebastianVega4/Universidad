@@ -142,8 +142,8 @@ public class PanelPrincipal extends JPanel {
             panelTop.revalidate();
             panelTop.repaint();
 
-            listaCiudadesIntermedias.remove(listaCiudadesIntermedias.size() - 1);
-            listaLabelsCiudadesIntermedias.remove(listaLabelsCiudadesIntermedias.size() - 1);
+            listaCiudadesIntermedias.removeLast();
+            listaLabelsCiudadesIntermedias.removeLast();
         } else {
             JOptionPane.showMessageDialog(this, "No hay ciudades intermedias para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
         }

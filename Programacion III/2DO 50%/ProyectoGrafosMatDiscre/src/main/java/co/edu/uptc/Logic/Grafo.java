@@ -60,7 +60,6 @@ public class Grafo {
         if (ciudadDestino.getPredecesor() == null) {
             return Collections.singletonList("No se encontró una ruta entre las ciudades ingresadas.");
         }
-
         return obtenerRuta(ciudadDestino);
     }
 
@@ -72,7 +71,6 @@ public class Grafo {
             ruta.add(ciudadActualD.getNombre());
             ciudadActualD = ciudadActualD.getPredecesor();
         }
-
         Collections.reverse(ruta);
         return ruta;
     }
@@ -98,13 +96,10 @@ public class Grafo {
                 JOptionPane.showMessageDialog(null, "Error al calcular la distancia. Verifica las ciudades en el trayecto.", "Error", JOptionPane.ERROR_MESSAGE);
                 return -1; // O cualquier valor que indique un error
             }
-
             distanciaTotal += ciudadActual.getDistanciaHacia(ciudadSiguiente);
         }
-
         return distanciaTotal;
     }
-
 
     public double calcularTiempoEstimado(String trayecto, double velocidadPromedio) {
         double distanciaTotal = calcularDistanciaTotal(trayecto);
