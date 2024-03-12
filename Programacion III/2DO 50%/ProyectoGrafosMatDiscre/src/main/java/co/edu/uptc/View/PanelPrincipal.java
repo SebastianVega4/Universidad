@@ -19,6 +19,7 @@ public class PanelPrincipal extends JPanel {
     private final JTextArea areaRutas;
     private JPanel panelTop, panelCenter, panelBottom;
     private final JButton botonEliminarCiudad;
+    private JLabel mapa;
 
     public PanelPrincipal(Grafo grafo) {
         this.grafo = grafo;
@@ -27,7 +28,7 @@ public class PanelPrincipal extends JPanel {
 
         // Crear paneles top, center y bottom
         panelTop = new JPanel(new GridBagLayout());
-        panelCenter = new JPanel(new GridBagLayout());
+        panelCenter = new JPanel(new BorderLayout());
         panelBottom = new JPanel(new GridBagLayout());
 
         // Añadir paneles al panel principal
@@ -65,36 +66,31 @@ public class PanelPrincipal extends JPanel {
         panelTop.add(listaDestino, gbc);
 
         // Button to add intermediate cities (en panelCenter)
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.CENTER;
         botonAgregarCiudad = new JButton("Agregar Ciudad");
         botonAgregarCiudad.addActionListener(this::agregarCiudadIntermedia);
-        panelCenter.add(botonAgregarCiudad, gbc);
 
         // New button to remove intermediate cities (en panelCenter)
-        gbc.gridx = 2;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.CENTER;
         botonEliminarCiudad = new JButton("Eliminar Ciudad Intermedia");
         botonEliminarCiudad.addActionListener(this::eliminarCiudadIntermedia);
-        panelCenter.add(botonEliminarCiudad, gbc);
 
         // Button to search route (en panelCenter)
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.anchor = GridBagConstraints.CENTER;
         botonBuscar = new JButton("Buscar Trayecto");
         botonBuscar.addActionListener(this::buscarTrayecto);
-        panelCenter.add(botonBuscar, gbc);
+
+        JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelBotones.add(botonAgregarCiudad);
+        panelBotones.add(botonEliminarCiudad);
+        panelBotones.add(botonBuscar);
+
+        // Load and display map image
+        ImageIcon imageIcon = new ImageIcon("src/main/java/co/edu/uptc/View/map.jpg");
+        Image image = imageIcon.getImage();
+        Image newImage = image.getScaledInstance(800, 600, Image.SCALE_SMOOTH);
+        mapa = new JLabel(new ImageIcon(newImage));
+        panelCenter.add(mapa, BorderLayout.CENTER);
+        panelCenter.add(panelBotones, BorderLayout.SOUTH);
 
         // Text area (en panelBottom)
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.gridwidth = 3;
-        gbc.fill = GridBagConstraints.BOTH;
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
         areaRutas = new JTextArea(20, 40);
         areaRutas.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(areaRutas);
@@ -119,7 +115,7 @@ public class PanelPrincipal extends JPanel {
 
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.gridx = 2;
-            gbc.gridy = listaCiudadesIntermedias.size();
+            gbc.gridy = listaCiudadesIntermedias.size()-1;
             gbc.anchor = GridBagConstraints.LINE_END;
             panelTop.add(nuevaEtiqueta, gbc);
 
