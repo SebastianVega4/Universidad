@@ -132,7 +132,7 @@ public class PanelPrincipal extends JPanel {
         ciudadesIntermedias.add(0, origen);
         ciudadesIntermedias.add(destino);
 
-        String trayecto = grafo.encontrarTrayectoMasCorto(ciudadesIntermedias);
+        String trayecto = grafo.encontralTrayectoTotal(ciudadesIntermedias);
         if (trayecto.startsWith("No se encontró")) {
             areaRutas.setText(trayecto);
         } else {

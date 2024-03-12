@@ -18,15 +18,19 @@ public class Grafo {
         ciudadOrigen.conectarCon(ciudadDestino, distancia);
     }
 
-    public String encontrarTrayectoMasCorto(List<String> ciudadesIntermedias) {
-        List<String> ciudadesTotales = new ArrayList<>(ciudadesIntermedias);
+    public String encontralTrayectoTotal(List<String> ciudadesAvisitar) {
+        List<String> ciudadesPorVisitar = ciudadesAvisitar;
+        List<String> trayecto = new ArrayList<>();
 
-        // Verifica si las ciudades intermedias son válidas
-        for (String ciudad : ciudadesTotales) {
-            if (!ciudades.containsKey(ciudad)) {
-                return "La ciudad '" + ciudad + "' no existe en el grafo.";
-            }
+        for (int i = 0; i < ciudadesPorVisitar.size() - 1; i++) {
+            Ciudad origen = ciudades.get(ciudadesPorVisitar.get(i));
+            Ciudad destino = ciudades.get(ciudadesPorVisitar.get(i + 1));
+            if (i>0) trayecto.remove(trayecto.getLast());
+            trayecto.addAll(encontrarTrayectoMasCorto(origen, destino));
         }
+        return String.join(" -> ", trayecto);
+    }
+    public List<String> encontrarTrayectoMasCorto(Ciudad ciudadOrigen, Ciudad ciudadDestino) {
 
         for (Ciudad ciudad : ciudades.values()) {
             ciudad.setDistanciaDesdeOrigen(Double.POSITIVE_INFINITY);
@@ -34,7 +38,6 @@ public class Grafo {
         }
 
         // Establece la distancia desde el origen a 0
-        Ciudad ciudadOrigen = ciudades.get(ciudadesTotales.get(0));
         ciudadOrigen.setDistanciaDesdeOrigen(0);
 
         // Crea la cola de prioridad para ordenar las ciudades por distancia
@@ -56,25 +59,23 @@ public class Grafo {
             }
         }
 
-        Ciudad ciudadDestino = ciudades.get(ciudadesTotales.get(ciudadesTotales.size() - 1));
         if (ciudadDestino == null || ciudadDestino.getDistanciaDesdeOrigen() == Double.POSITIVE_INFINITY) {
-            return "No se encontró una ruta entre las ciudades ingresadas.";
+            return Collections.singletonList("No se encontró una ruta entre las ciudades ingresadas.");
         }
 
-        return obtenerRuta(ciudadesTotales);
+        return obtenerRuta(ciudadOrigen,ciudadDestino);
     }
 
-    private String obtenerRuta(List<String> ciudadesTotales) {
+    private List<String> obtenerRuta(Ciudad ciudadOrigen, Ciudad ciudadDestino) {
         List<String> ruta = new ArrayList<>();
 
-        for (int i = 0; i < ciudadesTotales.size() - 1; i++) {
-            String origen = ciudadesTotales.get(i);
-            String destino = ciudadesTotales.get(i + 1);
+            String origen = ciudadOrigen.getNombre();
+            String destino = ciudadDestino.getNombre();
 
             Ciudad ciudadActualD = ciudades.get(destino);
 
             if (ciudadActualD == null) {
-                return "No se encontró una ruta entre las ciudades ingresadas.";
+                return Collections.singletonList("No se encontró una ruta entre las ciudades ingresadas.");
             }
 
             ruta.add(destino);
@@ -83,15 +84,14 @@ public class Grafo {
                 ciudadActualD = ciudadActualD.getPredecesor();
 
                 if (ciudadActualD == null) {
-                    return "No se encontró una ruta entre las ciudades ingresadas.";
+                    return Collections.singletonList("No se encontró una ruta entre las ciudades ingresadas.");
                 }
 
                 ruta.add(ciudadActualD.getNombre());
             }
-        }
 
         Collections.reverse(ruta);
-        return String.join(" -> ", ruta);
+        return ruta;
     }
 
     public List<String> obtenerNombresCiudades() {
