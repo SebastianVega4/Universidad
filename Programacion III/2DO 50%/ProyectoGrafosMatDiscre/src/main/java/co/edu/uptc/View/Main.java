@@ -12,15 +12,6 @@ public class Main {
 
             Grafo grafo = new Grafo();
 
-            grafo.agregarCiudad("Medellin", "Cartagena", 500);
-            grafo.agregarCiudad("Cali", "Barranquilla", 600);
-            grafo.agregarCiudad("Bogota", "Medellin", 300);
-            grafo.agregarCiudad("Bogota", "Cali", 400);
-            grafo.agregarCiudad("Bogota", "Tunja", 157);
-            grafo.agregarCiudad("Bogota", "Tunja", 157);
-            grafo.agregarCiudad("Tunja", "Chiquinquira", 45);
-            grafo.agregarCiudad("Tunja", "Sachica", 35);
-            grafo.agregarCiudad("Tunja", "Ibague", 120);
             grafo.agregarCiudad("Paipa", "Tunja", 41);
             grafo.agregarCiudad("Paipa", "Duitama", 25);
             grafo.agregarCiudad("Paipa", "Tuta", 14);
@@ -50,7 +41,6 @@ public class Main {
             grafo.agregarCiudad("Nazareth", "Corrales", 15);
             grafo.agregarCiudad("Mongui", "Morca", 12);
             grafo.agregarCiudad("Mongui", "Topaga", 6);
-
             grafo.agregarCiudad("Iza", "Cuitiva", 10);
             grafo.agregarCiudad("Cuitiva", "Tota", 15);
             grafo.agregarCiudad("Tota", "Aquitania", 12);

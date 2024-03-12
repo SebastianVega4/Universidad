@@ -11,14 +11,17 @@ import java.util.List;
 public class PanelPrincipal extends JPanel {
     private final Grafo grafo;
     private final List<JComboBox<String>> listaCiudadesIntermedias;
+    private final List<JLabel> listaLabelsCiudadesIntermedias;
     private final JButton botonAgregarCiudad;
     private final JButton botonBuscar;
     private final JTextArea areaRutas;
     private JPanel panelTop, panelCenter, panelBottom;
+    private final JButton botonEliminarCiudad;
 
     public PanelPrincipal(Grafo grafo) {
         this.grafo = grafo;
         this.listaCiudadesIntermedias = new ArrayList<>();
+        this.listaLabelsCiudadesIntermedias = new ArrayList<>();
 
         // Crear paneles top, center y bottom
         panelTop = new JPanel(new GridBagLayout());
@@ -66,6 +69,14 @@ public class PanelPrincipal extends JPanel {
         botonAgregarCiudad.addActionListener(this::agregarCiudadIntermedia);
         panelCenter.add(botonAgregarCiudad, gbc);
 
+        // New button to remove intermediate cities (en panelCenter)
+        gbc.gridx = 2;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.CENTER;
+        botonEliminarCiudad = new JButton("Eliminar Ciudad Intermedia");
+        botonEliminarCiudad.addActionListener(this::eliminarCiudadIntermedia);
+        panelCenter.add(botonEliminarCiudad, gbc);
+
         // Button to search route (en panelCenter)
         gbc.gridx = 1;
         gbc.gridy = 0;
@@ -100,11 +111,14 @@ public class PanelPrincipal extends JPanel {
             JComboBox<String> nuevaLista = new JComboBox<>(grafo.obtenerNombresCiudades().toArray(new String[0]));
             listaCiudadesIntermedias.add(nuevaLista);
 
+            JLabel nuevaEtiqueta = new JLabel("Ciudad intermedia:");
+            listaLabelsCiudadesIntermedias.add(nuevaEtiqueta);
+
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.gridx = 2;
             gbc.gridy = listaCiudadesIntermedias.size();
             gbc.anchor = GridBagConstraints.LINE_END;
-            panelTop.add(new JLabel("Ciudad intermedia:"), gbc);
+            panelTop.add(nuevaEtiqueta, gbc);
 
             gbc.gridx = 3;
             gbc.anchor = GridBagConstraints.LINE_START;
@@ -114,6 +128,21 @@ public class PanelPrincipal extends JPanel {
             repaint();
         } else {
             JOptionPane.showMessageDialog(this, "No se pueden agregar más de 5 ciudades intermedias.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void eliminarCiudadIntermedia(ActionEvent e) {
+        if (!listaCiudadesIntermedias.isEmpty()) {
+            int tamanioActual = listaCiudadesIntermedias.size();
+            panelTop.remove(listaLabelsCiudadesIntermedias.get(tamanioActual - 1)); // Eliminar JLabel
+            panelTop.remove(listaCiudadesIntermedias.get(tamanioActual - 1)); // Eliminar JComboBox
+            panelTop.revalidate();
+            panelTop.repaint();
+
+            listaCiudadesIntermedias.remove(listaCiudadesIntermedias.size() - 1);
+            listaLabelsCiudadesIntermedias.remove(listaLabelsCiudadesIntermedias.size() - 1);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay ciudades intermedias para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
