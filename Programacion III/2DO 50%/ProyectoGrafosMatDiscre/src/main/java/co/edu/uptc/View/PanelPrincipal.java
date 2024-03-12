@@ -107,24 +107,21 @@ public class PanelPrincipal extends JPanel {
     }
 
     private void agregarCiudadIntermedia(ActionEvent e) {
-        if (listaCiudadesIntermedias.size() < 5) { // Limit to 5 intermediate cities for simplicity
+        if (listaCiudadesIntermedias.size() < 5) { // Limitar a 5 ciudades intermedias por simplicidad
             JComboBox<String> nuevaLista = new JComboBox<>(nombresCiudades.toArray(new String[0]));
             listaCiudadesIntermedias.add(nuevaLista);
 
-            JLabel nuevaEtiqueta = new JLabel(ciudArega++ +".Ciudad intermedia:");
+            JLabel nuevaEtiqueta = new JLabel(ciudArega++ + ". Ciudad intermedia:");
             listaLabelsCiudadesIntermedias.add(nuevaEtiqueta);
 
             GridBagConstraints gbc = new GridBagConstraints();
-            gbc.gridy = listaCiudadesIntermedias.size()-1; // Incrementa el índice de fila
-            gbc.gridx = 2 ; // Cálculo de la posición x
-            if (ciudArega % 2 == 0&&ciudArega!=2 ){
-                gbc.gridx=gbc.gridx+ciudArega;
-                gbc.gridy = listaCiudadesIntermedias.size()-ciudArega;
-            }
+            gbc.gridx = 2 + (listaCiudadesIntermedias.size() - 1) * 2; // Incrementar la columna para cada nueva ciudad intermedia
             gbc.anchor = GridBagConstraints.LINE_END;
+            gbc.gridy = 0; // Fija la fila a 0 para todas las ciudades intermedias
+
             panelTop.add(nuevaEtiqueta, gbc);
 
-            gbc.gridx++; // Cálculo de la posición x
+            gbc.gridy = 1; // Cambia la fila para la lista de ciudades intermedias
             gbc.anchor = GridBagConstraints.LINE_START;
             panelTop.add(nuevaLista, gbc);
 
@@ -137,6 +134,7 @@ public class PanelPrincipal extends JPanel {
 
     private void eliminarCiudadIntermedia(ActionEvent e) {
         if (!listaCiudadesIntermedias.isEmpty()) {
+            ciudArega--;
             int tamanioActual = listaCiudadesIntermedias.size();
             panelTop.remove(listaLabelsCiudadesIntermedias.get(tamanioActual - 1)); // Eliminar JLabel
             panelTop.remove(listaCiudadesIntermedias.get(tamanioActual - 1)); // Eliminar JComboBox
