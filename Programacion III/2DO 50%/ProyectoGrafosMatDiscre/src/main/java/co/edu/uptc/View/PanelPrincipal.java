@@ -20,6 +20,7 @@ public class PanelPrincipal extends JPanel {
     private JPanel panelTop, panelCenter, panelBottom;
     private final JButton botonEliminarCiudad;
     private JLabel mapa;
+    private int ciudArega=1;
 
     public PanelPrincipal(Grafo grafo) {
         this.grafo = grafo;
@@ -110,16 +111,20 @@ public class PanelPrincipal extends JPanel {
             JComboBox<String> nuevaLista = new JComboBox<>(nombresCiudades.toArray(new String[0]));
             listaCiudadesIntermedias.add(nuevaLista);
 
-            JLabel nuevaEtiqueta = new JLabel("Ciudad intermedia:");
+            JLabel nuevaEtiqueta = new JLabel(ciudArega++ +".Ciudad intermedia:");
             listaLabelsCiudadesIntermedias.add(nuevaEtiqueta);
 
             GridBagConstraints gbc = new GridBagConstraints();
-            gbc.gridx = 2;
-            gbc.gridy = listaCiudadesIntermedias.size()-1;
+            gbc.gridy = listaCiudadesIntermedias.size()-1; // Incrementa el índice de fila
+            gbc.gridx = 2 ; // Cálculo de la posición x
+            if (ciudArega % 2 == 0&&ciudArega!=2 ){
+                gbc.gridx=gbc.gridx+ciudArega;
+                gbc.gridy = listaCiudadesIntermedias.size()-ciudArega;
+            }
             gbc.anchor = GridBagConstraints.LINE_END;
             panelTop.add(nuevaEtiqueta, gbc);
 
-            gbc.gridx = 3;
+            gbc.gridx++; // Cálculo de la posición x
             gbc.anchor = GridBagConstraints.LINE_START;
             panelTop.add(nuevaLista, gbc);
 
