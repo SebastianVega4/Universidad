@@ -3,12 +3,7 @@ package co.edu.uptc.Logic;
 import com.google.common.collect.Maps;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Grafo {
 
@@ -28,9 +23,8 @@ public class Grafo {
             Ciudad origen = ciudades.get(ciudadesPorVisitar.get(i));
             Ciudad destino = ciudades.get(ciudadesPorVisitar.get(i + 1));
             // Validar si la ciudad ya está en el trayecto
-            if (trayecto.contains(destino.getNombre())&&destino.getNombre()!=ciudadesAvisitar.getLast()) {
+            if (trayecto.contains(destino.getNombre())&& !Objects.equals(destino.getNombre(), ciudadesAvisitar.getLast())) {
                 JOptionPane.showMessageDialog(null, "La ciudad '" + destino.getNombre() + "' ya está en el trayecto.", "Error", JOptionPane.ERROR_MESSAGE);
-                return "";
             }
             if (i>0) trayecto.remove(trayecto.getLast());
             trayecto.addAll(encontrarTrayectoMasCorto(origen, destino));

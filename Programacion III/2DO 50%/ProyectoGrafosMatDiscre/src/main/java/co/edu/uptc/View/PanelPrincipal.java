@@ -6,12 +6,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PanelPrincipal extends JPanel {
     private final Grafo grafo;
     private final List<JComboBox<String>> listaCiudadesIntermedias;
     private final List<JLabel> listaLabelsCiudadesIntermedias;
+    private final List<String> nombresCiudades;
     private final JButton botonAgregarCiudad;
     private final JButton botonBuscar;
     private final JTextArea areaRutas;
@@ -46,7 +48,8 @@ public class PanelPrincipal extends JPanel {
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.LINE_START;
-        List<String> nombresCiudades = grafo.obtenerNombresCiudades();
+        nombresCiudades = grafo.obtenerNombresCiudades();
+        Collections.sort(nombresCiudades);
         JComboBox<String> listaOrigen = new JComboBox<>(nombresCiudades.toArray(new String[0]));
         panelTop.add(listaOrigen, gbc);
 
@@ -108,7 +111,7 @@ public class PanelPrincipal extends JPanel {
 
     private void agregarCiudadIntermedia(ActionEvent e) {
         if (listaCiudadesIntermedias.size() < 5) { // Limit to 5 intermediate cities for simplicity
-            JComboBox<String> nuevaLista = new JComboBox<>(grafo.obtenerNombresCiudades().toArray(new String[0]));
+            JComboBox<String> nuevaLista = new JComboBox<>(nombresCiudades.toArray(new String[0]));
             listaCiudadesIntermedias.add(nuevaLista);
 
             JLabel nuevaEtiqueta = new JLabel("Ciudad intermedia:");
@@ -158,7 +161,7 @@ public class PanelPrincipal extends JPanel {
             }
         }
 
-        ciudadesIntermedias.add(0, origen);
+        ciudadesIntermedias.addFirst(origen);
         ciudadesIntermedias.add(destino);
 
         String trayecto = grafo.encontralTrayectoTotal(ciudadesIntermedias);
