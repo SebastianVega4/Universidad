@@ -14,12 +14,8 @@ public class PanelPrincipal extends JPanel {
     private final List<JComboBox<String>> listaCiudadesIntermedias;
     private final List<JLabel> listaLabelsCiudadesIntermedias;
     private final List<String> nombresCiudades;
-    private final JButton botonAgregarCiudad;
-    private final JButton botonBuscar;
     private final JTextArea areaRutas;
-    private JPanel panelTop, panelCenter, panelBottom;
-    private final JButton botonEliminarCiudad;
-    private JLabel mapa;
+    private final JPanel panelTop;
     private int ciudArega=1;
 
     public PanelPrincipal(Grafo grafo) {
@@ -28,8 +24,8 @@ public class PanelPrincipal extends JPanel {
         this.listaLabelsCiudadesIntermedias = new ArrayList<>();
 
         panelTop = new JPanel(new GridBagLayout());
-        panelCenter = new JPanel(new BorderLayout());
-        panelBottom = new JPanel(new GridBagLayout());
+        JPanel panelCenter = new JPanel(new BorderLayout());
+        JPanel panelBottom = new JPanel(new GridBagLayout());
 
         //Panel principal
         setLayout(new BorderLayout());
@@ -66,13 +62,13 @@ public class PanelPrincipal extends JPanel {
         panelTop.add(listaDestino, gbc);
 
         //panelCenter)
-        botonAgregarCiudad = new JButton("Agregar Ciudad");
+        JButton botonAgregarCiudad = new JButton("Agregar Ciudad");
         botonAgregarCiudad.addActionListener(this::agregarCiudadIntermedia);
 
-        botonEliminarCiudad = new JButton("Eliminar Ciudad Intermedia");
+        JButton botonEliminarCiudad = new JButton("Eliminar Ciudad Intermedia");
         botonEliminarCiudad.addActionListener(this::eliminarCiudadIntermedia);
 
-        botonBuscar = new JButton("Buscar Trayecto");
+        JButton botonBuscar = new JButton("Buscar Trayecto");
         botonBuscar.addActionListener(this::buscarTrayecto);
 
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -84,7 +80,7 @@ public class PanelPrincipal extends JPanel {
         ImageIcon imageIcon = new ImageIcon("src/main/java/co/edu/uptc/View/map.jpg");
         Image image = imageIcon.getImage();
         Image newImage = image.getScaledInstance(800, 600, Image.SCALE_SMOOTH);
-        mapa = new JLabel(new ImageIcon(newImage));
+        JLabel mapa = new JLabel(new ImageIcon(newImage));
         panelCenter.add(mapa, BorderLayout.CENTER);
         panelCenter.add(panelBotones, BorderLayout.SOUTH);
 
