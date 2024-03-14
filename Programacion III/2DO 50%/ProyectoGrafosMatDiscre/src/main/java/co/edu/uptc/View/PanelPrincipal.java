@@ -27,12 +27,11 @@ public class PanelPrincipal extends JPanel {
         this.listaCiudadesIntermedias = new ArrayList<>();
         this.listaLabelsCiudadesIntermedias = new ArrayList<>();
 
-        // Crear paneles top, center y bottom
         panelTop = new JPanel(new GridBagLayout());
         panelCenter = new JPanel(new BorderLayout());
         panelBottom = new JPanel(new GridBagLayout());
 
-        // Añadir paneles al panel principal
+        //Panel principal
         setLayout(new BorderLayout());
         add(panelTop, BorderLayout.NORTH);
         add(panelCenter, BorderLayout.CENTER);
@@ -41,7 +40,7 @@ public class PanelPrincipal extends JPanel {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
 
-        // Labels and combo boxes (en panelTop)
+        //PanelTop
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.LINE_END;
@@ -66,15 +65,13 @@ public class PanelPrincipal extends JPanel {
         JComboBox<String> listaDestino = new JComboBox<>(nombresCiudades.toArray(new String[0]));
         panelTop.add(listaDestino, gbc);
 
-        // Button to add intermediate cities (en panelCenter)
+        //panelCenter)
         botonAgregarCiudad = new JButton("Agregar Ciudad");
         botonAgregarCiudad.addActionListener(this::agregarCiudadIntermedia);
 
-        // New button to remove intermediate cities (en panelCenter)
         botonEliminarCiudad = new JButton("Eliminar Ciudad Intermedia");
         botonEliminarCiudad.addActionListener(this::eliminarCiudadIntermedia);
 
-        // Button to search route (en panelCenter)
         botonBuscar = new JButton("Buscar Trayecto");
         botonBuscar.addActionListener(this::buscarTrayecto);
 
@@ -83,7 +80,7 @@ public class PanelPrincipal extends JPanel {
         panelBotones.add(botonEliminarCiudad);
         panelBotones.add(botonBuscar);
 
-        // Load and display map image
+        //image
         ImageIcon imageIcon = new ImageIcon("src/main/java/co/edu/uptc/View/map.jpg");
         Image image = imageIcon.getImage();
         Image newImage = image.getScaledInstance(800, 600, Image.SCALE_SMOOTH);
@@ -91,13 +88,12 @@ public class PanelPrincipal extends JPanel {
         panelCenter.add(mapa, BorderLayout.CENTER);
         panelCenter.add(panelBotones, BorderLayout.SOUTH);
 
-        // Text area (en panelBottom)
-        areaRutas = new JTextArea(20, 40);
+        //panelBottom)
+        areaRutas = new JTextArea(20, 80);
         areaRutas.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(areaRutas);
         panelBottom.add(scrollPane, gbc);
 
-        // Visual enhancements
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         setBackground(Color.WHITE);
         listaOrigen.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -170,10 +166,14 @@ public class PanelPrincipal extends JPanel {
             double distanciaTotal = grafo.calcularDistanciaTotal(trayecto);
             int tiempoEstimadoHoras = (int) grafo.calcularTiempoEstimado(trayecto, 50); // Velocidad promedio de 50 km/h
             int tiempoEstimadoMinutos = (int) ((grafo.calcularTiempoEstimado(trayecto, 50) * 60) % 60); // Obtener los minutos restantes
-            String informacionTrayecto = "Ruta más corta: " + trayecto +
-                    "\nDistancia total: " + distanciaTotal + " km" +
-                    "\nTiempo estimado: " + tiempoEstimadoHoras + " Horas " + tiempoEstimadoMinutos + " Minutos";
-            areaRutas.setText(informacionTrayecto);
+
+
+            String mensaje = "RUTA MAS CORTA\n" +
+                    "----------------------\n" +
+                    trayecto+ "\n" +
+                    "Distancia total: " + String.format("%.2f", distanciaTotal) + " km\n" +
+                    "Tiempo estimado: " + tiempoEstimadoHoras + " horas " + tiempoEstimadoMinutos + " minutos\n";
+            areaRutas.setText(mensaje);
         }
     }
 }
