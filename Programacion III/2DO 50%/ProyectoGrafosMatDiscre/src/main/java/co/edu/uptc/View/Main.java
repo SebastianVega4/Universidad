@@ -20,7 +20,7 @@ public class Main {
             grafo.agregarCiudad("Tunja", "Combita", 15);
             grafo.agregarCiudad("Tunja", "Paipa", 41.5);
             grafo.agregarCiudad("Tunja", "Sutamerchan", 44.3);
-            grafo.agregarCiudad("Tunja", "Villa de Leiva", 38.3);
+            grafo.agregarCiudad("Tunja", "Villa de Leyva", 38.3);
             grafo.agregarCiudad("Tunja", "Sachicha", 33.3);
             grafo.agregarCiudad("Tunja", "Tuta", 24.6);
             grafo.agregarCiudad("Tunja", "Sotaquira", 36.9);
@@ -34,23 +34,24 @@ public class Main {
             grafo.agregarCiudad("Sogamoso", "Chameza Mayor", 7.1);
             grafo.agregarCiudad("Sogamoso", "Firavitoba", 10.7);
             grafo.agregarCiudad("Sogamoso", "Iza", 14.8);
-            grafo.agregarCiudad("Sogamoso", "Acaparral", 12.8);
+            grafo.agregarCiudad("Sogamoso", "Alcaparral", 12.8);
 
             // Conexiones Santa Rosa de Viterbo
             grafo.agregarCiudad("Santa Rosa de Viterbo", "Tobasia", 10.3);
             grafo.agregarCiudad("Santa Rosa de Viterbo", "Chuche", 8);
             grafo.agregarCiudad("Santa Rosa de Viterbo", "Cerinza", 11);
+            grafo.agregarCiudad("Santa Rosa de Viterbo","Belen",17);
 
             // Conexiones Belén
             grafo.agregarCiudad("Belen", "Cerinza", 5.7);
             grafo.agregarCiudad("Belen", "Las puentes", 10.3);
-            grafo.agregarCiudad("Belen", "Paz del rio", 24.9);
+            grafo.agregarCiudad("Belen", "Paz del Rio", 24.9);
             grafo.agregarCiudad("Belen", "Tutaza", 14.1);
             grafo.agregarCiudad("Belen", "Beteitiva", 26.3);
 
             // Conexiones Tasco
             grafo.agregarCiudad("Tasco", "Beteitiva", 17.9);
-            grafo.agregarCiudad("Tasco", "Paz del rio", 14.3);
+            grafo.agregarCiudad("Tasco", "Paz del Rio", 14.3);
             grafo.agregarCiudad("Tasco", "Corrales", 20);
 
             // Conexiones Paz del Río
@@ -92,7 +93,7 @@ public class Main {
             grafo.agregarCiudad("Cuitiva", "Iza", 5.2);
 
             // Conexiones Pesca
-            grafo.agregarCiudad("Pesca", "Acaparral", 10.7);
+            grafo.agregarCiudad("Pesca", "Alcaparral", 10.7);
             grafo.agregarCiudad("Pesca", "Tota", 13.3);
             grafo.agregarCiudad("Pesca", "Toca", 30);
 
@@ -124,9 +125,9 @@ public class Main {
             grafo.agregarCiudad("Paipa", "Pantano de Vargas", 10.7);
 
             // Conexiones de Duitama
-            grafo.agregarCiudad("Duitama", "Santa rosa de Viterbo", 9.4);
+            grafo.agregarCiudad("Duitama", "Santa Rosa de Viterbo", 9.4);
             grafo.agregarCiudad("Duitama", "Punta larga",8.1);
-            grafo.agregarCiudad("Duitama", "Tibasossa", 11.7);
+            grafo.agregarCiudad("Duitama", "Tibasosa", 11.7);
             grafo.agregarCiudad("Duitama", "Sogamoso", 20.3);
             grafo.agregarCiudad("Duitama", "Santa Ana", 6.3);
 
@@ -177,7 +178,7 @@ public class Main {
             grafo.agregarCiudad("Combita", "Paipa", 39.3);
 
             // Conexiones Motavia
-            grafo.agregarCiudad("Motavia", "Combita", 13.3);
+            grafo.agregarCiudad("Motavita", "Combita", 13.3);
 
             // Conexiones Sotaquira
             grafo.agregarCiudad("Sotaquira", "Tuta", 16.4);
