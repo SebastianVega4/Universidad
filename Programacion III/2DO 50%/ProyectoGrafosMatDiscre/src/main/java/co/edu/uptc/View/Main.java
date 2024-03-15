@@ -102,91 +102,88 @@ public class Main {
             grafo.agregarCiudad("Chivata", "Tunja", 11.8);
 
             // Conexiones Oicata
-            grafo.agregarCiudad("Oicata", "Tunja", distancia);
-            grafo.agregarCiudad("Oicata", "Combita", distancia);
-            grafo.agregarCiudad("Oicata", "Tuta", distancia);
-            grafo.agregarCiudad("Oicata", "Sotaquira", distancia);
-            grafo.agregarCiudad("Oicata", "Paipa", distancia);
+            grafo.agregarCiudad("Oicata", "Tunja", 14.3);
+            grafo.agregarCiudad("Oicata", "Combita",8.7);
+            grafo.agregarCiudad("Oicata", "Tuta", 18.4);
+            grafo.agregarCiudad("Oicata", "Sotaquira", 30.6);
+            grafo.agregarCiudad("Oicata", "Paipa", 35.3);
 
             // Conexiones Siachoque
-            grafo.agregarCiudad("Siachoque", "Toca", distancia);
-            grafo.agregarCiudad("Siachoque", "Tunja", distancia);
+            grafo.agregarCiudad("Siachoque", "Toca", 10.7);
+            grafo.agregarCiudad("Siachoque", "Tunja", 19.4);
 
             // Conexiones Santa Teresita
-            grafo.agregarCiudad("Santa Teresita", "Cucaita", distancia);
-            grafo.agregarCiudad("Santa Teresita", "Villa de Leyva", distancia);
+            grafo.agregarCiudad("Santa Teresita", "Cucaita", 15.3);
+            grafo.agregarCiudad("Santa Teresita", "Villa de Leyva", 6);
 
             // Conexiones de Paipa
-            grafo.agregarCiudad("Paipa", "Sotaquira", distancia);
-            grafo.agregarCiudad("Paipa", "Tuta", distancia);
-            grafo.agregarCiudad("Paipa", "Duitama", distancia);
-            grafo.agregarCiudad("Paipa", "Toca", distancia);
-            grafo.agregarCiudad("Paipa", "Pantano de Vargas", distancia);
+            grafo.agregarCiudad("Paipa", "Sotaquira", 18.4);
+            grafo.agregarCiudad("Paipa", "Tuta",19.5);
+            grafo.agregarCiudad("Paipa", "Duitama", 13.4);
+            grafo.agregarCiudad("Paipa", "Toca", 30.3);
+            grafo.agregarCiudad("Paipa", "Pantano de Vargas", 10.7);
 
             // Conexiones de Duitama
-            grafo.agregarCiudad("Duitama", "Santa rosa de Viterbo", distancia);
-            grafo.agregarCiudad("Duitama", "Punta larga", distancia);
-            grafo.agregarCiudad("Duitama", "Tibasossa", distancia);
-            grafo.agregarCiudad("Duitama", "Sogamoso", distancia);
-            grafo.agregarCiudad("Duitama", "Santa Ana", distancia);
+            grafo.agregarCiudad("Duitama", "Santa rosa de Viterbo", 9.4);
+            grafo.agregarCiudad("Duitama", "Punta larga",8.1);
+            grafo.agregarCiudad("Duitama", "Tibasossa", 11.7);
+            grafo.agregarCiudad("Duitama", "Sogamoso", 20.3);
+            grafo.agregarCiudad("Duitama", "Santa Ana", 6.3);
 
             // Conexiones Pantano de Vargas
-            grafo.agregarCiudad("Pantano de Vargas", "Duitama", distancia);
-            grafo.agregarCiudad("Pantano de Vargas", "Firavitoba", distancia);
+            grafo.agregarCiudad("Pantano de Vargas", "Duitama", 13);
+            grafo.agregarCiudad("Pantano de Vargas", "Firavitoba", 18.8);
 
             // Conexiones Tuta
-            grafo.agregarCiudad("Tuta", "Toca", distancia);
+            grafo.agregarCiudad("Tuta", "Toca", 23.2);
 
             // Conexiones Punta larga
-            grafo.agregarCiudad("Punta larga", "Nobsa", distancia);
-            grafo.agregarCiudad("Punta larga", "Chameza Mayor", distancia);
+            grafo.agregarCiudad("Punta larga", "Nobsa", 9.7);
+            grafo.agregarCiudad("Punta larga", "Chameza Mayor",10.8 );
 
             // Conexiones Belencito
-            grafo.agregarCiudad("Belencito", "Chameza Mayor", distancia);
+            grafo.agregarCiudad("Belencito", "Chameza Mayor", 4.3);
 
             // Conexiones Tutaza
-            grafo.agregarCiudad("Tutaza", "Beteitiva", distancia);
-            grafo.agregarCiudad("Tutaza", "Cartavita", distancia);
+            grafo.agregarCiudad("Tutaza", "Beteitiva", 26.8);
+            grafo.agregarCiudad("Tutaza", "Cartavita", 6.6);
 
             // Conexiones Páramo
-            grafo.agregarCiudad("Páramo", "Cartavita", distancia);
-            grafo.agregarCiudad("Páramo", "Belen", distancia);
+            grafo.agregarCiudad("Páramo", "Cartavita", 11.3);
+            grafo.agregarCiudad("Páramo", "Belen", 23.2);
 
             // Conexiones Chameza Mayor
-            grafo.agregarCiudad("Chameza Mayor", "La esperanza", distancia);
-            grafo.agregarCiudad("Chameza Mayor", "Gameza", distancia);
+            grafo.agregarCiudad("Chameza Mayor", "La esperanza", 14.2);
+            grafo.agregarCiudad("Chameza Mayor", "Gameza", 17.5);
 
             // Conexiones Iza
-            grafo.agregarCiudad("Iza", "Firavitoba", distancia);
-            grafo.agregarCiudad("Iza", "Alcaparral", distancia);
+            grafo.agregarCiudad("Iza", "Firavitoba", 7);
+            grafo.agregarCiudad("Iza", "Alcaparral", 5.5);
 
             // Conexiones Firavitoba
-            grafo.agregarCiudad("Firavitoba", "Alcaparral", distancia);
+            grafo.agregarCiudad("Firavitoba", "Alcaparral", 4.8);
 
             // Conexiones Buenavista
-            grafo.agregarCiudad("Buenavista", "Arcabuco", distancia);
-            grafo.agregarCiudad("Buenavista", "Combita", distancia);
+            grafo.agregarCiudad("Buenavista", "Arcabuco", 10.8);
+            grafo.agregarCiudad("Buenavista", "Combita", 15.8);
 
             // Conexiones Arcabuco
-            grafo.agregarCiudad("Arcabuco", "Patio bonito", distancia);
-            grafo.agregarCiudad("Arcabuco", "Cucaita", distancia);
-
-            // Conexiones Villa de Leyva
-            grafo.agregarCiudad("Villa de Leyva", "Cucaita", distancia);
+            grafo.agregarCiudad("Arcabuco", "Patio bonito", 17.1);
+            grafo.agregarCiudad("Arcabuco", "Villa de Leyva", 25.9);
 
             // Conexiones Combita
-            grafo.agregarCiudad("Combita", "Tuta", distancia);
-            grafo.agregarCiudad("Combita", "Sotaquira", distancia);
-            grafo.agregarCiudad("Combita", "Paipa", distancia);
+            grafo.agregarCiudad("Combita", "Tuta", 22.4);
+            grafo.agregarCiudad("Combita", "Sotaquira", 34.7);
+            grafo.agregarCiudad("Combita", "Paipa", 39.3);
 
             // Conexiones Motavia
-            grafo.agregarCiudad("Motavia", "Combita", distancia);
+            grafo.agregarCiudad("Motavia", "Combita", 13.3);
 
             // Conexiones Sotaquira
-            grafo.agregarCiudad("Sotaquira", "Tuta", distancia);
+            grafo.agregarCiudad("Sotaquira", "Tuta", 16.4);
 
             // Conexiones Gameza
-            grafo.agregarCiudad("Gameza", "La esperanza", distancia);
+            grafo.agregarCiudad("Gameza", "La esperanza", 15.6);
 
             PanelPrincipal panel = new PanelPrincipal(grafo);
             frame.getContentPane().add(panel);
