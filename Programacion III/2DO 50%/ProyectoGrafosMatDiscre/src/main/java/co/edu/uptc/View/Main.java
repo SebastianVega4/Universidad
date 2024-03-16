@@ -8,7 +8,7 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Trayecto más corto");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(400, 400);
+            frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
             Grafo grafo = new Grafo();
 
@@ -188,8 +188,6 @@ public class Main {
 
             PanelPrincipal panel = new PanelPrincipal(grafo);
             frame.getContentPane().add(panel);
-
-            frame.pack();
             frame.setVisible(true);
         });
     }

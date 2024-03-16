@@ -2,9 +2,13 @@ package co.edu.uptc.View;
 
 import co.edu.uptc.Logic.Grafo;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +21,7 @@ public class PanelPrincipal extends JPanel {
     private final JTextArea areaRutas;
     private final JPanel panelTop;
     private int ciudArega=1;
+    private BufferedImage backgroundImage;
 
     public PanelPrincipal(Grafo grafo) {
         this.grafo = grafo;
@@ -40,7 +45,10 @@ public class PanelPrincipal extends JPanel {
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.LINE_END;
-        panelTop.add(new JLabel("Ciudad de Origen:"), gbc);
+        JLabel ciudadOrigen =new JLabel("Ciudad de Origen:");
+        ciudadOrigen.setForeground(Color.WHITE);
+        ciudadOrigen.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+        panelTop.add(ciudadOrigen, gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 0;
@@ -48,33 +56,47 @@ public class PanelPrincipal extends JPanel {
         nombresCiudades = grafo.obtenerNombresCiudades();
         Collections.sort(nombresCiudades);
         JComboBox<String> listaOrigen = new JComboBox<>(nombresCiudades.toArray(new String[0]));
+        listaOrigen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         panelTop.add(listaOrigen, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.LINE_END;
-        panelTop.add(new JLabel("Ciudad de Destino:"), gbc);
+        JLabel ciudadDestino = new JLabel("Ciudad de Destino:");
+        ciudadDestino.setForeground(Color.WHITE);
+        ciudadDestino.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+        panelTop.add(ciudadDestino, gbc);
 
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.LINE_START;
         JComboBox<String> listaDestino = new JComboBox<>(nombresCiudades.toArray(new String[0]));
+        listaDestino.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         panelTop.add(listaDestino, gbc);
 
         //panelCenter)
         JButton botonAgregarCiudad = new JButton("Agregar Ciudad");
+        botonAgregarCiudad.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         botonAgregarCiudad.addActionListener(this::agregarCiudadIntermedia);
 
         JButton botonEliminarCiudad = new JButton("Eliminar Ciudad Intermedia");
         botonEliminarCiudad.addActionListener(this::eliminarCiudadIntermedia);
+        botonEliminarCiudad.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         JButton botonBuscar = new JButton("Buscar Trayecto");
         botonBuscar.addActionListener(this::buscarTrayecto);
+        botonBuscar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER));
         panelBotones.add(botonAgregarCiudad);
         panelBotones.add(botonEliminarCiudad);
         panelBotones.add(botonBuscar);
+        JLabel byLink = new JLabel("         By: github.com/SebastianVega4");
+        byLink.setFont(new Font("Courier", Font.ITALIC, 11));
+        byLink.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+        byLink.setForeground(Color.WHITE);
+        panelBotones.add(byLink);
+        panelBotones.setOpaque(false);
 
         //image
         ImageIcon imageIcon = new ImageIcon("src/main/java/co/edu/uptc/View/map.jpg");
@@ -84,8 +106,15 @@ public class PanelPrincipal extends JPanel {
         panelCenter.add(mapa, BorderLayout.CENTER);
         panelCenter.add(panelBotones, BorderLayout.SOUTH);
 
+        // Establecer el color de fondo transparente
+        setBackground(new Color(0, 0, 0, 0)); // Color transparente
+        panelTop.setOpaque(false);
+        panelCenter.setOpaque(false);
+        panelBottom.setOpaque(false);
+        setOpaque(false);
+
         //panelBottom)
-        areaRutas = new JTextArea(20, 80);
+        areaRutas = new JTextArea(15, 75);
         areaRutas.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(areaRutas);
         panelBottom.add(scrollPane, gbc);
@@ -96,14 +125,32 @@ public class PanelPrincipal extends JPanel {
         listaDestino.setFont(new Font("Arial", Font.PLAIN, 14));
         botonBuscar.setFont(new Font("Arial", Font.BOLD, 14));
         areaRutas.setFont(new Font("Arial", Font.PLAIN, 12));
+        // Cargar la imagen de fondo
+        try {
+            backgroundImage = ImageIO.read(new File("src/main/java/co/edu/uptc/View/fondo.jpg")); // Reemplaza "fondo.jpg" con la ruta correcta de tu imagen
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // Dibujar la imagen de fondo
+        if (backgroundImage != null) {
+            g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+        }
     }
 
     private void agregarCiudadIntermedia(ActionEvent e) {
         if (listaCiudadesIntermedias.size() < 5) { // Limitar a 5 ciudades intermedias por simplicidad
             JComboBox<String> nuevaLista = new JComboBox<>(nombresCiudades.toArray(new String[0]));
+            nuevaLista.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             listaCiudadesIntermedias.add(nuevaLista);
 
             JLabel nuevaEtiqueta = new JLabel(ciudArega++ + ". Ciudad intermedia:");
+            nuevaEtiqueta.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+            nuevaEtiqueta.setForeground(Color.WHITE);
             listaLabelsCiudadesIntermedias.add(nuevaEtiqueta);
 
             GridBagConstraints gbc = new GridBagConstraints();
@@ -164,7 +211,7 @@ public class PanelPrincipal extends JPanel {
             int tiempoEstimadoMinutos = (int) ((grafo.calcularTiempoEstimado(trayecto, 50) * 60) % 60); // Obtener los minutos restantes
 
 
-            String mensaje = "RUTA MAS CORTA\n" +
+            String mensaje = "RUTA A SEGUIR\n" +
                     "----------------------\n" +
                     trayecto+ "\n" +
                     "Distancia total: " + String.format("%.2f", distanciaTotal) + " km\n" +
