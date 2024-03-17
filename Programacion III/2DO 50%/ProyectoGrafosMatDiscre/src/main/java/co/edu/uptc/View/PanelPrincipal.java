@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class PanelPrincipal extends JPanel {
     private final Grafo grafo;
@@ -22,6 +23,7 @@ public class PanelPrincipal extends JPanel {
     private final JPanel panelTop;
     private int ciudArega=1;
     private BufferedImage backgroundImage;
+    private final JPanel panelImages = new JPanel();
 
     public PanelPrincipal(Grafo grafo) {
         this.grafo = grafo;
@@ -99,7 +101,7 @@ public class PanelPrincipal extends JPanel {
         panelBotones.setOpaque(false);
 
         //image
-        ImageIcon imageIcon = new ImageIcon("src/main/java/co/edu/uptc/View/map.jpg");
+        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/map.jpg"));
         Image image = imageIcon.getImage();
         Image newImage = image.getScaledInstance(800, 600, Image.SCALE_SMOOTH);
         JLabel mapa = new JLabel(new ImageIcon(newImage));
@@ -114,10 +116,18 @@ public class PanelPrincipal extends JPanel {
         setOpaque(false);
 
         //panelBottom)
-        areaRutas = new JTextArea(15, 75);
+        JPanel panelText = new JPanel(new BorderLayout());
+        areaRutas = new JTextArea(6, 75);
         areaRutas.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(areaRutas);
-        panelBottom.add(scrollPane, gbc);
+        panelText.add(scrollPane, BorderLayout.CENTER);
+
+        panelImages.setLayout(new FlowLayout(FlowLayout.LEADING, 0, 0));
+        panelImages.setOpaque(false);
+
+        panelBottom.setLayout(new BorderLayout());
+        panelBottom.add(panelText, BorderLayout.CENTER);
+        panelBottom.add(panelImages, BorderLayout.SOUTH);
 
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         setBackground(Color.WHITE);
@@ -125,9 +135,10 @@ public class PanelPrincipal extends JPanel {
         listaDestino.setFont(new Font("Arial", Font.PLAIN, 14));
         botonBuscar.setFont(new Font("Arial", Font.BOLD, 14));
         areaRutas.setFont(new Font("Arial", Font.PLAIN, 12));
+
         // Cargar la imagen de fondo
         try {
-            backgroundImage = ImageIO.read(new File("src/main/java/co/edu/uptc/View/fondo.jpg")); // Reemplaza "fondo.jpg" con la ruta correcta de tu imagen
+            backgroundImage = ImageIO.read(getClass().getResource("/fondo.jpg")); // Reemplaza "fondo.jpg" con la ruta correcta de tu imagen
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -188,6 +199,7 @@ public class PanelPrincipal extends JPanel {
     }
 
     private void buscarTrayecto(ActionEvent e) {
+        panelImages.removeAll();
         String origen = (String) ((JComboBox<?>) panelTop.getComponent(1)).getSelectedItem();
         String destino = (String) ((JComboBox<?>) panelTop.getComponent(3)).getSelectedItem();
 
@@ -205,18 +217,40 @@ public class PanelPrincipal extends JPanel {
         String trayecto = grafo.encontralTrayectoTotal(ciudadesIntermedias);
         if (trayecto.startsWith("No se encontró")) {
             areaRutas.setText(trayecto);
-        } else {
-            double distanciaTotal = grafo.calcularDistanciaTotal(trayecto);
+        } else {            double distanciaTotal = grafo.calcularDistanciaTotal(trayecto);
             int tiempoEstimadoHoras = (int) grafo.calcularTiempoEstimado(trayecto, 50); // Velocidad promedio de 50 km/h
             int tiempoEstimadoMinutos = (int) ((grafo.calcularTiempoEstimado(trayecto, 50) * 60) % 60); // Obtener los minutos restantes
 
 
-            String mensaje = "RUTA A SEGUIR\n" +
+            String mensaje = "RUTA MAS CORTA A SEGUIR:\n" +
                     "----------------------\n" +
                     trayecto+ "\n" +
                     "Distancia total: " + String.format("%.2f", distanciaTotal) + " km\n" +
                     "Tiempo estimado: " + tiempoEstimadoHoras + " horas " + tiempoEstimadoMinutos + " minutos\n";
             areaRutas.setText(mensaje);
+        }
+        for (String ciudadIntermedia : ciudadesIntermedias) {
+            showImage(ciudadIntermedia);
+        }
+    }
+
+    private void showImage(String cityName) {
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(getClass().getResource("/imagenes/" + cityName + ".jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (image != null) {
+            int scaledWidth = 200;
+            int scaledHeight = 200;
+            Image scaledImage = image.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH);
+
+            JLabel imageLabel = new JLabel(new ImageIcon(scaledImage));
+            panelImages.add(imageLabel);
+            panelImages.revalidate();
+            panelImages.repaint();
         }
     }
 }

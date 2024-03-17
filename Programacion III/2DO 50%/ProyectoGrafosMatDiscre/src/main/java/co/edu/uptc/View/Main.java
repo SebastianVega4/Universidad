@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Trayecto más corto");
+            JFrame frame = new JFrame("Trayecto más corto con Algoritmo Dikstra(Grafos)");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
@@ -19,9 +19,9 @@ public class Main {
             grafo.agregarCiudad("Tunja", "Cucaita", 17.8);
             grafo.agregarCiudad("Tunja", "Combita", 15);
             grafo.agregarCiudad("Tunja", "Paipa", 41.5);
-            grafo.agregarCiudad("Tunja", "Sutamerchan", 44.3);
+            grafo.agregarCiudad("Tunja", "Sutamarchan", 44.3);
             grafo.agregarCiudad("Tunja", "Villa de Leyva", 38.3);
-            grafo.agregarCiudad("Tunja", "Sachicha", 33.3);
+            grafo.agregarCiudad("Tunja", "Sachica", 33.3);
             grafo.agregarCiudad("Tunja", "Tuta", 24.6);
             grafo.agregarCiudad("Tunja", "Sotaquira", 36.9);
 
