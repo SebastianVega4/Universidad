@@ -45,6 +45,13 @@
     <a href="index.jsp">
         <button id="irIndex" class="btn btn-primary btn-block" type="button">Agregar otro afiliado</button>
     </a>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text" id="addon-wrapping">ID</span>
+        <input type="text" class="form-control" id="idUserShearch" name="idUserShearch" placeholder=" 12345" aria-label="Recipient's username with two button addons">
+        <button class="btn btn-outline-secondary" id="btModificar" type="button" name="btModificar">Modificar</button>
+        <button class="btn btn-outline-secondary" type="submit" id="btEliminar" name="btEliminar">Eliminar</button>
+    </div>
     <h1 class="my-4">Afiliados</h1>
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">

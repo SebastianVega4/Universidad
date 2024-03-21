@@ -1,3 +1,0 @@
-D:/University/7 SEMESTRE/Programacion III/C/Workshop_One/cmake-build-debug/CMakeFiles/Workshop_One.dir
-D:/University/7 SEMESTRE/Programacion III/C/Workshop_One/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/University/7 SEMESTRE/Programacion III/C/Workshop_One/cmake-build-debug/CMakeFiles/rebuild_cache.dir

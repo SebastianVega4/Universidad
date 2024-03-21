@@ -1,6 +1,72 @@
 $(document).ready(function () {
     obtenerAfiliadosInicio();
 
+    $("#idUserShearch").keypress(function (event){
+        if(/[^0-9]/.test(event.key)){
+            event.preventDefault()
+        }
+    })
+
+    $("#btModificar").click(function (event){
+        var idUsuario = $("#idUserShearch").val();
+
+        if (!idUsuario) {
+            alert("Ingrese el ID del usuario.");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "consulServlet",
+            data: { idAfiliado: idUsuario },
+            success: function(response) {
+                if (!response) {
+                    alert("Usuario no encontrado.");
+                } else {
+                    var urlModificar = "http://localhost:8080/ProyectoWeb_war/updateUser.jsp?id="+ idUsuario;
+                    window.location.href = urlModificar;
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("Error al verificar la existencia del usuario");
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+                let errorMessage = JSON.parse(xhr.responseText).error;
+                alert("Error: " + errorMessage);
+            }
+        });
+
+    })
+
+    $("#btEliminar").click(function (event){
+        var idUsuario = $("#idUserShearch").val();
+
+        if (!idUsuario) {
+            alert("Ingrese el ID del usuario.");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: "ajaxServlet",
+            data: { modificar: "2", idAfiliado: idUsuario },
+            success: function(response) {
+                if (!response) {
+                    alert("Usuario no encontrado.");
+                } else {
+                    alert("Usuario eliminado con exito\n" + response.toString());
+                    obtenerAfiliadosInicio();
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("Error al verificar la existencia del usuario");
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+                let errorMessage = JSON.parse(xhr.responseText).error;
+                alert("Error: " + errorMessage);
+            }
+        });
+
+    })
+
     $("#consul").click(function (event) {
         event.preventDefault();
         const url = "consulServlet";
@@ -8,6 +74,7 @@ $(document).ready(function () {
             consulPor: $("#consulPor").val(),
             queConsulta: $("#queConsulta").val(),
         };
+
         $.ajax({
             type: "POST",
             url: url,
@@ -55,7 +122,6 @@ function obtenerAfiliados(consulPor, queConsulta) {
             console.log(xhr.status);
             console.log(xhr.responseText);
             let errorMessage = JSON.parse(xhr.responseText).error;
-            obtenerAfiliadosInicio();
             alert("Error: " + errorMessage);
         }
     });

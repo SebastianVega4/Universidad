@@ -1,3 +1,0 @@
-C:/Users/A372144/Downloads/Git/Universidad/Programacion III/Proyect/cmake-build-debug/CMakeFiles/LinkedDouble.dir
-C:/Users/A372144/Downloads/Git/Universidad/Programacion III/Proyect/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/A372144/Downloads/Git/Universidad/Programacion III/Proyect/cmake-build-debug/CMakeFiles/rebuild_cache.dir

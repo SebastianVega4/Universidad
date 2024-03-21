@@ -1,3 +1,0 @@
-C:/Users/A372144/Downloads/Git/Universidad/Programacion III/2daclase/cmake-build-debug/CMakeFiles/2daclase.dir
-C:/Users/A372144/Downloads/Git/Universidad/Programacion III/2daclase/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/A372144/Downloads/Git/Universidad/Programacion III/2daclase/cmake-build-debug/CMakeFiles/rebuild_cache.dir

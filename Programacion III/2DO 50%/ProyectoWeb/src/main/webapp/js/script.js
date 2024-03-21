@@ -6,6 +6,7 @@ $(document).ready(function () {
         const url = "ajaxServlet";
         const esIndividualValue = $("#esIndividual").prop("checked") ? "true" : "false";
         const data = {
+            modificar: "0",
             idAfiliado: $("#idAfiliado").val(),
             nombre: $("#nombreAfiliado").val(),
             apellido: $("#apellidoAfiliado").val(),
