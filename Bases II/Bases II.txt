@@ -1,0 +1,36 @@
+select 'USUARIO: ' || user ||' , HOY ES: ' || sysdate AS ALIAS From dual;
+ALIAS
+--------------------------------------------------------------------------------
+USUARIO: HR , HOY ES: 20/09/24
+
+select SUBSTR (10000-8, 3, 2) FROM DUAL;
+SU
+--
+92
+
+select SUBSTR ('1#3#5#7#', 5) FROM DUAL;
+SUBS
+----
+5#7#
+
+ SELECT distinct department_id FROM DEPARTMENTS;
+SELECT employee_id, first_name,last_name FROM employees;
+
+SELECT employee_id, first_name, last_name FROM employees where department_id =90;
+
+SELECT first_name, last_name FROM employees where hire_date < '01/01/20';
+
+SELECT last_name, salary from employees where salary <= 3000;
+
+SELECT last_name, salary from employees where salary between 9000 and 11000;
+
+SELECT city, state_province, country_id from locations where country_id in('UK', 'CA');
+
+SELECT last_name from employees WHERE last_name LIKE '_o%';
+
+SELECT first_name , last_name as posible_candidato from employees where  last_name like '%s';
+
+select last_name from employees where manager_id is null;
+
+select last_name from employees where commission_pct is not null;
+

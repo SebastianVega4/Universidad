@@ -1,0 +1,2 @@
+mysqldump -u root -p ejercicio1 > ejercioclar.sql
+mysql -u root -p Ejer < ejer.sql
