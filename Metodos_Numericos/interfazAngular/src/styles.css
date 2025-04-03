@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+.titulo {
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #0f2027, #004e92, #1e2952);
+    background: linear-gradient(to right, #0f2027, #004e92, #1e2952);
+    color: #f5f5f5;
+
+}
+
+
+/* Título de la página */
+h1 {
+    font-size: 3rem; /* Tamaño más grande */
+    text-align: center;
+    font-weight: 800; /* Más grueso */
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+/* Estilos para los botones */
+.btn-primary {
+    background-color: indigo; /* Azul más vibrante */
+    border: none;
+    border-radius: 10px; /* Esquinas ligeramente más suaves */
+    font-size: 1.1rem;
+    width: 100%;
+    height: 50px; /* Botones más altos */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: rgb(49, 1, 83); /* Azul más oscuro */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+}
+
+/* Fila de botones: espaciado y alineación */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaciado horizontal entre botones */
+    margin-bottom: 20px; /* Espaciado entre filas */
+}
+
+.col-md-3 {
+    flex: 1 1 auto; /* Los botones se expanden de forma uniforme */
+    max-width: 200px; /* Ancho máximo por botón */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .col-md-3 {
+        margin-bottom: 15px;
+    }
+    .btn-primary {
+        width: 100%;  /* Los botones ocuparán todo el ancho en pantallas pequeñas */
+    }
+}
+
+.modal {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.modal-dialog {
+  margin: 0 auto;
+}
+
+.container {
+    background: linear-gradient(145deg, #1c2536, #232f47); /* Gradiente sutil */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), 
+                0 2px 10px rgba(255, 255, 255, 0.1); /* Sombra de luz */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Más espacio entre botones */
+    max-width: 800px; /* Limitar el ancho máximo */
+    margin: auto; /* Centrar el contenedor */
+    margin-top: 50px; /* Separarlo del título */
+}

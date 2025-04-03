@@ -1,0 +1,5 @@
+# Construir la imagen de Docker
+docker build -t punto_fijo_api .
+
+# Ejecutar el contenedor
+docker run -p 5000:5000 punto_fijo_api

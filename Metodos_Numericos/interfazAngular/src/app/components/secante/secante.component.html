@@ -1,0 +1,123 @@
+<div class="row">
+  <div class="col-sm-5">
+    <div class="card">
+      <div class="card-body text-center">
+        <span class="titulo">Método de la Secante</span>
+        <p class="mt-3">
+          El método de la Secante es una técnica iterativa para encontrar una raíz aproximada de una función no lineal. 
+          A diferencia de otros métodos, no requiere el cálculo de derivadas, sino que utiliza dos puntos iniciales para aproximar la pendiente de la función mediante una secante.
+        </p>
+        <p>
+          Para aplicar este método, se necesitan:
+        </p>
+        <ul class="text-start">
+          <li>Una <strong>función</strong> f(x).</li>
+          <li>Dos <strong>puntos iniciales</strong> x0 y x1.</li>
+        </ul>
+        <p>
+          Nota: En cada iteración, el nuevo valor de x se calcula usando la fórmula:
+        </p>
+        <p>
+          x<sub>n+1</sub> = x<sub>n</sub> - f(x<sub>n</sub>) * (x<sub>n</sub> - x<sub>n-1</sub>) / (f(x<sub>n</sub>) - f(x<sub>n-1</sub>)).
+        </p>
+        <p>
+          El proceso se repite hasta que la diferencia entre valores sucesivos sea menor que un valor de tolerancia o hasta alcanzar un número máximo de iteraciones.
+        </p>
+      </div>
+    </div>
+  </div>  
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo">{{titulo}}</span>
+          <form class="mt-3" [formGroup]="eventForm" (ngSubmit)="consulta()">
+            <div class="mb-3">
+                <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+                    Función
+                  </label>
+              <div class="input-group">
+                <input type="text" formControlName="funcion" class="form-control form-control-lg" placeholder="Función" readonly>
+                <button type="button" class="btn btn-secondary" (click)="openCalculator('funcion')">🧮</button>
+
+              </div>
+              <div class="text-danger" *ngIf="eventForm.get('funcion')?.hasError('required') && eventForm.get('funcion')?.touched">
+                <span>La función <strong> es obligatoria</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+                <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+                    Punto X0
+                  </label>
+              <input type="number" formControlName="x0" class="form-control form-control-lg" placeholder="X0">
+              <div class="text-danger" *ngIf="eventForm.get('x0')?.hasError('required') && eventForm.get('x0')?.touched">
+                <span>El punto X0 <strong> es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+                <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+                    Punto X1
+                  </label>
+              <input type="number" formControlName="x1" class="form-control form-control-lg" placeholder="X1">
+              <div class="text-danger" *ngIf="eventForm.get('x1')?.hasError('required') && eventForm.get('x1')?.touched">
+                <span>El punto X1 <strong> es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button type="button" routerLink="/**" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+              <button type="submit" [disabled]="eventForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo">Resultados</span>
+          <br>
+          <span>Raíz Encontrada: {{raiz}}</span>
+          <br>
+          <span class="titulo">Gráfica</span>
+           <br>
+          <img *ngIf="imagen" [src]="imagen" alt="Gráfica">
+          <table *ngIf="lista.length >= 0" class="table table-striped mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Iteración</th>
+                <th scope="col">X0</th>
+                <th scope="col">X1</th>
+                <th scope="col">X2</th>
+                <th scope="col">Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let punto of lista">
+                <td>{{ punto.iteracion }}</td>
+                <td>{{ punto.x0 }}</td>
+                <td>{{ punto.x1 }}</td>
+                <td>{{ punto.x2 }}</td>
+                <td>{{ punto.error }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+ <!-- Modal para la calculadora -->
+ <div class="modal" tabindex="-1" role="dialog" id="calculatorModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+        <app-calculator (close)="closeCalculator()" (save)="saveFunction($event)"></app-calculator>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeCalculator()">Cerrar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
