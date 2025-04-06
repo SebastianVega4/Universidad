@@ -1,0 +1,54 @@
+version: '3.8'
+services:
+
+  newton_raphson:
+    build: ./Newton_Raphson
+    ports:
+      - "5000:5000"
+
+  biseccion:
+    build: ./biseccion
+    ports:
+      - "5001:5001"
+      
+  secante:
+    build: ./secante
+    ports:
+      - "5002:5002"
+      
+  punto_fijo:
+    build: ./punto_fijo
+    ports:
+      - "5003:5003"
+
+  broyden:
+    build: ./broyden
+    ports:
+      - "5004:5004"
+
+  gauss_seidel:
+    build: ./gauss_seidel
+    ports:
+      - "5005:5005"
+
+  trapecio:
+    build: ./Trapecio
+    ports:
+      - "5006:5006"
+
+  jacobi:
+    build: ./jacobi
+    ports:
+      - "5007:5007"
+
+  simpson:
+    build: ./simpson
+    ports:
+      - "5008:5008"
+  angular-app:
+    build:
+      context: ./interfazAngular
+      dockerfile: Dockerfile
+    ports:
+      - "5009:5009"
+

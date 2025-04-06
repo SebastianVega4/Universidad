@@ -1,0 +1,16 @@
+.matrix-col {
+    margin: 5px;
+  }
+  
+  .matrix-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .matrix-input {
+    margin: 5px;
+    width: 60px;
+    text-align: center;
+  }
+  

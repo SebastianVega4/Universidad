@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="col-sm-5">
+    <div class="card">
+      <div class="card-body text-center">
+        <span class="titulo">Método del Trapecio</span>
+        <p class="mt-3">
+          El método del Trapecio es una técnica de integración numérica utilizada para aproximar el valor de una integral definida. 
+          Divide el intervalo de integración en varios subintervalos, calculando el área aproximada bajo la curva mediante trapecios.
+        </p>
+        <p>
+          Para aplicar este método, se necesitan:
+        </p>
+        <ul class="text-start">
+          <li>Una <strong>función</strong> f(x) que se desea integrar.</li>
+          <li>El <strong>límite inferior</strong> a del intervalo.</li>
+          <li>El <strong>límite superior</strong> b del intervalo.</li>
+          <li>El <strong>número de trapecios</strong> n, que determina la precisión de la aproximación.</li>
+        </ul>
+        <p>
+          Nota: La integral aproximada se calcula usando la fórmula:
+        </p>
+        <p>
+          I ≈ (h / 2) * [f(a) + 2 * Σ f(x<sub>i</sub>) + f(b)],
+        </p>
+        <p>
+          donde \( h = (b - a) / n \) es el ancho de cada subintervalo, y los puntos \( x_i \) son los nodos intermedios del intervalo.
+        </p>
+        <p>
+          El método es sencillo y eficiente, pero su precisión mejora al aumentar el número de trapecios \( n \).
+        </p>
+      </div>
+    </div>
+  </div>
+  
+    <div class="col-sm-5">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo">{{titulo}}</span>
+          <form class="mt-3" [formGroup]="eventForm" (ngSubmit)="consulta()">
+            <div class="mb-3">
+              <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+                Función
+              </label>
+              <div class="input-group">
+                <input type="text" formControlName="funcion" class="form-control form-control-lg" placeholder="Función" readonly>
+                <button type="button" class="btn btn-secondary" (click)="openCalculator('funcion')">🧮</button>
+
+              </div>
+              <div class="text-danger" *ngIf="eventForm.get('funcion')?.hasError('required') && eventForm.get('funcion')?.touched">
+                <span>La función <strong> es obligatoria</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+                Límite inferior
+              </label>
+              <input type="number" formControlName="a" class="form-control form-control-lg" placeholder="Límite inferior">
+              <div class="text-danger" *ngIf="eventForm.get('a')?.hasError('required') && eventForm.get('a')?.touched">
+                <span>El límite inferior <strong>es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+                Límite superior
+              </label>
+              <input type="number" formControlName="b" class="form-control form-control-lg" placeholder="Límite Superior">
+              <div class="text-danger" *ngIf="eventForm.get('b')?.hasError('required') && eventForm.get('b')?.touched">
+                <span>El límite superior<strong> es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+                Número de trapécios
+              </label>
+              <input type="number" formControlName="n" class="form-control form-control-lg" placeholder="Número de trapécios" min="1"  step="1" required>
+              <div class="text-danger" *ngIf="eventForm.get('n')?.hasError('required') && eventForm.get('n')?.touched">
+                <span>El número de trapécios <strong> es obligatorio</strong></span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button type="button" routerLink="/**" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+              <button type="submit"  class="btn btn-success btn-lg float-end">ACEPTAR</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="card">
+        <div class="card-body text-center">
+          <span class="titulo">Resultados</span>
+          <br>
+          <span>Área Encontrada: {{area}}</span>
+          <br>
+          <span class="titulo">Gráfica</span>
+           <br>
+          <img *ngIf="imagen" [src]="imagen" alt="Gráfica">
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <!-- Modal para la calculadora -->
+<div class="modal" tabindex="-1" role="dialog" id="calculatorModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Calculadora</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeCalculator()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-calculator (close)="closeCalculator()" (save)="saveFunction($event)"></app-calculator>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeCalculator()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+  
+  
+  
+  

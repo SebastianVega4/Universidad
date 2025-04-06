@@ -1,0 +1,115 @@
+<div class="row">
+  <div class="col-sm-5">
+    <div class="card">
+      <div class="card-body text-center">
+        <span class="titulo">Método de Punto Fijo</span>
+        <p class="mt-3">
+          El método de punto fijo es una técnica iterativa utilizada para encontrar una raíz aproximada de una ecuación no lineal. 
+          Consiste en transformar la ecuación original en una forma despejada, de manera que la solución pueda calcularse a partir de una función de iteración.
+        </p>
+        <p>
+          Para aplicar este método, se necesitan:
+        </p>
+        <ul class="text-start">
+          <li>Una <strong>función original</strong> f(x).</li>
+          <li>Una <strong>función de despeje</strong> g(x) tal que x = g(x).</li>
+          <li>Un <strong>punto inicial</strong> x_0.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5">
+    <div class="card">
+      <div class="card-body text-center">
+        <span class="titulo">Método de Punto Fijo</span>
+        <form class="mt-3" [formGroup]="eventForm" (ngSubmit)="consulta()">
+          <div class="mb-3">
+            <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+              Función despeje
+            </label>
+
+            <div class="input-group">
+              <input type="text" formControlName="funcion" class="form-control form-control-lg" placeholder="Funcion Despeje" readonly>
+              <button type="button" class="btn btn-secondary" (click)="openCalculator('funcion')">🧮</button>
+            </div>
+            <div class="text-danger" *ngIf="eventForm.get('funcion')?.hasError('required') && eventForm.get('funcion')?.touched">
+              <span>La función despeje<strong> es obligatoria</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+              Función original
+            </label>
+            <div class="input-group">
+              <input type="text" formControlName="funcionO" class="form-control form-control-lg" placeholder="Funcion Original" readonly>
+              <button type="button" class="btn btn-secondary" (click)="openCalculator('funcionO')">🧮</button>
+            </div>
+            <div class="text-danger" *ngIf="eventForm.get('funcionO')?.hasError('required') && eventForm.get('funcionO')?.touched">
+              <span>La función original <strong> es obligatoria</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="block mb-2 text-sm font-bold text-gray-700" for="description">
+              Punto de inicio
+            </label>
+            <input type="number" formControlName="puntoI" class="form-control form-control-lg" placeholder="Punto Inicial">
+            <div class="text-danger" *ngIf="eventForm.get('puntoI')?.hasError('required') && eventForm.get('puntoI')?.touched">
+              <span>El punto de inicio <strong> es obligatorio</strong></span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <button type="button" routerLink="/**" class="btn btn-secondary btn-lg float-start">VOLVER</button>
+            <button type="submit" [disabled]="eventForm.invalid" class="btn btn-success btn-lg float-end">ACEPTAR</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-7">
+    <div class="card">
+      <div class="card-body text-center">
+        <span class="titulo">Resultados</span>
+        <br>
+        <span>Raíz Encontrada: {{raiz}}</span>
+        <br>
+        <span class="titulo">Gráfica</span>
+        <br>
+        <img *ngIf="imagen" [src]="imagen" alt="Gráfica">
+        <table *ngIf="lista.length >= 0" class="table table-striped mt-3">
+          <thead>
+            <tr>
+              <th scope="col">Iteración</th>
+              <th scope="col">Xi</th>
+              <th scope="col">Error</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let punto of lista">
+              <td>{{ punto.iteracion }}</td>
+              <td>{{ punto.xi }}</td>
+              <td>{{ punto.error }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<br>
+
+ <!-- Modal para la calculadora -->
+ <div class="modal" tabindex="-1" role="dialog" id="calculatorModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+        <app-calculator (close)="closeCalculator()" (save)="saveFunction($event)"></app-calculator>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeCalculator()">Cerrar</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
