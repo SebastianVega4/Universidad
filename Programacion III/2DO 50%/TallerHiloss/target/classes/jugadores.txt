@@ -1,0 +1,5 @@
+Juan America/New_York 20
+Maria Europe/Paris 25
+Carlos Asia/Tokyo 18
+Ana America/Mexico_City 30
+Pedro Asia/Dubai 22

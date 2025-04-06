@@ -8,6 +8,10 @@
 # BlueJ files
 *.ctxt
 
+.idea/
+.vs/
+.vscode/
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -15,6 +19,7 @@
 *.jar
 *.war
 *.nar
+*.pdf
 *.ear
 *.zip
 *.tar.gz

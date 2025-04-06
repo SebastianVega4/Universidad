@@ -1,0 +1,134 @@
+c9f6e46 - SebastianVega4, hace 15 horas : añadit trabajos
+0809069 - SebastianVega4, hace 3 días : añadir proyecto de Metodos numericos en angular y Python
+7b64e29 - “SebastianVega4”, hace 4 meses : arreglar archivos
+6203916 - “SebastianVega4”, hace 4 meses : 2024_2
+8594955 - “SebastianVega4”, hace 1 año : eliminar repositorio añidado
+07d6167 - “SebastianVega4”, hace 1 año : eliminar repositorio añidado
+dca320b - “SebastianVega4”, hace 1 año : ignorar los .jar
+1584573 - “SebastianVega4”, hace 1 año : subir local
+03a6347 - “SebastianVega4”, 1 año, y 1 mes atrás : arreglar y optimizar repositorio eliminando archivos
+ced74da - “SebastianVega4”, 1 año, y 1 mes atrás : proyecto grafos matematicas dicretas terminado para mostrar
+1a6e625 - “SebastianVega4”, 1 año, y 1 mes atrás : el proyecto mdi ya con interfaz
+aff68d6 - “SebastianVega4”, 1 año, y 1 mes atrás : grafo funcional
+5a158fa - “SebastianVega4”, 1 año, y 1 mes atrás : grafo completo
+de4c14a - “SebastianVega4”, 1 año, y 1 mes atrás : añadiendo municipios al grafo
+5aa7ef0 - “SebastianVega4”, 1 año, y 1 mes atrás : mejorar codigo
+f6182bf - “SebastianVega4”, 1 año, y 1 mes atrás :  mejor codigo
+5730799 - “SebastianVega4”, 1 año, y 1 mes atrás : ahora si ya la logica y creo que ubicacion de estica esta bien solo falta color y update imagen
+dcc362b - “SebastianVega4”, 1 año, y 1 mes atrás : codoptimizado
+7a84673 - “SebastianVega4”, 1 año, y 1 mes atrás : añadir imagen al interfa
+c388e3d - “SebastianVega4”, 1 año, y 1 mes atrás : codigo arregladado y optimizado
+92535f9 - “SebastianVega4”, 1 año, y 1 mes atrás : logica terminada del proyecto matematicas discretas
+63a57bb - “SebastianVega4”, 1 año, y 1 mes atrás : funcionalidad  mdi
+eb0bcd8 - “SebastianVega4”, 1 año, y 1 mes atrás : m4horandi mdi
+1303123 - “SebastianVega4”, 1 año, y 1 mes atrás : ya terminado casi el mdi falta una validacion e interfaz
+337071f - “SebastianVega4”, 1 año, y 1 mes atrás : pryectro mdi
+e322b9f - “SebastianVega4”, 1 año, y 1 mes atrás : muchos cambios añadir proyecto web el proyecto mdi y otras cosas que hice en estas semanas
+055cb68 - “SebastianVega4”, 1 año, y 1 mes atrás : actulizacion
+5b028f9 - “SebastianVega4”, 1 año, y 1 mes atrás : agregar taller hilos termnado
+89b6a69 - “SebastianVega4”, 1 año, y 1 mes atrás : adañir Tallerhilos casi terminado y mejorando el proyecto grafos
+fd520da - “SebastianVega4”, 1 año, y 1 mes atrás : adicionar tallerHilos
+424cbe8 - “SebastianVega4”, 1 año, y 2 meses atrás : añadir parcial hilos
+2fa630b - “SebastianVega4”, 1 año, y 2 meses atrás : se me olvido actulizarlo desde teprano ahora si en el repositorio esta todo el codigo funcional
+9705fe0 - “SebastianVega4”, 1 año, y 2 meses atrás : comentado
+2134f41 - “SebastianVega4”, 1 año, y 2 meses atrás : finalizado con las ciudades y pueblos correctos
+2090591 - “SebastianVega4”, 1 año, y 2 meses atrás : mas informacion en la imprecion de datos e interfaz mejorada
+b744975 - “SebastianVega4”, 1 año, y 2 meses atrás : ambos lados trayecto e imprecion
+03887b7 - “SebastianVega4”, 1 año, y 2 meses atrás : codigo de proyectoGrafo funcional
+a21aefd - “SebastianVega4”, 1 año, y 2 meses atrás : agregar coreciones
+eace6e2 - “SebastianVega4”, 1 año, y 2 meses atrás : proyectoGrafos
+531c846 - “SebastianVega4”, 1 año, y 2 meses atrás : agregar 'hilos'
+5018ed6 - “SebastianVega4”, 1 año, y 2 meses atrás : grafos clase
+88e38c6 - “SebastianVega4”, 1 año, y 4 meses atrás : crreguido
+32dba29 - “SebastianVega4”, 1 año, y 4 meses atrás : .
+c420b42 - “SebastianVega4”, 1 año, y 4 meses atrás : proyecto finalizado con java doc
+bfa9def - “SebastianVega4”, 1 año, y 4 meses atrás : parcial primer 50
+08d18ef - “SebastianVega4”, 1 año, y 4 meses atrás : parcial primer 50
+863c058 - “SebastianVega4”, 1 año, y 4 meses atrás : cambiar arreglo estatico
+7a85bfc - “SebastianVega4”, 1 año, y 4 meses atrás : solo falta mockups y terminado el diccionario
+67bdefb - “SebastianVega4”, 1 año, y 4 meses atrás : terminar proyecto como tal
+62cbc05 - “SebastianVega4”, 1 año, y 4 meses atrás : estructurando mejor el proyecto
+3839022 - “SebastianVega4”, 1 año, y 4 meses atrás : añadiendo proyecto diccionario pri50%
+71260a3 - “SebastianVega4”, 1 año, y 4 meses atrás : finish the project individual fisrt 50%
+3d2e44a - “SebastianVega4”, 1 año, y 4 meses atrás : Proyect(taller individual) terminado
+915653d - “SebastianVega4”, 1 año, y 4 meses atrás : casi terminado el Project(taller) progra
+5864c26 - “SebastianVega4”, 1 año, y 4 meses atrás : agragando estructura de controller para proyecto
+e5a0fe0 - “SebastianVega4”, 1 año, y 4 meses atrás : coreccion a ver si ya no coge repositorio dentro de otro
+87b8b84 - “SebastianVega4”, 1 año, y 4 meses atrás : LinkedDouble funcional
+d80de03 - “SebastianVega4”, 1 año, y 4 meses atrás : coregir directorio lista dobles
+0bd62cf - “SebastianVega4”, 1 año, y 4 meses atrás : codigo de listas dobles funcional con clase Player
+1e6a28d - “SebastianVega4”, 1 año, y 4 meses atrás : añadir proyecto y optimizacion de las carpertas
+d57962e - “SebastianVega4”, 1 año, y 4 meses atrás : iniciar proceso entrega
+05f1258 - “SebastianVega4”, 1 año, y 4 meses atrás : areglar directorio de ejercicos c++
+5cbeeff - “SebastianVega4”, 1 año, y 4 meses atrás : prjDataStructure completo
+a6cfafb - “SebastianVega4”, 1 año, y 5 meses atrás : c++ add
+85146ad - “SebastianVega4”, 1 año, y 5 meses atrás : arreglar codigo para iterar al final y salga al derecho
+0dd5a5d - “SebastianVega4”, 1 año, y 5 meses atrás : añadir prjData prograIII
+d992409 - “SebastianVega4”, 1 año, y 5 meses atrás : herencia c#
+fde05a8 - Sebastian Vega, 1 año, y 6 meses atrás : Update README.md
+64dd947 - “SebastianVega4”, 1 año, y 6 meses atrás : Merge branch 'main' of https://github.com/SebastianVega4/Java
+8de04f8 - “SebastianVega4”, 1 año, y 6 meses atrás : añadir proyecto 2do 50 prograII
+dc416b9 - “SebastianVega4”, 1 año, y 6 meses atrás : hacer p
+42bda71 - “SebastianVega4”, 1 año, y 6 meses atrás : añadir parcial
+33f9d91 - “SebastianVega4”, 1 año, y 7 meses atrás : añadiendo lo visto en clases u
+982b774 - “SebastianVega4”, 1 año, y 7 meses atrás : archivo plano y escriir sin perder linea
+25f137a - “SebastianVega4”, 1 año, y 7 meses atrás : Ficheros-Persistence
+4652d4f - “SebastianVega4”, 1 año, y 7 meses atrás : ficheros
+ca32405 - “SebastianVega4”, 1 año, y 7 meses atrás : Arreglar nombres acepta el reto
+d097cdd - “SebastianVega4”, 1 año, y 7 meses atrás : organizar y actulizar
+3246bd9 - “SebastianVega4”, 1 año, y 7 meses atrás : proyecto 2do 50%
+c1bdf8e - “SebastianVega4”, 1 año, y 8 meses atrás : MenuAdminMaquinaProyecto
+f626544 - “SebastianVega4”, 1 año, y 8 meses atrás : arrego 2d arraylist
+789f3ae - “SebastianVega4”, 1 año, y 8 meses atrás : arraylist 2d
+f4b0fd4 - “SebastianVega4”, 1 año, y 8 meses atrás : arraylist diary
+5428050 - “SebastianVega4”, 1 año, y 8 meses atrás : añadir proyecto
+16cde86 - “SebastianVega4”, 1 año, y 8 meses atrás : actulizar proyecto
+3800279 - “SebastianVega4”, 1 año, y 8 meses atrás : proyecto
+ad38181 - “SebastianVega4”, 1 año, y 8 meses atrás : proyecto progra2
+38579e3 - “SebastianVega4”, 1 año, y 8 meses atrás : Recursividad
+bc9dd37 - “SebastianVega4”, 1 año, y 8 meses atrás : genericas
+4100d6f - “SebastianVega4”, 1 año, y 8 meses atrás : recursividad
+fb96390 - “SebastianVega4”, 1 año, y 8 meses atrás : recursividad
+d070731 - “SebastianVega4”, 1 año, y 9 meses atrás : yolo
+fc2214b - “SebastianVega4”, 1 año, y 9 meses atrás : yo
+684da86 - “SebastianVega4”, 1 año, y 9 meses atrás : añadir genericClassTres
+0f2c215 - “SebastianVega4”, 1 año, y 9 meses atrás : class generic two
+245acaf - “SebastianVega4”, 1 año, y 9 meses atrás : class generic two
+e0fb4ee - “SebastianVega4”, 1 año, y 9 meses atrás : class generic two
+dfba9f0 - “SebastianVega4”, 1 año, y 9 meses atrás : eliminar zips
+8b289e8 - “SebastianVega4”, 1 año, y 9 meses atrás : Clases arraylist generic
+d1c5129 - “SebastianVega4”, 1 año, y 9 meses atrás : add folder progra II
+3b5ca62 - SebastianVega4, 1 año, y 11 meses atrás : ajedrez funcinal
+00a7ff0 - SebastianVega4, 1 año, y 11 meses atrás : ajedrez funcional
+54a5c10 - SebastianVega4, hace 2 años : Algoritmos de ordenamiento
+c687c6b - SebastianVega4, hace 2 años : arreglar codigo
+9559a79 - SebastianVega4, hace 2 años : añadir proyectos
+ce09340 - SebastianVega4, 2 años, y 1 mes atrás : taller
+9a2143f - SebastianVega4, 2 años, y 1 mes atrás : taller parcial
+f336182 - SebastianVega4, 2 años, y 1 mes atrás : actulizar
+d69c9fd - SebastianVega4, 2 años, y 2 meses atrás : trabajo de clase
+dcfff88 - SebastianVega4, 2 años, y 2 meses atrás : clase 1ro febrero
+2fe1ba7 - SebastianVega4, 2 años, y 4 meses atrás : progra l
+962bd01 - SebastianVega4, 2 años, y 4 meses atrás : directorio
+f489ed4 - SebastianVega4, 2 años, y 5 meses atrás : areglar directorio y añadir bien el javadoc de ProjectCandidates
+0b7dfe4 - SebastianVega4, 2 años, y 5 meses atrás : documentcion proyecto 2do 50
+e231455 - SebastianVega4, 2 años, y 5 meses atrás : se me olvido poder generar nuevos numeros ramdom SOLUCIONADO
+2038d8c - SebastianVega4, 2 años, y 5 meses atrás : trabajo final
+b569572 - SebastianVega4, 2 años, y 5 meses atrás : Actulizacion
+e68e9ca - SebastianVega4, 2 años, y 5 meses atrás : taller progra 1
+b63855b - SebastianVega4, 2 años, y 5 meses atrás :  arreglos
+2e5e1bb - SebastianVega4, 2 años, y 5 meses atrás : mejorando codigo
+e578065 - SebastianVega4, 2 años, y 6 meses atrás : Clase arraw 19 oct
+6ed52a3 - SebastianVega4, 2 años, y 6 meses atrás : herencia
+6c62c34 - SebastianVega4, 2 años, y 6 meses atrás : herencia
+467497b - SebastianVega4, 2 años, y 6 meses atrás : herencia
+5ccae49 - SebastianVega4, 2 años, y 7 meses atrás : Mejorando codigo
+cf73284 - SebastianVega4, 2 años, y 7 meses atrás : Mejorando codigo
+423d831 - SebastianVega4, 2 años, y 7 meses atrás : Update README.md
+66f1581 - SebastianVega4, 2 años, y 7 meses atrás : añadiendo archivos funcionales
+3cb6c52 - SebastianVega4, 2 años, y 7 meses atrás : Update README.md
+312e9c3 - SebastianVega4, 2 años, y 7 meses atrás : Trabajos Algo..
+5f0ed1d - SebastianVega4, 2 años, y 7 meses atrás : agregando trabajos de u progra 1
+d61dee3 - SebastianVega4, 2 años, y 7 meses atrás : modificacion del archivo readmi
+bca726c - SebastianVega4, 2 años, y 7 meses atrás : agragar carpeta de retos al repositorio
+928dadd - SebastianVega4, 2 años, y 7 meses atrás : Initial commit
