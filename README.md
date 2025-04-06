@@ -101,12 +101,18 @@ Este repositorio se encuentra bajo la Licencia GPL 3.0.
 - Distribución
 - Uso privado
 
-## 📬 Contacto
+---
 
-**Sebastián Vega**
+## 👨‍🎓 Autor
 
-[LinkedIn](https://www.linkedin.com/in/johan-sebastian-vega-ruiz-b1292011b/)  
-Correo electrónico: *Sebastian.vegar2015@gmail.com*
+Desarrollado por **Sebastián Vega**  
+📧 *Sebastian.vegar2015@gmail.com*  
+🔗 [LinkedIn - Johan Sebastián Vega Ruiz](https://www.linkedin.com/in/johan-sebastian-vega-ruiz-b1292011b/)
 
+---
+ 
+Facultad de Ingeniería — Ingeniería de Sistemas 🧩
 **🏫 Universidad Pedagógica y Tecnológica de Colombia**  
-📍 Sogamoso, Boyacá | 📅 2021-2025
+📍 Sogamoso, Boyacá 📍
+
+© 2022 — Universidad Pedagógica y Tecnológica de Colombia (UPTC) 
