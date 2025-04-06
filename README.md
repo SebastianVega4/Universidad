@@ -102,7 +102,6 @@ Este repositorio se encuentra bajo la Licencia GPL 3.0.
 - Uso privado
 
 ---
-
 ## 👨‍🎓 Autor
 
 Desarrollado por **Sebastián Vega**  
@@ -115,4 +114,4 @@ Facultad de Ingeniería — Ingeniería de Sistemas 🧩
 **🏫 Universidad Pedagógica y Tecnológica de Colombia**  
 📍 Sogamoso, Boyacá 📍
 
-© 2022 — Universidad Pedagógica y Tecnológica de Colombia (UPTC) 
+© 2025 — Sebastian Vega
